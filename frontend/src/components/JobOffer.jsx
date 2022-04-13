@@ -15,6 +15,7 @@ function JobOffer() {
       <div>
         <h1>{offerTemplate.title}</h1>
       </div>
+      <div className="separatingLine" />
     </div>
   );
 }
