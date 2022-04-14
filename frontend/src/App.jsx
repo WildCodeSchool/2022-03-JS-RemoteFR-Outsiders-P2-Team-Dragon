@@ -1,14 +1,45 @@
-import Home from "@pages/Home";
+// import React, { useState } from "react";
+// // import { Routes, Route, Link } from "react-router";
+// import Accueil from "./pages/Accueil";
+// import Feedback from "./pages/Feedback";
+// import "./App.css";
 
-import "./App.css";
+// function App() {
+//   const [sendOffreToSuivi, setSendOffreToSuivi] = useState(false);
 
-function App() {
-  return (
-    <div className="App">
-      <Home />
-      <p>coucou</p>
-    </div>
-  );
-}
+//   const handleClickButtonFavorite = () => {
+//     setSendOffreToSuivi(!sendOffreToSuivi);
+//   };
+//   return (
+//     <>
+//       {/* <Navbar /> */}
+//       <div className="main">
+//         <Accueil
+//           handleClickButtonGo
+//           showFavoriteButton
+//           handleClickButtonFavorite={handleClickButtonFavorite}
+//         />
+//         <Feedback sendOffreToSuivi={sendOffreToSuivi} />
+//         {/* <Routes>
+//         <Route
+//           path="/"
+//           element={
+//             <Accueil
+//               handleClickButtonFavorite
+//               sendOffreToSuivi={sendOffreToSuivi}
+//             />
+//           }
+//         />
+//         <Route
+//           path="/feedback"
+//           element={<Feedback sendOffreToSuivi={sendOffreToSuivi} />}
+//         />
 
-export default App;
+//       </Routes> */}
+//       </div>
+//       {/* <footer/> */}
+//     </>
+//   );
+// }
+
+// export default App;
