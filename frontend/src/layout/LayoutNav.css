@@ -1,0 +1,58 @@
+nav {
+  position: fixed;
+}
+
+.div-nav {
+  display: flex;
+}
+
+.liste-nav {
+  list-style: none;
+  height: 200px;
+  width: 70%;
+}
+
+.items {
+  width: 100%;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.btn-toggle {
+  display: block;
+  position: absolute;
+  right: 0.5rem;
+  top: 0.8rem;
+  border-radius: 50px;
+}
+
+.img-logo {
+  width: 4rem;
+  height: 4rem;
+}
+
+.img-boussole {
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
+  display: block;
+}
+
+@media screen and (min-width: 750px) {
+  .liste-nav {
+    list-style: none;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .items {
+    margin-right: 10px;
+    cursor: pointer;
+  }
+
+  .img-boussole {
+    display: none;
+  }
+}
