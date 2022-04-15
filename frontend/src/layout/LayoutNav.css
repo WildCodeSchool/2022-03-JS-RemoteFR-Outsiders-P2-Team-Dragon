@@ -12,15 +12,14 @@ nav {
   list-style: none;
   display: flex;
   flex-direction: column;
-  right: 65px;
-  width: -webkit-fill-available;
+  justify-content: space-evenly;
+  align-items: baseline;
+  right: 6rem;
   background-color: var(--primary-color);
   height: 6rem;
 }
 
 .items {
-  width: 100%;
-  margin-right: 10px;
   cursor: pointer;
   color: white;
 }
@@ -54,7 +53,8 @@ nav {
     list-style: none;
     display: flex;
     flex-direction: inherit;
-    width: auto;
+    align-items: center;
+    width: 55rem;
   }
 
   .items {
