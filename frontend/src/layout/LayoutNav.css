@@ -4,18 +4,25 @@ nav {
 
 .div-nav {
   display: flex;
+  background-color: var(--primary-color);
+  height: 6rem;
 }
 
 .liste-nav {
   list-style: none;
-  height: 200px;
-  width: 70%;
+  display: flex;
+  flex-direction: column;
+  right: 65px;
+  width: -webkit-fill-available;
+  background-color: var(--primary-color);
+  height: 6rem;
 }
 
 .items {
   width: 100%;
   margin-right: 10px;
   cursor: pointer;
+  color: white;
 }
 
 .btn-toggle {
@@ -27,8 +34,8 @@ nav {
 }
 
 .img-logo {
-  width: 4rem;
-  height: 4rem;
+  width: 6rem;
+  height: 6rem;
 }
 
 .img-boussole {
@@ -39,20 +46,22 @@ nav {
 }
 
 @media screen and (min-width: 750px) {
+  .img-logo {
+    width: 6rem;
+    height: 6rem;
+  }
   .liste-nav {
     list-style: none;
     display: flex;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
+    flex-direction: inherit;
+    width: auto;
   }
 
   .items {
-    margin-right: 10px;
     cursor: pointer;
   }
 
-  .img-boussole {
+  .btn-toggle {
     display: none;
   }
 }

@@ -1,15 +1,23 @@
-import React, { useState } from "react";
+import React from "react";
+import { Routes, Route } from "react-router-dom";
 import Nav from "@components/Nav";
+import "./App.css";
+
+import Accueil from "@pages/Accueil";
 import Suivi from "@pages/Suivi";
 import Bassin from "@pages/Bassin";
-import Accueil from "@pages/Accueil";
 import Feedback from "@pages/Feedback";
-import "./App.css";
 
 function App() {
   return (
     <div className="App">
       <Nav />
+      <Routes>
+        <Route path="/Accueil" element={<Accueil />} />
+        <Route path="/Suivi" element={<Suivi />} />
+        <Route path="/Bassin" element={<Bassin />} />
+        <Route path="/Feedback" element={<Feedback />} />
+      </Routes>
     </div>
   );
 }

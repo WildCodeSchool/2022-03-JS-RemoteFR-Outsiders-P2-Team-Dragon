@@ -1,7 +1,7 @@
 import React from "react";
 
 function Feedback() {
-  return <div>Page Feedback</div>;
+  return <div>Feedback</div>;
 }
 
 export default Feedback;
