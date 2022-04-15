@@ -1,7 +1,6 @@
 import React from "react";
 
-// added ...
-function Details({ ...offerTemplate }) {
+function Details({ offerTemplate }) {
   return (
     <div>
       <h3>{offerTemplate.title}</h3>

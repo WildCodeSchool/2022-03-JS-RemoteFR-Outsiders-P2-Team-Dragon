@@ -1,50 +1,44 @@
-// import React from "react";
-// import FavoriteButton from "./FavoriteButton";
-// import styles from "../assets/Accueil.module.css";
-// import Details from "./Details";
+import React from "react";
+import FavoriteButton from "./FavoriteButton";
+import styles from "../assets/Accueil.module.css";
+import Details from "./Details";
 
-// const offerTemplate = {
-//   title: "Développeur Full-Stack",
-//   contract: "CDI",
-//   workingHours: "35h",
-//   Company: "Microsoft",
-//   prevExperience: "+10ans",
-//   Description: "ipsum dolorem",
-// };
+function JobOffer({
+  sendOffreToSuivi,
+  showFavoriteButton,
+  handleClickButtonFavorite,
+  offer,
+}) {
+  return (
+    <>
+      <div className={styles.mainAccueil}>
+        <div className={styles.favoriteDiv}>
+          {showFavoriteButton ? (
+            <FavoriteButton
+              sendOffreToSuivi={sendOffreToSuivi}
+              showFavoriteButton
+              handleClickButtonFavorite={handleClickButtonFavorite}
+            />
+          ) : (
+            console.warn("pas de button")
+          )}
+        </div>
+        <div className={styles.jobSynthesisDiv}>
+          <h1>{offer.title}</h1>
+          <div>
+            {offer.contract}
+            {" | "}
+            {offer.workingHours}
+            {" | "}
+            {offer.Company}
+            {" | "}
+            {offer.prevExperience}
+          </div>
+        </div>
+      </div>
+      <Details offerTemplate={offer} />
+    </>
+  );
+}
 
-// function JobOffer({
-//   sendOffreToSuivi,
-//   showFavoriteButton,
-//   handleClickButtonFavorite,
-// }) {
-//   return (
-//     <div>
-//       <div click ici>
-//         {showFavoriteButton ? (
-//           <FavoriteButton
-//             sendOffreToSuivi={sendOffreToSuivi}
-//             showFavoriteButton
-//             handleClickButtonFavorite={handleClickButtonFavorite}
-//           />
-//         ) : (
-//           console.warn("pas de button")
-//         )}
-//       </div>
-//       <div>
-//         <h1>{offerTemplate.title}</h1>
-//       </div>
-//       <div>
-//         {offerTemplate.contract}
-//         {" | "}
-//         {offerTemplate.workingHours}
-//         {" | "}
-//         {offerTemplate.Company}
-//         {" | "}
-//         {offerTemplate.prevExperience}
-//       </div>
-//       <Details offerTemplate={offerTemplate} />;
-//     </div>
-//   );
-// }
-
-// export default JobOffer;
+export default JobOffer;
