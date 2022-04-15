@@ -1,8 +1,9 @@
 import React from "react";
+import styles from "../assets/Accueil.module.css";
 
 function Details({ offerTemplate }) {
   return (
-    <div>
+    <div className={styles.jobDetail}>
       <h3>{offerTemplate.title}</h3>
       <h3>{offerTemplate.contract}</h3>
       <h3>{offerTemplate.workingHours}</h3>

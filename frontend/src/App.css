@@ -13,3 +13,8 @@
   --font-size-p: 1rem;
   --line-height: 1.5;
 }
+
+.main {
+  background-color: var(--third-color);
+  padding: 1rem;
+}

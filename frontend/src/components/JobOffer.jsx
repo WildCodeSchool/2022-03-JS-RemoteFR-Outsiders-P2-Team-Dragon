@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import FavoriteButton from "./FavoriteButton";
 import styles from "../assets/Accueil.module.css";
 import Details from "./Details";
@@ -9,9 +9,13 @@ function JobOffer({
   handleClickButtonFavorite,
   offer,
 }) {
+  const [showDetail, setshowDetail] = useState(false);
+  const handleClick = () => {
+    setshowDetail(!showDetail);
+  };
   return (
-    <>
-      <div className={styles.mainAccueil}>
+    <div className={styles.mainAccueil}>
+      <div className={styles.jobContainer}>
         <div className={styles.favoriteDiv}>
           {showFavoriteButton ? (
             <FavoriteButton
@@ -35,9 +39,18 @@ function JobOffer({
             {offer.prevExperience}
           </div>
         </div>
+        <div className={styles.favoriteDiv}>
+          <button
+            type="button"
+            onClick={handleClick}
+            className={styles.buttonDetail}
+          >
+            ...
+          </button>
+        </div>
       </div>
-      <Details offerTemplate={offer} />
-    </>
+      {showDetail ? <Details offerTemplate={offer} /> : null}
+    </div>
   );
 }
 

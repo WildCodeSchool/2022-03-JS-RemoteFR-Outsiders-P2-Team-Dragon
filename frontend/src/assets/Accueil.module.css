@@ -1,4 +1,7 @@
 .mainAccueil {
+  background-color: white;
+}
+.jobContainer {
   display: flex;
   margin: 1rem;
   text-align: center;
@@ -12,6 +15,20 @@
 .jobSynthesisDiv {
   margin: 1rem;
   padding: 1rem;
+}
+
+.jobDetail {
+  text-align: center;
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.buttonDetail {
+  border-radius: 50%;
+  background-color: var(--fourth-color);
+  height: 30px;
+  width: 30px;
+  color: var(--fourth-color);
 }
 
 /* o-------------------------scar -------------------------*/
