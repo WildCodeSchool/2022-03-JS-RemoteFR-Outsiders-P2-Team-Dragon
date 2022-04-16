@@ -3,8 +3,8 @@ import React, { useState } from "react";
 export default function FilterButton({ label }) {
   const [isChecked, setIsChecked] = useState(false);
 
-  const handleClick = (e) => {
-    e.preventDefault();
+  const handleClick = (event) => {
+    event.preventDefault();
     setIsChecked(!isChecked);
   };
 
