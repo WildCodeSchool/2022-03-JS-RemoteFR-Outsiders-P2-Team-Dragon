@@ -34,34 +34,48 @@
   flex-grow: 1;
   padding: 0.8em;
   border: 1px solid rgba(0, 0, 0, 0.301);
-  border-radius: 0.6em;
+  border-radius: 0.4em;
 }
+
+.fieldscontainer input:focus,
+.fieldscontainer select:focus{
+  outline: 1px solid var(--button-color);
+}
+
 
 .filterbutton{
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  font-size: 1em;
-  color: var(--button-color);
-  background-color: white;
+  flex-wrap: wrap;
 }
 
-.checked {
+.filterbutton button{
+  color: var(--button-color);
+  background-color: white;
+  font-size: 1em;
+  font-weight: 700;
+  border-radius: 0.4em;
+  padding: 0.4em 1.2em;
+  border: 1px solid var(--button-color);
+  transition: background-color 0.35s, color 0.35s;
+  cursor: pointer;
+}
+
+.filterbutton .checked{
   color: white;
   background-color: var(--button-color);
-  font-size: 1em;
-  border-radius: 0.6em;
-  padding: 0.2em 0.8em 0.2em 0.8em;
-  border-style: none;
 }
 
 .buttonform input {
-  padding: 0.8em 10em 0.8em 10em;
+  padding: 0.8em 0em;
   background-color: var(--secondary-color);
   color: white;
   font-size: 1em;
   font-weight: 700;
-  border-radius: 0.6em;
+  border-radius: 0.4em;
   border-style: none;
+  cursor: pointer;
+  width: 100%;
 }

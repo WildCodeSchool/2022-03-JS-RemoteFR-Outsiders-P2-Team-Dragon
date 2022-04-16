@@ -3,7 +3,6 @@
 :root {
   --primary-color: #1a4a57;
   --secondary-color: #35606b;
-  --main-background: rgb(248, 248, 248);
   --bloc-background: #e3e9eb;
   --button-color: #f08b30;
   --font-family: "Roboto";
@@ -19,6 +18,3 @@
   font-family: var(--font-family);
 }
 
-body {
-  background-color: var(--main-background);
-}
