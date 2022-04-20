@@ -3,6 +3,7 @@ import Accueil from "./pages/Accueil";
 import "./App.css";
 
 function App() {
+  // partie de Oscar
   const [sendOffreToSuivi, setSendOffreToSuivi] = useState(false);
 
   const handleClickButtonFavorite = () => {
