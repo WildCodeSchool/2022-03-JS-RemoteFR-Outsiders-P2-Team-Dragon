@@ -1,13 +1,26 @@
-import Home from "@pages/Home";
-
+import React, { useState } from "react";
+import Accueil from "./pages/Accueil";
 import "./App.css";
 
 function App() {
+  // partie de Oscar
+  const [sendOffreToSuivi, setSendOffreToSuivi] = useState(false);
+
+  const handleClickButtonFavorite = () => {
+    setSendOffreToSuivi(!sendOffreToSuivi);
+  };
   return (
-    <div className="App">
-      <Home />
-      <p>coucou</p>
-    </div>
+    <>
+      {/* <Navbar /> */}
+      <div className="main">
+        <Accueil
+          handleClickButtonGo
+          showFavoriteButton
+          handleClickButtonFavorite={handleClickButtonFavorite}
+        />
+      </div>
+      {/* <footer/> */}
+    </>
   );
 }
 

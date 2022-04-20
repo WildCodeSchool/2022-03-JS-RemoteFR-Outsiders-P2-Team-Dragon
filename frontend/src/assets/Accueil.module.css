@@ -1,0 +1,63 @@
+.mainAccueil {
+  background-color: white;
+}
+.jobContainer {
+  display: flex;
+  margin: 1rem;
+  text-align: center;
+}
+
+.favoriteDiv {
+  display: flex;
+  align-items: center;
+}
+
+.jobSynthesisDiv {
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.jobDetail {
+  text-align: center;
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.buttonDetail {
+  border-radius: 50%;
+  background-color: var(--fourth-color);
+  height: 30px;
+  width: 30px;
+  color: var(--fourth-color);
+}
+
+/* o-------------------------scar -------------------------*/
+.oscar-div-exemple {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.offre {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: aqua;
+  height: 20vh;
+  width: 20vw;
+}
+.buttonAddFavorite {
+  border: 0;
+  background-color: transparent;
+  display: flex;
+}
+.favoriteIcon {
+  height: 2rem;
+}
+.favoriteIcon:hover {
+  height: 2.2rem;
+}
+
+/* -------------------------oscar-------------------------*/
