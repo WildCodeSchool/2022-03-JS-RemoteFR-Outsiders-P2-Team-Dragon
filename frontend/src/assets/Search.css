@@ -4,7 +4,6 @@
   justify-content: center;
   align-items: center;
   background-color: white; /* var(--bloc-background) */
-  margin: 5em 1em 1em 1em;
   border: 1px solid rgb(201, 197, 197);
   border-radius: 10px;
 }
@@ -77,4 +76,9 @@
   border-style: none;
   cursor: pointer;
   width: 100%;
+}
+
+.buttonform input:hover {
+  background-color: var(--primary-color);
+  transition: background-color 0.35s, color 0.35s;
 }

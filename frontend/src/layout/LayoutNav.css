@@ -4,7 +4,7 @@ nav {
 
 .div-nav {
   display: flex;
-  background-color: var(--primary-color);
+  background-color: var(--secondary-color);
   height: 6rem;
 }
 
