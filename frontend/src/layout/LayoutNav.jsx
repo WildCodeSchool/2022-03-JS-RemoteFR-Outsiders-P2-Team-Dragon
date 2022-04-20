@@ -28,14 +28,14 @@ function Layout() {
             <Link to="/accueil" className="items">
               Accueil
             </Link>
-            <Link to="/bassin" className="items">
-              Bassin d&apos;emplois
+            <Link to="/profil" className="items">
+              Profil
             </Link>
             <Link to="/suivi" className="items">
-              Suivis de candidatures
+              Suivis
             </Link>
-            <Link to="/feedback" className="items">
-              Retours entreprises
+            <Link to="/bassin" className="items">
+              Bassin d&apos;emplois
             </Link>
           </nav>
         )}

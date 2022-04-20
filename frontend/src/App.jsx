@@ -6,7 +6,7 @@ import "./App.css";
 import Accueil from "@pages/Accueil";
 import Suivi from "@pages/Suivi";
 import Bassin from "@pages/Bassin";
-import Feedback from "@pages/Feedback";
+import Feedback from "@pages/Profil";
 
 function App() {
   return (

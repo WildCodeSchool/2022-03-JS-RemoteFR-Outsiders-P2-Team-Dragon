@@ -54,7 +54,7 @@ nav {
     display: flex;
     flex-direction: inherit;
     align-items: center;
-    width: 55rem;
+    width: 50rem;
   }
 
   .items {
