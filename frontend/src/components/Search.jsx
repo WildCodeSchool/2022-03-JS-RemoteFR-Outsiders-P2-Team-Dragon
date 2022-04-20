@@ -1,7 +1,6 @@
 import React from "react";
-import FilterButton from "@components/FilterButton";
-import "@assets/Common.css";
-import "@assets/Search.css";
+import FilterButton from "./FilterButton";
+import "../assets/Search.css";
 
 export default function Search() {
   return (

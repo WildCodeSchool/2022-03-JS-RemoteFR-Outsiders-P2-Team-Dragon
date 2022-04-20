@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: var(--bloc-background);
+  background-color: white; /* var(--bloc-background) */
   margin: 5em 1em 1em 1em;
   border: 1px solid rgb(201, 197, 197);
   border-radius: 10px;
@@ -38,12 +38,11 @@
 }
 
 .fieldscontainer input:focus,
-.fieldscontainer select:focus{
+.fieldscontainer select:focus {
   outline: 1px solid var(--button-color);
 }
 
-
-.filterbutton{
+.filterbutton {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -51,7 +50,7 @@
   flex-wrap: wrap;
 }
 
-.filterbutton button{
+.filterbutton button {
   color: var(--button-color);
   background-color: white;
   font-size: 1em;
@@ -63,7 +62,7 @@
   cursor: pointer;
 }
 
-.filterbutton .checked{
+.filterbutton .checked {
   color: white;
   background-color: var(--button-color);
 }
