@@ -1,10 +1,3 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  text-decoration: none;
-}
-
 :root {
   --primary-color: #1a4a57;
   --secondary-color: #35606b;
@@ -12,6 +5,20 @@
   --fourth-color: #f08b30;
   --font-size-p: 1rem;
   --line-height: 1.5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
 }
 
 .main {
