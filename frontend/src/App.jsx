@@ -1,27 +1,25 @@
 import React, { useState } from "react";
-import Section from "./components/Section";
-import Offre from "./components/Offre";
-import "./assets/oscar.css";
+// import { Routes, Route, Link } from "react-router";
+import Accueil from "./pages/Accueil";
+import Feedback from "./pages/Feedback";
+import "./assets/Accueil.module.css";
+import "./assets/Accueil.css";
 import "./App.css";
 
 function App() {
   const [sendOffreToSuivi, setSendOffreToSuivi] = useState(false);
-
   const handleClickButtonFavorite = () => {
     setSendOffreToSuivi(!sendOffreToSuivi);
   };
-
   return (
-    <div className="App">
-      <div className="oscar-div-exemple">
-        <Offre
-          showFavoriteButton
-          handleClickButtonFavorite={handleClickButtonFavorite}
-        />
-        <Section sendOffreToSuivi={sendOffreToSuivi} />
-      </div>
+    <div className="main">
+      <Accueil
+        handleClickButtonGo
+        showFavoriteButton
+        handleClickButtonFavorite={handleClickButtonFavorite}
+      />
+      <Feedback sendOffreToSuivi={sendOffreToSuivi} />
     </div>
   );
 }
-
 export default App;

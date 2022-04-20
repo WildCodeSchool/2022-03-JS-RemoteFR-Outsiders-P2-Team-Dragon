@@ -1,0 +1,28 @@
+.separatingLine {
+  height: 10px;
+  background-color: white;
+}
+
+.main {
+  background-color: grey;
+}
+
+/* o-------------------------scar -------------------------*/
+.buttonAddFavorite {
+  border: 0;
+  background-color: transparent;
+  display: flex;
+}
+.favoriteIcon {
+  height: 1rem;
+}
+
+
+
+
+
+
+
+
+
+/* -------------------------oscar-------------------------*/
