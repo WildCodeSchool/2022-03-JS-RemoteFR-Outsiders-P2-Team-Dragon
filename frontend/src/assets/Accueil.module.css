@@ -1,5 +1,6 @@
 .mainAccueil {
   background-color: white;
+  border-radius: 10px;
 }
 .jobContainer {
   display: flex;
