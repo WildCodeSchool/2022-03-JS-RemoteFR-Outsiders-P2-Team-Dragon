@@ -1,46 +1,55 @@
-import React from "react";
+import React, { useState } from "react";
 import FavoriteButton from "./FavoriteButton";
+import styles from "../assets/Accueil.module.css";
 import Details from "./Details";
 
-const offerTemplate = {
-  title: "Développeur Full-Stack",
-  contract: "CDI",
-  workingHours: "35h",
-  Company: "Microsoft",
-  prevExperience: "+10ans",
-  Description: "ipsum dolorem",
-};
 function JobOffer({
   sendOffreToSuivi,
   showFavoriteButton,
   handleClickButtonFavorite,
+  offer,
 }) {
+  const [showDetail, setshowDetail] = useState(false);
+  const handleClick = () => {
+    setshowDetail(!showDetail);
+  };
   return (
-    <div>
-      <div>
-        {showFavoriteButton ? (
-          <FavoriteButton
-            sendOffreToSuivi={sendOffreToSuivi}
-            showFavoriteButton
-            handleClickButtonFavorite={handleClickButtonFavorite}
-          />
-        ) : (
-          console.warn("pas de button")
-        )}
+    <div className={styles.mainAccueil}>
+      <div className={styles.jobContainer}>
+        <div className={styles.favoriteDiv}>
+          {showFavoriteButton ? (
+            <FavoriteButton
+              sendOffreToSuivi={sendOffreToSuivi}
+              showFavoriteButton
+              handleClickButtonFavorite={handleClickButtonFavorite}
+            />
+          ) : (
+            console.warn("pas de button")
+          )}
+        </div>
+        <div className={styles.jobSynthesisDiv}>
+          <h1>{offer.title}</h1>
+          <div>
+            {offer.contract}
+            {" | "}
+            {offer.workingHours}
+            {" | "}
+            {offer.Company}
+            {" | "}
+            {offer.prevExperience}
+          </div>
+        </div>
+        <div className={styles.favoriteDiv}>
+          <button
+            type="button"
+            onClick={handleClick}
+            className={styles.buttonDetail}
+          >
+            ...
+          </button>
+        </div>
       </div>
-      <div>
-        <h1>{offerTemplate.title}</h1>
-      </div>
-      <div>
-        {offerTemplate.contract}
-        {" | "}
-        {offerTemplate.workingHours}
-        {" | "}
-        {offerTemplate.Company}
-        {" | "}
-        {offerTemplate.prevExperience}
-      </div>
-      <Details offerTemplate={offerTemplate} />
+      {showDetail ? <Details offerTemplate={offer} /> : null}
     </div>
   );
 }

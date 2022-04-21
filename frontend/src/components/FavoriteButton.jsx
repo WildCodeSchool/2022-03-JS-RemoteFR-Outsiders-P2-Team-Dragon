@@ -26,7 +26,6 @@ export default function FavoriteButton({ handleClickButtonFavorite }) {
           />
         )}
       </button>
-      <h1>Animated Heart Like Button</h1>
     </div>
   );
 }

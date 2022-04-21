@@ -1,10 +1,35 @@
-.separatingLine {
-  height: 10px;
+.mainAccueil {
   background-color: white;
+  border-radius: 10px;
+}
+.jobContainer {
+  display: flex;
+  margin: 1rem;
+  text-align: center;
 }
 
-.main {
-  background-color: grey;
+.favoriteDiv {
+  display: flex;
+  align-items: center;
+}
+
+.jobSynthesisDiv {
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.jobDetail {
+  text-align: center;
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.buttonDetail {
+  border-radius: 50%;
+  background-color: var(--fourth-color);
+  height: 30px;
+  width: 30px;
+  color: var(--fourth-color);
 }
 
 /* o-------------------------scar -------------------------*/
@@ -17,10 +42,10 @@
   display: flex;
 }
 .favoriteIcon {
-  height: 1rem;
+  height: 2rem;
 }
 .favoriteIcon:hover {
-  height: 1.1rem;
+  height: 2.2rem;
 }
 
 /* -------------------------oscar-------------------------*/
