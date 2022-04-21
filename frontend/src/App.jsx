@@ -20,7 +20,7 @@ function App() {
       <div className="main">
         <Routes>
           <Route
-            path="/"
+            path="/Accueil"
             element={
               <Accueil
                 handleClickButtonGo

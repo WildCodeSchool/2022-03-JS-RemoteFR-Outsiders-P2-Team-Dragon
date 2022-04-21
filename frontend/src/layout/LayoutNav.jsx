@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import React, { useState } from "react";
-import logo from "../assets/logo_Find_Tech.jpg";
-import boussoleToggle from "../assets/boussole.png";
+import logo from "../assets/logo.svg";
+import boussoleToggle from "../assets/boussole.svg";
 import "./LayoutNav.css";
 
 function Layout() {
