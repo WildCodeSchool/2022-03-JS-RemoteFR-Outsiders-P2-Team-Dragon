@@ -1,14 +1,33 @@
-import React from "react";
-import FilterButton from "./FilterButton";
-import "../assets/Search.css";
-import "../assets/Common.css";
+
+
+import React, { useState } from "react";
+import FilterButton from "@components/FilterButton";
+import "@assets/Common.css";
+import "@assets/Search.css";
+
+
 
 export default function Search() {
+  const [metier, setMetier] = useState("");
+
+  function handleClick(e) {
+    e.preventDefault();
+    console.warn(`bouton cliqué ${metier}`);
+  }
   return (
     <div className="searchjob">
-      <form className="formjob">
+      <form className="formjob" onSubmit={handleClick}>
         <div className="fieldscontainer">
-          <input type="search" id="job" placeholder="Métier" name="job" />
+          <input
+            type="search"
+            id="job"
+            value={metier}
+            placeholder="Métier"
+            name="job"
+            onChange={(e) => {
+              setMetier(e.target.value);
+            }}
+          />
           <input
             type="search"
             id="lieu"
@@ -43,7 +62,7 @@ export default function Search() {
           <FilterButton label="Stage" />
         </div>
         <div className="buttonform">
-          <input type="button" value="FIND TECH JOB !" />
+          <input type="submit" value="FIND TECH JOB !" />
         </div>
       </form>
     </div>
