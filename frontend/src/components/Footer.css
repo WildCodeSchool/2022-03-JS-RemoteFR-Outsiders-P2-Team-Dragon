@@ -1,5 +1,55 @@
 .div-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
   background-color: var(--primary-color);
-  height: 8rem;
+  height: 6rem;
   margin: auto;
+  color: white;
+  font-size: 0.9rem;
+  align-items: self-start;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  padding-top: 0.3rem;
+}
+
+/***/
+
+@media screen and (max-width: 360px) {
+  .div-footer {
+    justify-content: space-around;
+    background-color: var(--primary-color);
+    height: 8rem;
+    margin: auto;
+    color: white;
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .div-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: end;
+    background-color: var(--primary-color);
+    height: 8rem;
+    margin: inherit;
+    color: white;
+    font-size: 1.2rem;
+    width: 65rem;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .div-footer {
+    width: 65rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .div-footer {
+    width: 80rem;
+    margin: auto;
+  }
 }
