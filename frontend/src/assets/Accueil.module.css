@@ -18,10 +18,22 @@
   padding: 1rem;
 }
 
-.jobDetail {
+.jobDetail,
+h3,
+p {
   text-align: center;
   background-color: var(--secondary-color);
   color: white;
+}
+
+h3 {
+  padding: 15px;
+  font-size: 20px;
+}
+
+p {
+  padding: 15px;
+  font-size: 15px;
 }
 
 .buttonDetail {
