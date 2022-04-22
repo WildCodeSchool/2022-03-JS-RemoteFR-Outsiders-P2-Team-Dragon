@@ -1,9 +1,9 @@
 .div-footer {
   display: flex;
-  flex-direction: column;
+
   justify-content: start;
-  background-color: var(--primary-color);
-  height: 6rem;
+  background-color: var(--secondary-color);
+  height: auto;
   margin: auto;
   color: white;
   font-size: 0.9rem;
