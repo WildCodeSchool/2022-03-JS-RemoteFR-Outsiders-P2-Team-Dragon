@@ -1,7 +1,9 @@
 import React, { useState } from "react";
-import FilterButton from "./FilterButton";
-import "../assets/Common.css";
-import "../assets/Search.css";
+
+import FilterButton from "@components/FilterButton";
+import "@assets/Common.css";
+import "@assets/Search.css";
+
 
 export default function Search() {
   const [inputs, setInputs] = useState({});
