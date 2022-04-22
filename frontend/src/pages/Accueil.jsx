@@ -3,6 +3,7 @@ import Search from "../components/Search";
 import JobOffer from "../components/JobOffer";
 // import styles from "../assets/Accueil.module.css";
 // import Feedback from "./Feedback";
+import "@assets/Common.css";
 
 const offerTemplate = [
   {
