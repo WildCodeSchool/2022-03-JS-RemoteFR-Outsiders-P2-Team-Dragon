@@ -35,7 +35,7 @@ function Nav() {
 
         {(toggleMenu || screenWidth > 750) && (
           <nav className="liste-nav">
-            <Link to="/accueil" className="items">
+            <Link to="/" className="items">
               Accueil
             </Link>
             <Link to="/profil" className="items">
