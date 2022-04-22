@@ -34,7 +34,6 @@
   height: 3.1rem;
   margin-top: 1rem;
   margin-bottom: 0.5rem;
-  position: relative;
   right: 9.7rem;
 }
 
@@ -55,7 +54,7 @@
     width: 6rem;
     height: 6rem;
     margin-top: 2rem;
-    left: 4rem;
+    margin-left: 9rem;
   }
 
   .div-nav {
@@ -73,7 +72,7 @@
 
   .items {
     cursor: pointer;
-    font-size: 3rem;
+    font-size: 2rem;
   }
 
   .btn-toggle {
@@ -89,7 +88,7 @@
     width: 6rem;
     height: 6rem;
     margin-top: 2rem;
-    left: 3rem;
+    margin-left: 3rem;
   }
 }
 
@@ -101,11 +100,11 @@
     width: 6rem;
     height: 6rem;
     margin-top: 2rem;
-    margin-right: 12rem;
+    margin-right: auto;
   }
 }
 
-@media screen and (min-width: 1300px) {
+@media screen and (min-width: 1500px) {
   .div-nav {
     width: 100%;
     margin: auto;
@@ -114,7 +113,11 @@
     width: 6rem;
     height: 6rem;
     margin-top: 2rem;
-    margin-right: 93rem;
+    margin-right: auto;
     font-size: 2rem;
+  }
+  .items {
+    cursor: pointer;
+    font-size: 3rem;
   }
 }

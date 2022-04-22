@@ -36,7 +36,7 @@
     height: 8rem;
     margin: inherit;
     color: white;
-    font-size: 3rem;
+    font-size: 2rem;
     width: 65rem;
   }
 }
@@ -51,5 +51,6 @@
   .div-footer {
     width: 100%;
     margin: auto;
+    font-size: 3rem;
   }
 }
