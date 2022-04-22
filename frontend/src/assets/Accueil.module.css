@@ -6,6 +6,7 @@
   display: flex;
   margin: 1rem;
   text-align: center;
+  justify-content: space-around;
 }
 
 .favoriteDiv {
@@ -14,7 +15,7 @@
 }
 
 .jobSynthesisDiv {
-  margin: 1rem;
+  margin: 0.5rem;
   padding: 1rem;
 }
 
@@ -30,6 +31,7 @@
   height: 30px;
   width: 30px;
   color: var(--fourth-color);
+  border: 0;
 }
 
 /* o-------------------------scar -------------------------*/
