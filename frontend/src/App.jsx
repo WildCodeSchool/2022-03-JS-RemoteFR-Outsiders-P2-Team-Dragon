@@ -6,6 +6,7 @@ import Nav from "@components/Nav";
 import "./App.css";
 import Suivi from "@pages/Suivi";
 import Bassin from "@pages/Bassin";
+import Footer from "@components/Footer";
 
 function App() {
   // partie de Oscar
@@ -20,7 +21,7 @@ function App() {
       <div className="main">
         <Routes>
           <Route
-            path="/"
+            path="/Accueil"
             element={
               <Accueil
                 handleClickButtonGo
@@ -34,6 +35,7 @@ function App() {
           <Route path="/Profil" element={<Profil />} />
         </Routes>
       </div>
+      <Footer />
     </>
   );
 }
