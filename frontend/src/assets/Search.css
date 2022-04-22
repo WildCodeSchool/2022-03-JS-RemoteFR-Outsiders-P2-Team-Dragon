@@ -16,6 +16,7 @@
   width: 100%;
   padding: 1em;
   gap: 2em;
+  margin-top: 0.5em;
 }
 
 .formjob .fieldscontainer {
@@ -76,6 +77,7 @@
   border-style: none;
   cursor: pointer;
   width: 100%;
+  margin-bottom: 0.5em;
 }
 
 .buttonform input:hover {
