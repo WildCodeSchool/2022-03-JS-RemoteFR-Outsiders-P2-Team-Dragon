@@ -6,7 +6,8 @@ import "./App.css";
 import Accueil from "@pages/Accueil";
 import Suivi from "@pages/Suivi";
 import Bassin from "@pages/Bassin";
-import Feedback from "@pages/Feedback";
+import Feedback from "@pages/Profil";
+import Footer from "@components/Footer";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/Bassin" element={<Bassin />} />
         <Route path="/Feedback" element={<Feedback />} />
       </Routes>
+      <Footer />
     </div>
   );
 }
