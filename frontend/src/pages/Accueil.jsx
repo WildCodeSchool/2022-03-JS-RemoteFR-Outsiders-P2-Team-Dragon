@@ -7,6 +7,7 @@ import "@assets/Common.css";
 
 const offerTemplate = [
   {
+    id: 1,
     title: "Développeur Full-Stack",
     contract: "CDI",
     workingHours: "35h",
@@ -16,6 +17,7 @@ const offerTemplate = [
       "Nous recherchons un Lead Développeur Javascript francophone Senior pour rejoindre la fusée ADDAXA afin développer et améliorer nos plateformes e-commerces.",
   },
   {
+    id: 2,
     title: "Développeur Full-Stack",
     contract: "CDI",
     workingHours: "48h",
@@ -33,6 +35,7 @@ function Accueil({ sendOffreToSuivi, handleClickButtonFavorite }) {
       {offerTemplate.map((offer) => {
         return (
           <JobOffer
+            key={offer.id}
             sendOffreToSuivi={sendOffreToSuivi}
             showFavoriteButton
             handleClickButtonFavorite={handleClickButtonFavorite}

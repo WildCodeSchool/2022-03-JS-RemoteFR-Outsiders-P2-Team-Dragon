@@ -7,18 +7,18 @@ export default function Search() {
   const [inputs, setInputs] = useState({});
 
   const handleChange = (event) => {
-    const { name } = event.target;
-    const { value } = event.target;
+    const { name, value } = event.target;
     setInputs((values) => ({ ...values, [name]: value }));
   };
 
-  const handleClick = (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     console.warn(inputs);
   };
+
   return (
     <div className="searchjob">
-      <form className="formjob" onSubmit={handleClick}>
+      <form className="formjob" onSubmit={handleSubmit}>
         <div className="fieldscontainer">
           <input
             type="search"
@@ -61,14 +61,10 @@ export default function Search() {
           </select>
         </div>
         <div className="filterbutton">
-          <FilterButton label="CDI" name="cdi" value={inputs.cdi} />
-          <FilterButton label="CDD" name="cdd" value={inputs.cdd} />
-          <FilterButton
-            label="Alternance"
-            name="alternance"
-            value={inputs.alternance}
-          />
-          <FilterButton label="Stage" name="stage" value={inputs.stage} />
+          <FilterButton onChange={handleChange} label="CDI" />
+          <FilterButton onChange={handleChange} label="CDD" />
+          <FilterButton onChange={handleChange} label="Alternance" />
+          <FilterButton onChange={handleChange} label="Stage" />
         </div>
         <div className="buttonform">
           <input type="submit" value="FIND TECH JOB !" />
