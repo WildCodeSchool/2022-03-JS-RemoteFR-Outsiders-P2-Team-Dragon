@@ -69,6 +69,7 @@ p {
 }
 .favoriteIcon {
   height: 1rem;
+  background-color: red;
 }
 
 /* -------------------------oscar-------------------------*/
