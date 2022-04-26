@@ -3,29 +3,20 @@ import FavoriteButton from "./FavoriteButton";
 import styles from "../assets/Accueil.module.css";
 import Details from "./Details";
 
-function JobOffer({
-  sendOffreToSuivi,
-  showFavoriteButton,
-  handleClickButtonFavorite,
-  offer,
-}) {
+// showFavoriteButton=true montre le heart dans offer sinon il ne s'affiche pas
+function JobOffer({ showFavoriteButton, offer, handleLiked }) {
   const [showDetail, setshowDetail] = useState(false);
   const handleClick = () => {
     setshowDetail(!showDetail);
   };
+
   return (
     <div className={styles.mainAccueil}>
       <div className={styles.jobContainer}>
         <div className={styles.favoriteDiv}>
           {showFavoriteButton ? (
-            <FavoriteButton
-              sendOffreToSuivi={sendOffreToSuivi}
-              showFavoriteButton
-              handleClickButtonFavorite={handleClickButtonFavorite}
-            />
-          ) : (
-            console.warn("pas de button")
-          )}
+            <FavoriteButton offer={offer} handleLiked={handleLiked} />
+          ) : null}
         </div>
         <div className={styles.jobSynthesisDiv}>
           <h1>{offer.title}</h1>
