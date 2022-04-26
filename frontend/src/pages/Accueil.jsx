@@ -26,18 +26,16 @@ const offerTemplate = [
     id: 2,
   },
 ];
-// Partie Oscar : ici on reçois les props qui viennent d'App et pour les transmets vers JobOffer...
 function Accueil() {
-  const [isliked, setIsLiked] = useState(false);
+  const [isLiked, setIsLiked] = useState(false);
 
-  const handleLiked = (offerLiked) => {
-    setIsLiked(!isliked);
-
-    offerTemplate.map((offer) => {
-      if (offer.id === offerLiked.id) {
-        offer.isFavorite = !offer.isFavorite;
-      }
-    });
+  const handleLiked = () => {
+    setIsLiked(!isLiked);
+    // offerTemplate.map((offer) => {
+    //   if (offer.id === offerLiked.id) {
+    //     offer.isFavorite = !offer.isFavorite;
+    //   }
+    // });
   };
   return (
     <>
