@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import Search from "../components/Search";
 import JobOffer from "../components/JobOffer";
+import "@assets/Common.css";
 
 const offerTemplate = [
   {
+    id: 1,
     title: "Développeur Full-Stack",
     contract: "CDI",
     workingHours: "35h",
@@ -15,6 +17,7 @@ const offerTemplate = [
     id: 1,
   },
   {
+    id: 2,
     title: "Développeur Full-Stack",
     contract: "CDI",
     workingHours: "48h",
@@ -45,6 +48,7 @@ function Accueil() {
           return (
             // Partie Oscar : ici on envoie les props qui viennent d'App et les transmets vers JobOffer...
             <JobOffer
+              key={offer.id}
               handleLiked={handleLiked}
               showFavoriteButton
               offer={offer}

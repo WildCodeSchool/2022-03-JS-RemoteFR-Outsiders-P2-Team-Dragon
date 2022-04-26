@@ -8,6 +8,7 @@ import Suivi from "@pages/Suivi";
 import Bassin from "@pages/Bassin";
 import "./assets/Accueil.module.css";
 import "./assets/Accueil.css";
+import Footer from "@components/Footer";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/Profil" element={<Profil />} />
         </Routes>
       </div>
+      <Footer />
     </>
   );
 }
