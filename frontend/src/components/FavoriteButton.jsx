@@ -1,21 +1,28 @@
 import React from "react";
-import styles from "../assets/Accueil.module.css";
 
 // When I click on Heart, the poste is going to "Suivi de candidature"
 
-export default function FavoriteButton({ handleClickButtonFavorite }) {
+export default function FavoriteButton({ offer, handleLiked }) {
   return (
-    <div className={styles.addFavorite}>
+    <div className="addFavorite">
       <button
-        className={styles.buttonAddFavorite}
+        className="buttonAddFavorite"
         type="button"
-        onClick={handleClickButtonFavorite}
+        onClick={() => handleLiked(offer)}
       >
-        <img
-          className={styles.favoriteIcon}
-          src="..\src\assets\coeur.png"
-          alt="Like ?"
-        />
+        {offer.isFavorite ? (
+          <img
+            className="favoriteIcon"
+            src="..\src\assets\likeON.png"
+            alt="Dont liked"
+          />
+        ) : (
+          <img
+            className="favoriteIcon"
+            src="..\src\assets\likeOFF.png"
+            alt="liked"
+          />
+        )}
       </button>
     </div>
   );
