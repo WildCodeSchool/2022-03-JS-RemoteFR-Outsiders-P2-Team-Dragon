@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import FavoriteButton from "./FavoriteButton";
 import styles from "../assets/Accueil.module.css";
 import Details from "./Details";
-import "@assets/Common.css";
+import "../assets/Common.css";
 
 function JobOffer({
   sendOffreToSuivi,
