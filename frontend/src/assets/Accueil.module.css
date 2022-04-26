@@ -18,6 +18,9 @@
   margin: 0.5rem;
   padding: 1rem;
 }
+.jobSynthesisDiv h1 {
+  font-size: 1.2em;
+}
 
 .jobDetail,
 h3,
@@ -34,7 +37,7 @@ h3 {
 
 p {
   padding: 15px;
-  font-size: 15px;
+  font-size: 0.7rem;
 }
 
 .buttonDetail {
@@ -47,19 +50,25 @@ p {
 }
 
 /* o-------------------------scar -------------------------*/
-.addFavorite{
-
+.addFavorite {
 }
 .buttonAddFavorite {
   border: 0;
   background-color: transparent;
   display: flex;
 }
-.favoriteIcon {
-  height: 2rem;
-}
+
 .favoriteIcon:hover {
   height: 2.2rem;
+}
+
+.buttonAddFavorite {
+  border: 0;
+  background-color: transparent;
+  display: flex;
+}
+.favoriteIcon {
+  height: 1rem;
 }
 
 /* -------------------------oscar-------------------------*/

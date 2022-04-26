@@ -14,7 +14,6 @@ const offerTemplate = [
     Description:
       "Nous recherchons un Lead Développeur Javascript francophone Senior pour rejoindre la fusée ADDAXA afin développer et améliorer nos plateformes e-commerces.",
     isFavorite: false,
-    id: 1,
   },
   {
     id: 2,
@@ -26,19 +25,18 @@ const offerTemplate = [
     Description:
       "Global P.O.S est un éditeur de plateformes SaaS dédiées aux points de vente. Née en 2004 de l’association de professionnels de l’encaissement, nous sommes aujourd’hui le leader français des solutions software d’encaissement et de gestion des titres prépayés (chèques cadeaux, cartes cadeaux etc.) à destination des grands comptes du Retail comme des plus petites enseignes.",
     isFavorite: false,
-    id: 2,
   },
 ];
 function Accueil() {
   const [isLiked, setIsLiked] = useState(false);
 
-  const handleLiked = () => {
+  const handleLiked = (offerLiked) => {
     setIsLiked(!isLiked);
-    // offerTemplate.map((offer) => {
-    //   if (offer.id === offerLiked.id) {
-    //     offer.isFavorite = !offer.isFavorite;
-    //   }
-    // });
+    offerTemplate.map((offer) => {
+      if (offer.id === offerLiked.id) {
+        offer.isFavorite = !offer.isFavorite;
+      }
+    });
   };
   return (
     <>
