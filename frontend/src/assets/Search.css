@@ -35,6 +35,7 @@
   padding: 0.8em;
   border: 1px solid rgba(0, 0, 0, 0.301);
   border-radius: 0.4em;
+  font-size: 1.1em;
 }
 
 .fieldscontainer input:focus,
@@ -53,7 +54,7 @@
 .filterbutton button {
   color: var(--button-color);
   background-color: white;
-  font-size: 1em;
+  font-size: 1.1em;
   font-weight: 700;
   border-radius: 0.4em;
   padding: 0.5em 1.1em;
@@ -71,7 +72,7 @@
   padding: 0.8em 0em;
   background-color: var(--secondary-color);
   color: white;
-  font-size: 1em;
+  font-size: 1.4em;
   font-weight: 700;
   border-radius: 0.4em;
   border-style: none;
@@ -83,4 +84,13 @@
 .buttonform input:hover {
   background-color: var(--primary-color);
   transition: background-color 0.35s, color 0.35s;
+}
+
+
+@media screen and (max-width: 430px){
+  .filterbutton{
+    justify-content: center;
+    gap: 1em;
+  }
+
 }
