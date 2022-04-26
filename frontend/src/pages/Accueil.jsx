@@ -30,13 +30,14 @@ const offerTemplate = [
 function Accueil() {
   const [isLiked, setIsLiked] = useState(false);
 
-  const handleLiked = (offerLiked) => {
+  const handleLiked = () => {
+    // add offerLiked
     setIsLiked(!isLiked);
-    offerTemplate.map((offer) => {
-      if (offer.id === offerLiked.id) {
-        offer.isFavorite = !offer.isFavorite;
-      }
-    });
+    // // offerTemplate.map((offer) => {
+    // //   if (offer.id === offerLiked.id) {
+    // //     offer.isFavorite = !offer.isFavorite;
+    // //   }
+    // });
   };
   return (
     <>
