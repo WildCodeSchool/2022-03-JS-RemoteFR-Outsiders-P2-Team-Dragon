@@ -6,14 +6,14 @@ import "@assets/Common.css";
 
 function Accueil() {
   const [isLiked, setIsLiked] = useState(false);
-
+  // mettre  ---   offerLiked   ---  en parametre de handleLiked
   const handleLiked = () => {
     // add offerLiked
     setIsLiked(!isLiked);
-    // // offerTemplate.map((offer) => {
-    // //   if (offer.id === offerLiked.id) {
-    // //     offer.isFavorite = !offer.isFavorite;
-    // //   }
+    // offerTemplate.map((offer) => {
+    //   if (offer.id === offerLiked.id) {
+    //     offer.isFavorite = !offer.isFavorite;
+    //   }
     // });
   };
   return (

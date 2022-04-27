@@ -5,7 +5,7 @@ import styles from "../assets/Accueil.module.css";
 
 export default function FavoriteButton({ offer, handleLiked }) {
   return (
-    <div className="addFavorite">
+    <div>
       <button
         className={styles.buttonAddFavorite}
         type="button"
