@@ -3,8 +3,8 @@
 
   justify-content: start;
   background-color: var(--secondary-color);
-  height: auto;
-  margin: auto;
+  /* height: auto;
+  margin: auto; */
   color: white;
   font-size: 0.9rem;
   align-items: self-start;
@@ -59,7 +59,6 @@ p {
 @media screen and (min-width: 1200px) {
   .div-footer {
     width: 100%;
-    margin: auto;
     font-size: 3rem;
   }
 }
