@@ -1,20 +1,16 @@
 .div-footer {
   display: flex;
-
+  flex-direction: column;
   justify-content: start;
   background-color: var(--secondary-color);
-  height: auto;
   margin: auto;
   color: white;
   font-size: 0.9rem;
   align-items: self-start;
-  padding-bottom: 1rem;
-  padding-left: 1rem;
-  padding-top: 0.3rem;
 }
 
 p {
-  font-size: 1rem;
+  padding: 5px;
 }
 
 /***/
@@ -22,7 +18,7 @@ p {
 @media screen and (max-width: 360px) {
   .div-footer {
     justify-content: space-around;
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
     height: 8rem;
     margin: auto;
     color: white;
@@ -37,22 +33,15 @@ p {
     justify-content: space-around;
     align-items: end;
     background-color: var(--secondary-color);
-    height: 8rem;
     margin: inherit;
     color: white;
-    width: 65rem;
-  }
-  p {
     font-size: 2rem;
   }
 }
 
 @media screen and (min-width: 1000px) {
   .div-footer {
-    width: 65rem;
-  }
-  p {
-    font-size: 1rem;
+    width: 100%;
   }
 }
 

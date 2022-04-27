@@ -49,13 +49,8 @@ p {
   border: 0;
 }
 
-/* o-------------------------scar -------------------------*/
+/* -------------------------oscar -------------------------*/
 
-.buttonAddFavorite {
-  border: 0;
-  background-color: transparent;
-  display: flex;
-}
 
 .favoriteIcon:hover {
   height: 1.1rem;
@@ -63,6 +58,7 @@ p {
 
 .favoriteIcon {
   height: 1rem;
+  position: absolute;
 }
 
 /* -------------------------oscar-------------------------*/
