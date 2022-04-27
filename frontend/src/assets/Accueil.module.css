@@ -18,6 +18,9 @@
   margin: 0.5rem;
   padding: 1rem;
 }
+.jobSynthesisDiv h1 {
+  font-size: 1.2em;
+}
 
 .jobDetail,
 h3,
@@ -34,7 +37,7 @@ h3 {
 
 p {
   padding: 15px;
-  font-size: 15px;
+  font-size: 0.7rem;
 }
 
 .buttonDetail {
@@ -47,6 +50,10 @@ p {
 }
 
 /* -------------------------oscar -------------------------*/
+.favoriteIcon:hover {
+  height: 2.2rem;
+}
+
 .buttonAddFavorite {
   border: 0;
   background-color: transparent;
@@ -54,5 +61,7 @@ p {
 }
 .favoriteIcon {
   height: 1rem;
+  background-color: red;
 }
+
 /* -------------------------oscar-------------------------*/
