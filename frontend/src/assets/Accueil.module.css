@@ -50,8 +50,10 @@ p {
 }
 
 /* -------------------------oscar -------------------------*/
+
+
 .favoriteIcon:hover {
-  height: 1.05rem;
+  height: 1.1rem;
 }
 
 .buttonAddFavorite {
@@ -61,7 +63,7 @@ p {
 }
 .favoriteIcon {
   height: 1rem;
-  position:absolute;
+  position: absolute;
 }
 
 /* -------------------------oscar-------------------------*/
