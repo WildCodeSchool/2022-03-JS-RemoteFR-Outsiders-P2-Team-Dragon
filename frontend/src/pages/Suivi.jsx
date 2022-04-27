@@ -1,7 +1,9 @@
 import React from "react";
+import BackLogOffer from "../components/BackLogOffer";
+import "@assets/Common.css";
 
 function Suivi() {
-  return <div>Page Suivi</div>;
+  return <BackLogOffer />;
 }
 
 export default Suivi;
