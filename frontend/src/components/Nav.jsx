@@ -2,7 +2,8 @@ import { Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import logo from "@assets/logo.svg";
 import boussoleToggle from "@assets/boussole.svg";
-import "./Nav.css";
+import "../assets/Nav.css";
+import "../assets/Common.css";
 
 function Nav() {
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -42,7 +43,7 @@ function Nav() {
               Profil
             </Link>
             <Link to="/suivi" className="items">
-              Suivis
+              Suivi
             </Link>
             <Link to="/bassin" className="items">
               Bassin d&apos;emplois
