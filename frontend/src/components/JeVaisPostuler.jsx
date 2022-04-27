@@ -1,5 +1,5 @@
 import React from "react";
 
 export default function JeVaisPostuler() {
-  return <div>Hello</div>;
+  return <div>Composant je vais postuler</div>;
 }
