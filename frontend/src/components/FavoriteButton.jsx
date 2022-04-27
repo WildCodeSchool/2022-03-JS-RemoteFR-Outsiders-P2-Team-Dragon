@@ -4,7 +4,7 @@ import React from "react";
 
 export default function FavoriteButton({ offer, handleLiked }) {
   return (
-    <div className="addFavorite">
+    <div>
       <button
         className="buttonAddFavorite"
         type="button"
