@@ -7,7 +7,7 @@ const offerTemplate = [
     Company: "Microsoft",
     prevExperience: "+10ans",
     Description:
-      "Nous recherchons un Lead Développeur Javascript francophone Senior pour rejoindre la fusée ADDAXA afin développer et améliorer nos plateformes e-commerces.",
+      "Nous recherchons un Lead Dévseloppeur Javascript francophone Senior pour rejoindre la fusée ADDAXA afin développer et améliorer nos plateformes e-commerces.",
     isFavorite: false,
   },
   {
