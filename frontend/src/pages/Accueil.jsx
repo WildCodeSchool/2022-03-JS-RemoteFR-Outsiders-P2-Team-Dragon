@@ -10,11 +10,11 @@ function Accueil() {
   const handleLiked = () => {
     // add offerLiked
     setIsLiked(!isLiked);
-    //   offerTemplate.map((offer) => {
-    //     if (offer.id === offerLiked.id) {
-    //       offer.isFavorite = !offer.isFavorite;
-    //     }
-    //   });
+    // offerTemplate.map((offer) => {
+    //   if (offer.id === offerLiked.id) {
+    //     offer.isFavorite = !offer.isFavorite;
+    //   }
+    // });
   };
   return (
     <>
