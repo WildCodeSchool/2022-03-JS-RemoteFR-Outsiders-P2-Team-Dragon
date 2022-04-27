@@ -46,20 +46,13 @@ p {
   border: 0;
 }
 
-/* o-------------------------scar -------------------------*/
-.addFavorite{
-
-}
+/* -------------------------oscar -------------------------*/
 .buttonAddFavorite {
   border: 0;
   background-color: transparent;
   display: flex;
 }
 .favoriteIcon {
-  height: 2rem;
+  height: 1rem;
 }
-.favoriteIcon:hover {
-  height: 2.2rem;
-}
-
 /* -------------------------oscar-------------------------*/
