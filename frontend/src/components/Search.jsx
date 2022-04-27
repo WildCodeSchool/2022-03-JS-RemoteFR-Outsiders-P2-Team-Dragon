@@ -15,7 +15,7 @@ export default function Search() {
     event.preventDefault();
     console.warn(inputs);
   };
-
+  
   return (
     <div className="searchjob">
       <form className="formjob" onSubmit={handleSubmit}>

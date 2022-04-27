@@ -42,7 +42,7 @@ function Nav() {
               Profil
             </Link>
             <Link to="/suivi" className="items">
-              Suivis
+              Suivi
             </Link>
             <Link to="/bassin" className="items">
               Bassin d&apos;emplois
