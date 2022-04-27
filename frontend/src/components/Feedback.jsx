@@ -1,5 +1,5 @@
 import React from "react";
 
-export default function Feedback() {
-  return <div />;
+export default function Home() {
+  return <div>Home</div>;
 }
