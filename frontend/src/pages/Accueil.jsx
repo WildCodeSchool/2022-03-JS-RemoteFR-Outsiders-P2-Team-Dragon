@@ -6,15 +6,10 @@ import "@assets/Common.css";
 
 function Accueil() {
   const [isLiked, setIsLiked] = useState(false);
-  // mettre  ---   offerLiked   ---  en parametre de handleLiked
-  const handleLiked = () => {
-    // add offerLiked
+  const handleLiked = (item) => {
     setIsLiked(!isLiked);
-    // offerTemplate.map((offer) => {
-    //   if (offer.id === offerLiked.id) {
-    //     offer.isFavorite = !offer.isFavorite;
-    //   }
-    // });
+    const offerToUpdate = offerTemplate.find((offer) => offer.id === item.id);
+    offerToUpdate.isFavorite = !offerToUpdate.isFavorite;
   };
   return (
     <>
