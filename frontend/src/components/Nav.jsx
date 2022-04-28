@@ -2,7 +2,8 @@ import { Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import logo from "@assets/logo.svg";
 import boussoleToggle from "@assets/boussole.svg";
-import "./Nav.css";
+import "../assets/Nav.css";
+import "../assets/Common.css";
 
 function Nav() {
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -35,14 +36,14 @@ function Nav() {
 
         {(toggleMenu || screenWidth > 750) && (
           <nav className="liste-nav">
-            <Link to="/accueil" className="items">
+            <Link to="/" className="items">
               Accueil
             </Link>
             <Link to="/profil" className="items">
               Profil
             </Link>
             <Link to="/suivi" className="items">
-              Suivis
+              Suivi
             </Link>
             <Link to="/bassin" className="items">
               Bassin d&apos;emplois

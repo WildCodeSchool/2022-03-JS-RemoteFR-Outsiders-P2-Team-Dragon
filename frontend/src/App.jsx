@@ -1,27 +1,28 @@
 import React from "react";
+import Accueil from "@pages/Accueil";
+import Profil from "@pages/Profil";
 import { Routes, Route } from "react-router-dom";
 import Nav from "@components/Nav";
 import "./App.css";
-
-import Accueil from "@pages/Accueil";
 import Suivi from "@pages/Suivi";
 import Bassin from "@pages/Bassin";
-import Feedback from "@pages/Profil";
+import "./assets/Accueil.module.css";
 import Footer from "@components/Footer";
 
 function App() {
   return (
-    <div className="App">
+    <>
       <Nav />
-      <Routes>
-        <Route path="/Accueil" element={<Accueil />} />
-        <Route path="/Suivi" element={<Suivi />} />
-        <Route path="/Bassin" element={<Bassin />} />
-        <Route path="/Feedback" element={<Feedback />} />
-      </Routes>
+      <div className="main">
+        <Routes>
+          <Route path="/" element={<Accueil />} />
+          <Route path="/Suivi" element={<Suivi />} />
+          <Route path="/Bassin" element={<Bassin />} />
+          <Route path="/Profil" element={<Profil />} />
+        </Routes>
+      </div>
       <Footer />
-    </div>
+    </>
   );
 }
-
 export default App;

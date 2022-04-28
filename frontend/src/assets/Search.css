@@ -1,0 +1,96 @@
+.searchjob {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white; /* var(--bloc-background) */
+  border: 1px solid rgb(201, 197, 197);
+  border-radius: 10px;
+}
+
+.formjob {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  width: 100%;
+  padding: 1em;
+  gap: 2em;
+  margin-top: 0.5em;
+}
+
+.formjob .fieldscontainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5em;
+}
+
+.fieldscontainer input,
+.fieldscontainer select {
+  min-width: 50px;
+  flex-grow: 1;
+  padding: 0.8em;
+  border: 1px solid rgba(0, 0, 0, 0.301);
+  border-radius: 0.4em;
+  font-size: 1.1em;
+}
+
+.fieldscontainer input:focus,
+.fieldscontainer select:focus {
+  outline: 1px solid var(--button-color);
+}
+
+.filterbutton {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.filterbutton button {
+  color: var(--button-color);
+  background-color: white;
+  font-size: 1.1em;
+  font-weight: 700;
+  border-radius: 0.4em;
+  padding: 0.5em 1.1em;
+  border: 1px solid var(--button-color);
+  transition: background-color 0.35s, color 0.35s;
+  cursor: pointer;
+}
+
+.filterbutton .checked {
+  color: white;
+  background-color: var(--button-color);
+}
+
+.buttonform input {
+  padding: 0.8em 0em;
+  background-color: var(--secondary-color);
+  color: white;
+  font-size: 1.4em;
+  font-weight: 700;
+  border-radius: 0.4em;
+  border-style: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 0.5em;
+}
+
+.buttonform input:hover {
+  background-color: var(--primary-color);
+  transition: background-color 0.35s, color 0.35s;
+}
+
+
+@media screen and (max-width: 430px){
+  .filterbutton{
+    justify-content: center;
+    gap: 1em;
+  }
+
+}
