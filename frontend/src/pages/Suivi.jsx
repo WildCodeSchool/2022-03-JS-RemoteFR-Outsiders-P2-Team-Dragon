@@ -1,11 +1,21 @@
 import React from "react";
-import Applications from "../components/Applications";
+import { Link } from "react-router-dom";
+// import BackLogOffer from "../components/BackLogOffer";
+// import Applications from "../components/Applications";
+import "@assets/Common.css";
 
 function Suivi() {
   return (
-    <div>
-      <Applications />
-    </div>
+    <nav>
+      <ul>
+        <li>
+          <Link to="/suivi/backLog">BackLogOffer</Link>
+        </li>
+        <li>
+          <Link to="/suivi/Application">Application</Link>
+        </li>
+      </ul>
+    </nav>
   );
 }
 

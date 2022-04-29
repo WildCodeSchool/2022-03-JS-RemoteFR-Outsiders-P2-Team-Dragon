@@ -1,0 +1,43 @@
+.offercontainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+
+.offerlist{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 1em;
+}
+
+.jePostuleButtonON {
+  color: white;
+  background-color: var(--button-color);
+  font-size: 1.1em;
+  font-weight: 700;
+  border-radius: 0.4em;
+  padding: 0.5em 1.1em;
+  border: 1px solid var(--button-color);
+  transition: background-color 0.35s, color 0.35s;
+  cursor: pointer;
+}
+
+.jePostuleButtonOFF {
+  color: var(--button-color);
+  background-color: white;
+  font-size: 1.1em;
+  font-weight: 700;
+  border-radius: 0.4em;
+  padding: 0.5em 1.1em;
+  border: 1px solid var(--button-color);
+  transition: background-color 0.35s, color 0.35s;
+  cursor: pointer;
+}
+
+.postulebutton {
+  padding: 1em;
+}

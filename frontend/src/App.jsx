@@ -8,6 +8,8 @@ import Suivi from "@pages/Suivi";
 import Bassin from "@pages/Bassin";
 import "./assets/Accueil.module.css";
 import Footer from "@components/Footer";
+import BackLogOffer from "@components/BackLogOffer";
+import Applications from "@components/Applications";
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
           <Route path="/Suivi" element={<Suivi />} />
           <Route path="/Bassin" element={<Bassin />} />
           <Route path="/Profil" element={<Profil />} />
+          <Route path="/suivi/backlog" element={<BackLogOffer />} />
+          <Route path="/suivi/application" element={<Applications />} />
         </Routes>
       </div>
       <Footer />

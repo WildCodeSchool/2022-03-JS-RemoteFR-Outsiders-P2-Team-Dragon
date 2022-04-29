@@ -1,7 +1,7 @@
 const offerTemplate = [
   {
     id: 1,
-    title: "Développeur Full-Stack",
+    title: "Développeur Full-Stack 1",
     contract: "CDI",
     workingHours: "35h",
     Company: "Microsoft",
@@ -12,7 +12,7 @@ const offerTemplate = [
   },
   {
     id: 2,
-    title: "Développeur Full-Stack",
+    title: "Développeur Full-Stack 2",
     contract: "CDI",
     workingHours: "48h",
     Company: "Apple",
