@@ -37,7 +37,7 @@ export default function Search() {
           />
           <select name="salaire" id="salaire" onChange={handleChange}>
             <option value={inputs.salaire || ""}>Salaire</option>
-            <option> non précisé </option>
+            <option>Non précisé</option>
             <option>25k€ - 30k€</option>
             <option>30k€ - 35k€</option>
             <option>35k€ - 40k€</option>
@@ -45,15 +45,15 @@ export default function Search() {
           </select>
           <select id="remote" name="remote" onChange={handleChange}>
             <option value={inputs.remote || ""}>Télétravail</option>
-            <option> non précisé </option>
+            <option>Non précisé</option>
             <option>Complet</option>
-            <option>Régulier (2 à 3j/s)</option>
-            <option>Occasionnel (qq j/m)</option>
+            <option>Régulier</option>
+            <option>Occasionnel</option>
             <option>Non</option>
           </select>
           <select id="experience" name="experience" onChange={handleChange}>
             <option value={inputs.experience || ""}>Experience</option>
-            <option> non précisé </option>
+            <option>Non précisé</option>
             <option>0 à 2 ans</option>
             <option>3 à 5 ans</option>
             <option>5 à 10 ans</option>

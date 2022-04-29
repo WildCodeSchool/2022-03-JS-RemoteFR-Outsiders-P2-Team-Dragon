@@ -1,10 +1,14 @@
 .mainAccueil {
   background-color: white;
   border-radius: 10px;
+  /* min-width: 290px; */
+  width: 100%;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 .jobContainer {
+  padding: 0;
   display: flex;
-  margin: 1rem;
   text-align: center;
   justify-content: space-around;
 }
@@ -37,7 +41,7 @@ h3 {
 
 p {
   padding: 15px;
-  font-size: 0.7rem;
+  font-size: 1.1rem;
 }
 
 .buttonDetail {
@@ -51,16 +55,21 @@ p {
 
 /* -------------------------oscar -------------------------*/
 
-
 .favoriteIcon:hover {
   height: 1.1rem;
 }
+/* o-------------------------scar -------------------------*/
 
 .buttonAddFavorite {
   border: 0;
   background-color: transparent;
   display: flex;
 }
+
+.favoriteIcon:hover {
+  height: 1.1rem;
+}
+
 .favoriteIcon {
   height: 1rem;
   position: absolute;
