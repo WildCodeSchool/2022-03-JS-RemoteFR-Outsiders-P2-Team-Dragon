@@ -16,7 +16,7 @@ function Accueil() {
       <Search />
       {offerTemplate.map((offer) => {
         return (
-          // Partie Oscar : ici on envoie les props qui viennent d'App et les transmets vers JobOffer...
+          // Partie Oscar  : ici on envoie les props qui viennent d'App et les transmets vers JobOffer...
           <JobOffer
             key={offer.id}
             handleLiked={handleLiked}
