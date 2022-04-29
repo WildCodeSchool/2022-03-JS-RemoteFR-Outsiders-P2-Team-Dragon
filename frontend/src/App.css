@@ -70,3 +70,18 @@ code {
 button {
   font-size: calc(10px + 2vmin);
 }
+
+.jvp-red {
+  background-color: yellow;
+  height: 2rem;
+}
+
+.btn-red {
+  background-color: red;
+  color: white;
+}
+
+.btn-green {
+  background-color: green;
+  color: white;
+}
