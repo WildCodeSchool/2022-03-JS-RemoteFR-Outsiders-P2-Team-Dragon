@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import offerTemplate from "../data/offerTemplate";
 import Search from "../components/Search";
 import JobOffer from "../components/JobOffer";
-import "@assets/Common.css";
+import "../assets/Common.css";
 
 function Accueil() {
   const [isLiked, setIsLiked] = useState(false);
