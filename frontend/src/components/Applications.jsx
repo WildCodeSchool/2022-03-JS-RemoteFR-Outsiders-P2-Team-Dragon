@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "@assets/Application.module.css";
 import offerTemplate from "../data/offerTemplate";
 import appliedOffers from "../data/appliedOffers";
@@ -6,9 +6,10 @@ import JobOffer from "./JobOffer";
 import ApplicationDetails from "./applicationDetails";
 
 function Applications() {
-  const DisplayedOffers = appliedOffers.map(
-    (offer) => offerTemplate[offer.id - 1]
+  const [DisplayedOffers] = useState(
+    appliedOffers.map((offer) => offerTemplate[offer.id - 1])
   );
+
   return (
     <div>
       <div>
@@ -34,7 +35,10 @@ function Applications() {
                   </button>
                 </div>
               </div>
-              <ApplicationDetails key={offer.id} />
+              <ApplicationDetails
+                application={appliedOffers[offer.id - 1]}
+                key={offer.id}
+              />
             </>
           );
         })}

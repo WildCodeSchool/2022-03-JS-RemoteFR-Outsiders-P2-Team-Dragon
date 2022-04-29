@@ -1,8 +1,8 @@
 import React from "react";
 
-function applicationDetails({ offer }) {
-  console.warn("coucou");
-  return <div>Postulé le {offer}</div>;
+function applicationDetails({ application }) {
+  console.warn(application.id);
+  return <div>Postulé le </div>;
 }
 
 export default applicationDetails;
