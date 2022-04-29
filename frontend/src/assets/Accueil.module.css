@@ -37,7 +37,7 @@ h3 {
 
 p {
   padding: 15px;
-  font-size: 0.7rem;
+  font-size: 1.1rem;
 }
 
 .buttonDetail {
@@ -49,18 +49,18 @@ p {
   border: 0;
 }
 
-/* -------------------------oscar -------------------------*/
-
-
-.favoriteIcon:hover {
-  height: 1.1rem;
-}
+/* o-------------------------scar -------------------------*/
 
 .buttonAddFavorite {
   border: 0;
   background-color: transparent;
   display: flex;
 }
+
+.favoriteIcon:hover {
+  height: 1.1rem;
+}
+
 .favoriteIcon {
   height: 1rem;
   position: absolute;
