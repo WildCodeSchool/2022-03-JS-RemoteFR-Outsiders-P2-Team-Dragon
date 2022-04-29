@@ -1,3 +1,10 @@
+.offercontainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
 .jePostuleButtonON {
   color: white;
   background-color: var(--button-color);
@@ -20,4 +27,8 @@
   border: 1px solid var(--button-color);
   transition: background-color 0.35s, color 0.35s;
   cursor: pointer;
+}
+
+.postulebutton {
+  padding: 1em;
 }
