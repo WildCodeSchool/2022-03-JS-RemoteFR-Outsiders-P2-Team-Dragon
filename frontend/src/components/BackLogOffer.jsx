@@ -7,7 +7,7 @@ import JobOffer from "./JobOffer";
 
 export default function BackLogOffer() {
   return (
-    <div>
+    <div className="offercontainer">
       <div>
         {offerTemplate.map((offer) =>
           offer.isFavorite ? (
@@ -17,7 +17,7 @@ export default function BackLogOffer() {
           )
         )}
       </div>
-      <div>
+      <div className="postulebutton">
         <JePostuleButton />
       </div>
     </div>
