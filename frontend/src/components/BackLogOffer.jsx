@@ -8,7 +8,7 @@ import JobOffer from "./JobOffer";
 export default function BackLogOffer() {
   return (
     <div className="offercontainer">
-      <div>
+      <div className="offerlist">
         {offerTemplate.map((offer) =>
           offer.isFavorite ? (
             <JobOffer showFavoriteButton={false} offer={offer} />
