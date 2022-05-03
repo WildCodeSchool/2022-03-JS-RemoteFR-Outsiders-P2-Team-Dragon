@@ -6,7 +6,7 @@
   width: 100%;
 }
 
-.offerlist{
+.offerlist {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;

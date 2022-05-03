@@ -10,11 +10,15 @@ import "./assets/Accueil.module.css";
 import Footer from "@components/Footer";
 import BackLogOffer from "@components/BackLogOffer";
 import Applications from "@components/Applications";
+import FetchJobs from "@components/FetchJobs";
 
 function App() {
   return (
     <>
       <Nav />
+      <div className="App">
+        <FetchJobs />
+      </div>
       <div className="main">
         <Routes>
           <Route path="/" element={<Accueil />} />
