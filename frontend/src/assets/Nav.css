@@ -32,7 +32,7 @@
 
 .img-logo {
   width: 6rem;
-  height: 3.1rem;
+  height: 3rem;
   margin-top: 1rem;
   margin-bottom: 0.5rem;
   right: 9.7rem;
@@ -111,8 +111,8 @@
     margin: auto;
   }
   .img-logo {
-    width: 6rem;
-    height: 6rem;
+    width: 4rem;
+    height: 4rem;
     margin-top: 2rem;
     margin-right: auto;
     font-size: 2rem;
