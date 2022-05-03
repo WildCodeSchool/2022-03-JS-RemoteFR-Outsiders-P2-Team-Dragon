@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Accueil from "@pages/Accueil";
 import Profil from "@pages/Profil";
 import { Routes, Route } from "react-router-dom";
@@ -11,8 +11,18 @@ import Footer from "@components/Footer";
 import BackLogOffer from "@components/BackLogOffer";
 import Applications from "@components/Applications";
 import FetchJobs from "@components/FetchJobs";
+import axios from "axios";
 
 function App() {
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await axios("http://localhost:5000/api/token");
+      console.warn(result);
+      localStorage.setItem("token", result.data);
+    };
+    fetchData();
+  }, []);
+
   return (
     <>
       <Nav />

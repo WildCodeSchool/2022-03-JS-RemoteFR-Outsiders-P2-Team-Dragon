@@ -2,24 +2,29 @@ import React from "react";
 import axios from "axios";
 
 export default function FetchJobs() {
-  const [statejob, setStateJob] = React.useState("hello");
-
-  const API = "https://candidat.pole-emploi.fr/offres/recherche/detail/3136965";
-  const token = JSON.parse(sessionStorage.getItem("data"));
+  const [statejob, setStateJob] = React.useState("Hello");
+  const API =
+    "https://api.emploi-store.fr/partenaire/offresdemploi/v2/offres/3136965";
+  // 👎 const API = "https://candidat.pole-emploi.fr/offres/recherche/detail/3136965";
   /* const token = user.data.id; take only token and save in token variable */
 
-  const getJob = () => {
-    axios
-      .get(API, { headers: { Authorization: `Bearer ${token}` } })
+  const config = {
+    headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+  };
 
+  const handleGetJobs = () => {
+    axios
+      .get(API, config)
       .then((response) => response.data)
       .then((data) => {
-        setStateJob(data[0]);
+        console.warn(data);
+        setStateJob(statejob);
       });
   };
+
   return (
     <div>
-      <button type="button" statejob={statejob} onClick={getJob}>
+      <button type="button" statejob={statejob} onClick={handleGetJobs}>
         Jobs
       </button>
     </div>
