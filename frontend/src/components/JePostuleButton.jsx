@@ -11,7 +11,7 @@ export default function JePostuleButton({ handlePostuled, offer }) {
         type="button"
         onClick={() => handlePostuled(offer)}
       >
-        Je postule !
+        {offer.isPostule ? "J'ai postulé !" : "Je postule !"}
       </button>
     </div>
   );
