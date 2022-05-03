@@ -1,0 +1,68 @@
+.mainAccueil {
+  background-color: white;
+  border-radius: 10px;
+}
+.jobContainer {
+  display: flex;
+  margin: 1rem;
+  text-align: center;
+  justify-content: space-around;
+}
+
+.favoriteDiv {
+  display: flex;
+  align-items: center;
+}
+
+.jobSynthesisDiv {
+  margin: 0.5rem;
+  padding: 1rem;
+}
+.jobSynthesisDiv h1 {
+  font-size: 1.2em;
+}
+
+.jobDetail,
+h3,
+p {
+  text-align: center;
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+h3 {
+  padding: 15px;
+  font-size: 20px;
+}
+
+p {
+  padding: 15px;
+  font-size: 0.7rem;
+}
+
+.buttonDetail {
+  border-radius: 50%;
+  background-color: var(--fourth-color);
+  height: 30px;
+  width: 30px;
+  color: var(--fourth-color);
+  border: 0;
+}
+
+/* -------------------------oscar -------------------------*/
+
+.favoriteIcon:hover {
+  height: 1.1rem;
+}
+
+.buttonAddFavorite {
+  border: 0;
+  background-color: transparent;
+  display: flex;
+}
+.favoriteIcon {
+  height: 1rem;
+  position: absolute;
+}
+
+/* -------------------------oscar-------------------------*/

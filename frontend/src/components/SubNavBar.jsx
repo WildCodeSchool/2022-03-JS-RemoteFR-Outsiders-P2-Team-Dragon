@@ -1,7 +1,7 @@
 import React from "react";
 
-function SubNavbar() {
+function SubNavBar() {
   return <div>SubNavBar</div>;
 }
 
-export default SubNavbar;
+export default SubNavBar;

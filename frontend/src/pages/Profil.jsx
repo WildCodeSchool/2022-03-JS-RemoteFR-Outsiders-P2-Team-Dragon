@@ -1,7 +1,7 @@
 import React from "react";
 
-function Feedback() {
-  return <div>Feedback</div>;
+function Profil() {
+  return <div>Profil</div>;
 }
 
-export default Feedback;
+export default Profil;
