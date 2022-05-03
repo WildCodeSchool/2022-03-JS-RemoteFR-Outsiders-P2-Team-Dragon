@@ -1,20 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import "@assets/BackLogOffer.css";
 
 // When I click on Button, the poste is going to "J'ai postulé"
 
-export default function JePostuleButton() {
-  const [isPostule, setPostule] = useState(false);
-  const toggleClass = () => {
-    setPostule(!isPostule);
-  };
-
+export default function JePostuleButton({ handlePostuled, offer }) {
   return (
     <div>
       <button
-        className={isPostule ? "jePostuleButtonON" : "jePostuleButtonOFF"}
+        className={offer.isPostule ? "jePostuleButtonON" : "jePostuleButtonOFF"}
         type="button"
-        onClick={toggleClass}
+        onClick={() => handlePostuled(offer)}
       >
         Je postule !
       </button>

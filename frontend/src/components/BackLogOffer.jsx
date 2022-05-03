@@ -5,7 +5,7 @@ import "@assets/BackLogOffer.css";
 import offerTemplate from "../data/offerTemplate";
 import JobOffer from "./JobOffer";
 
-export default function BackLogOffer() {
+export default function BackLogOffer({ handlePostuled }) {
   return (
     <div className="offercontainer">
       <div className="offerlist">
@@ -14,7 +14,10 @@ export default function BackLogOffer() {
             <div className="postulecontainer" key={offer.id}>
               <JobOffer showFavoriteButton={false} offer={offer} />
               <div className="postulebutton">
-                <JePostuleButton />
+                <JePostuleButton
+                  handlePostuled={handlePostuled}
+                  offer={offer}
+                />
               </div>
             </div>
           ) : (
