@@ -3,8 +3,7 @@
   border-radius: 10px;
   /* min-width: 290px; */
   width: 100%;
-  margin-bottom: 1rem;
-  margin-top: 1rem;
+  margin: 1rem 0rem 1rem 1rem;
 }
 .jobContainer {
   padding: 0;
@@ -53,15 +52,11 @@ p {
   border: 0;
 }
 
-<<<<<<< HEAD
 /* -------------------------oscar -------------------------*/
 
 .favoriteIcon:hover {
   height: 1.1rem;
 }
-=======
-/* o-------------------------scar -------------------------*/
->>>>>>> US_Backlogoffer
 
 .buttonAddFavorite {
   border: 0;

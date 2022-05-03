@@ -1,17 +1,17 @@
 .offercontainer {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  width: 100%;
+}
+
+.postulecontainer {
+  display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
   width: 100%;
-}
-
-.offerlist{
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  margin-bottom: 1em;
 }
 
 .jePostuleButtonON {
@@ -41,3 +41,5 @@
 .postulebutton {
   padding: 1em;
 }
+
+

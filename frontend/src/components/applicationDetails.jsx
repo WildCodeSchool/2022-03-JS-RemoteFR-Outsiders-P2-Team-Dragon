@@ -1,7 +1,7 @@
 import React from "react";
 
 function applicationDetails({ application }) {
-  console.warn(application.id);
+  console.warn(application);
   return <div>Postulé le </div>;
 }
 
