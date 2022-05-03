@@ -8,23 +8,18 @@ import JobOffer from "./JobOffer";
 export default function BackLogOffer({ handlePostuled }) {
   return (
     <div className="offercontainer">
-      <div className="offerlist">
-        {offerTemplate.map((offer) =>
-          offer.isFavorite ? (
-            <div className="postulecontainer" key={offer.id}>
-              <JobOffer showFavoriteButton={false} offer={offer} />
-              <div className="postulebutton">
-                <JePostuleButton
-                  handlePostuled={handlePostuled}
-                  offer={offer}
-                />
-              </div>
+      {offerTemplate.map((offer) =>
+        offer.isFavorite ? (
+          <div className="postulecontainer" key={offer.id}>
+            <JobOffer showFavoriteButton={false} offer={offer} />
+            <div className="postulebutton">
+              <JePostuleButton handlePostuled={handlePostuled} offer={offer} />
             </div>
-          ) : (
-            ""
-          )
-        )}
-      </div>
+          </div>
+        ) : (
+          ""
+        )
+      )}
     </div>
   );
 }
