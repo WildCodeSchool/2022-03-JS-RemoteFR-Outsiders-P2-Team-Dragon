@@ -25,7 +25,7 @@ function App() {
           <Route path="/Bassin" element={<Bassin />} />
           <Route path="/Profil" element={<Profil />} />
         </Routes>
-        <SubNavbar />
+      <SubNavbar />
         <Routes>
           <Route path="/je-vais-postuler" element={<JeVaisPostuler />} />
           <Route path="/j-ai-postule" element={<JaiPostule />} />
