@@ -1,16 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import offerTemplate from "../data/offerTemplate";
 import Search from "../components/Search";
 import JobOffer from "../components/JobOffer";
 import "../assets/Common.css";
 
-function Accueil() {
-  const [isLiked, setIsLiked] = useState(false);
-  const handleLiked = (item) => {
-    setIsLiked(!isLiked);
-    const offerToUpdate = offerTemplate.find((offer) => offer.id === item.id);
-    offerToUpdate.isFavorite = !offerToUpdate.isFavorite;
-  };
+function Accueil({ handleLiked }) {
   return (
     <div>
       <Search />

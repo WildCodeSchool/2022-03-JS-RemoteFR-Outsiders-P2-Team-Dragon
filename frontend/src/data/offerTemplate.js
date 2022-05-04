@@ -10,6 +10,7 @@ const offerTemplate = [
       "Nous recherchons un Lead Dévseloppeur Javascript francophone Senior pour rejoindre la fusée ADDAXA afin développer et améliorer nos plateformes e-commerces.",
     isFavorite: false,
     isPostule: false,
+    inFeedback: false,
   },
   {
     id: 2,
@@ -22,6 +23,7 @@ const offerTemplate = [
       "Global P.O.S est un éditeur de plateformes SaaS dédiées aux points de vente. Née en 2004 de l’association de professionnels de l’encaissement, nous sommes aujourd’hui le leader français des solutions software d’encaissement et de gestion des titres prépayés (chèques cadeaux, cartes cadeaux etc.) à destination des grands comptes du Retail comme des plus petites enseignes.",
     isFavorite: false,
     isPostule: false,
+    inFeedback: false,
   },
   {
     id: 3,
@@ -34,6 +36,7 @@ const offerTemplate = [
       "Global P.O.S est un éditeur de plateformes SaaS dédiées aux points de vente. Née en 2004 de l’association de professionnels de l’encaissement, nous sommes aujourd’hui le leader français des solutions software d’encaissement et de gestion des titres prépayés (chèques cadeaux, cartes cadeaux etc.) à destination des grands comptes du Retail comme des plus petites enseignes.",
     isFavorite: false,
     isPostule: false,
+    inFeedback: false,
   },
   {
     id: 4,
@@ -58,6 +61,7 @@ const offerTemplate = [
       "Global P.O.S est un éditeur de plateformes SaaS dédiées aux points de vente. Née en 2004 de l’association de professionnels de l’encaissement, nous sommes aujourd’hui le leader français des solutions software d’encaissement et de gestion des titres prépayés (chèques cadeaux, cartes cadeaux etc.) à destination des grands comptes du Retail comme des plus petites enseignes.",
     isFavorite: false,
     isPostule: false,
+    inFeedback: false,
   },
 ];
 
