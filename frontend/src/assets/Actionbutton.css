@@ -1,20 +1,12 @@
-.offercontainer {
+.actioncontainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: stretch;
-  width: 100%;
-}
-
-.postulecontainer {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
   align-items: center;
-  width: 100%;
 }
 
-.jePostuleButtonON {
+.relaunchButtonON,
+.cancelButtonON {
   color: white;
   background-color: var(--button-color);
   font-size: 1.1em;
@@ -26,7 +18,8 @@
   cursor: pointer;
 }
 
-.jePostuleButtonOFF {
+.relaunchButtonOFF,
+.cancelButtonOFF {
   color: var(--button-color);
   background-color: white;
   font-size: 1.1em;
@@ -38,6 +31,7 @@
   cursor: pointer;
 }
 
-.postulebutton {
+.relaunchbutton,
+.cancelbutton {
   padding: 1em;
 }
