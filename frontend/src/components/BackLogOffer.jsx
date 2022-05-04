@@ -11,7 +11,11 @@ export default function BackLogOffer({ handlePostuled }) {
       {offerTemplate.map((offer) =>
         offer.isFavorite ? (
           <div className="postulecontainer" key={offer.id}>
-            <JobOffer showFavoriteButton={false} offer={offer} />
+            <JobOffer
+              className="coucou"
+              showFavoriteButton={false}
+              offer={offer}
+            />
             <div className="postulebutton">
               <JePostuleButton handlePostuled={handlePostuled} offer={offer} />
             </div>
