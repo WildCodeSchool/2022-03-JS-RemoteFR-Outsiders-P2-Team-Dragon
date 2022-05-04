@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import logo from "@assets/logo.svg";
-import boussoleToggle from "@assets/boussole.svg";
+import boussoleToggle from "@assets/boussole.png";
 import "../assets/Nav.css";
 import "../assets/Common.css";
 

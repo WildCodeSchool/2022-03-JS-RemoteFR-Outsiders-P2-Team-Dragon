@@ -12,6 +12,9 @@ function SubNavbar() {
       <nav>
         <ul>
           <li>
+            <Link to="/subnavbar/backLog">BackLogOffer</Link>
+          </li>
+          <li>
             <Link to="/je-vais-postuler">Je vais postuler</Link>
           </li>
           <li>
