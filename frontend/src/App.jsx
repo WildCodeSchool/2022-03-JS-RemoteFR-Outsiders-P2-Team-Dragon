@@ -26,7 +26,7 @@ function App() {
         <Nav />
         <div className="main">
           <Routes>
-            <Route path="/" element={<Accueil />} />
+            <Route path="/" element={<Accueil handleLiked={handleLiked} />} />
             <Route
               path="/Suivi"
               element={<Suivi handleLiked={handleLiked} />}
