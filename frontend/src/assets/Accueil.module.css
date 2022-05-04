@@ -1,9 +1,8 @@
 .mainAccueil {
   background-color: white;
   border-radius: 10px;
-  min-width: 290px;
-  width: 100%;
   margin: 1rem 0rem 1rem 1rem;
+  width: 100%;
 }
 .jobContainer {
   padding: 0;

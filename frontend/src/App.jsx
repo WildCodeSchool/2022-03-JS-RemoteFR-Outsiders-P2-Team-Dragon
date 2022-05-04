@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Accueil from "@pages/Accueil";
 import Profil from "@pages/Profil";
 import { Routes, Route } from "react-router-dom";
@@ -11,8 +11,15 @@ import Footer from "@components/Footer";
 import BackLogOffer from "@components/BackLogOffer";
 import Applications from "@components/Applications";
 import { OngletSuiviContextProvider } from "./contexts/OngletSuiviContext";
+import offerTemplate from "./data/offerTemplate";
 
 function App() {
+  const [isLiked, setIsLiked] = useState(false);
+  const handleLiked = (item) => {
+    setIsLiked(!isLiked);
+    const offerToUpdate = offerTemplate.find((offer) => offer.id === item.id);
+    offerToUpdate.isFavorite = !offerToUpdate.isFavorite;
+  };
   return (
     <OngletSuiviContextProvider>
       <>
@@ -20,10 +27,16 @@ function App() {
         <div className="main">
           <Routes>
             <Route path="/" element={<Accueil />} />
-            <Route path="/Suivi" element={<Suivi />} />
+            <Route
+              path="/Suivi"
+              element={<Suivi handleLiked={handleLiked} />}
+            />
             <Route path="/Bassin" element={<Bassin />} />
             <Route path="/Profil" element={<Profil />} />
-            <Route path="/suivi/backlog" element={<BackLogOffer />} />
+            <Route
+              path="/suivi/backlog"
+              element={<BackLogOffer handleLiked={handleLiked} />}
+            />
             <Route path="/suivi/application" element={<Applications />} />
           </Routes>
         </div>

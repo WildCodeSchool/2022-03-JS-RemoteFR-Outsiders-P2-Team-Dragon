@@ -12,6 +12,7 @@ const offerTemplate = [
     isPostule: false,
     isRelaunch: false,
     isCancel: false,
+    inFeedback: false,
   },
   {
     id: 2,
@@ -28,6 +29,7 @@ const offerTemplate = [
     isPostule: false,
     isRelaunch: false,
     isCancel: false,
+    inFeedback: false,
   },
   {
     id: 3,
@@ -44,6 +46,7 @@ const offerTemplate = [
     isPostule: false,
     isRelaunch: false,
     isCancel: false,
+    inFeedback: false,
   },
   {
     id: 4,
@@ -72,6 +75,7 @@ const offerTemplate = [
     isPostule: false,
     isRelaunch: false,
     isCancel: false,
+    inFeedback: false,
   },
 ];
 

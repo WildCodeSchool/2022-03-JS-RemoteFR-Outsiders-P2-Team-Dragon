@@ -7,7 +7,7 @@ import "@assets/Common.css";
 import styles from "../assets/Suivi.module.css";
 // import OngletSuiviContext from "../contexts/OngletSuiviContext";
 
-function Suivi() {
+function Suivi({ handleLiked }) {
   const [isPostuled, setIsPostuled] = useState(false);
 
   const handlePostuled = (item) => {
@@ -15,7 +15,6 @@ function Suivi() {
     const offerToUpdate = offerTemplate.find((offer) => offer.id === item.id);
     offerToUpdate.isPostule = !offerToUpdate.isPostule;
   };
-
   return (
     <>
       <nav>
@@ -29,7 +28,7 @@ function Suivi() {
         </ul>
       </nav>
 
-      <BackLogOffer handlePostuled={handlePostuled} />
+      <BackLogOffer handlePostuled={handlePostuled} handleLiked={handleLiked} />
     </>
   );
 }
