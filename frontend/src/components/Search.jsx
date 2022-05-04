@@ -6,7 +6,7 @@ import "@assets/Search.css";
 
 export default function Search() {
   const [inputs, setInputs] = useState({});
-  const API = `https://api.emploi-store.fr/partenaire/offresdemploi/v2/offres/search?motsCles=${inputs.job}`;
+  const API = `https://api.emploi-store.fr/partenaire/offresdemploi/v2/offres/search?motsCles=${inputs.job},${inputs.lieu}`;
 
   const config = {
     headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
