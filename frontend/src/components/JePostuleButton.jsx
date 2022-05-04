@@ -14,7 +14,7 @@ export default function JePostuleButton({
   return (
     <div>
       <button
-        className={offer.isPostule ? "jePostuleButtonON" : "jePostuleButtonOFF"}
+        className="jePostuleButtonON"
         type="button"
         onClick={buttonsBacklogoffer}
       >
