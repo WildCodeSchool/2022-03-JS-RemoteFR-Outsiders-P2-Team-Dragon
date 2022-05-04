@@ -2,6 +2,8 @@ const appliedOffers = [
   {
     id: 1,
     hasAnswer: false,
+    applicationComments:
+      "Entreprise intéressante mais offres limitée en responsabilités",
     contactDetails: {
       contactName: "Marie Condiart",
       company: "Microsoft",
@@ -14,6 +16,7 @@ const appliedOffers = [
   {
     id: 3,
     hasAnswer: false,
+    applicationComments: "Contact bien passé avec le recruteur",
     contactDetails: {
       contactName: "Norbert Malin",
       company: "Withings",

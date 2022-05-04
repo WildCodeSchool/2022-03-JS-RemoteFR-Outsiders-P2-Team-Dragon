@@ -33,9 +33,39 @@
 
 .applicationDetails {
   padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .contactDetails {
   font-weight: lighter;
   font-size: 0.8rem;
+}
+
+.displayDetailsApplication {
+  padding: 0.5rem;
+  width: 75%;
+}
+
+.editButton {
+  padding: 0.5rem;
+  width: 100px;
+  height: 4rem;
+  border-radius: 10px;
+  border: 0;
+}
+
+.editDetailsDiv {
+  margin: 1rem;
+  padding: 0.5rem;
+}
+
+.editApplicationForm {
+  display: grid;
+}
+
+.formItem {
+  display: flex;
+  justify-content: space-between;
 }
