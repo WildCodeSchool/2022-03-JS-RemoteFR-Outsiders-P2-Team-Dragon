@@ -5,7 +5,7 @@ import "@assets/Accueil.module.css";
 function Details({ offerTemplate }) {
   return (
     <div className="jobDetail">
-      <h3>{offerTemplate.title}</h3>
+      {/* <h3>{offerTemplate.title}</h3> */}
       <p>{offerTemplate.Description}</p>
     </div>
   );

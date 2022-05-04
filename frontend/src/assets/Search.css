@@ -86,11 +86,9 @@
   transition: background-color 0.35s, color 0.35s;
 }
 
-
-@media screen and (max-width: 430px){
-  .filterbutton{
+@media screen and (max-width: 430px) {
+  .filterbutton {
     justify-content: center;
     gap: 1em;
   }
-
 }
