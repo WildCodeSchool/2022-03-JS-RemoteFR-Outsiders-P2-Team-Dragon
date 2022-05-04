@@ -18,7 +18,7 @@ export default function FetchJobs() {
       .then((response) => response.data)
       .then((data) => {
         console.warn(data);
-        setStateJob(statejob);
+        setStateJob(data.statejob);
       });
   };
 
