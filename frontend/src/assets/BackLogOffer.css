@@ -6,8 +6,18 @@
   width: 100%;
 }
 
-.postulecontainer {
+.postulecontainerON {
   display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: rebeccapurple;
+  width: 100%;
+}
+
+.postulecontainerOFF {
+  display: flex;
+  background-color: bisque;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
@@ -41,5 +51,3 @@
 .postulebutton {
   padding: 1em;
 }
-
-
