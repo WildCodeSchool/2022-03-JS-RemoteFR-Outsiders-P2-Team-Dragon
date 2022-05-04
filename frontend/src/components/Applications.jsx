@@ -4,20 +4,22 @@ import offerTemplate from "../data/offerTemplate";
 import appliedOffers from "../data/appliedOffers";
 import JobOffer from "./JobOffer";
 import ApplicationDetails from "./applicationDetails";
+// import OngletSuiviContext from "../contexts/OngletSuiviContext";
 
 function Applications() {
-  const [DisplayedOffers] = useState(
-    appliedOffers.map((offer) => offerTemplate[offer.id - 1])
-  );
-
+  const [appliedRef] = useState(appliedOffers);
+  // const [hasAnswer, setHasAnswer] = useState(appliedRef);
   return (
     <div>
       <div>
-        {DisplayedOffers.map((offer) => {
+        {appliedRef.map((offer) => {
           return (
             <>
               <div className={styles.appliedOffer}>
-                <JobOffer offer={offer} key={offer.id} />
+                <JobOffer
+                  offer={offerTemplate[offer.id - 1]}
+                  key={offer.id - 1}
+                />
                 <div className={styles.answerbuttons}>
                   <button
                     type="button"
@@ -35,10 +37,7 @@ function Applications() {
                   </button>
                 </div>
               </div>
-              <ApplicationDetails
-                application={appliedOffers[offer.id - 1]}
-                key={offer.id}
-              />
+              <ApplicationDetails offer={offer} key={offer.id} />
             </>
           );
         })}

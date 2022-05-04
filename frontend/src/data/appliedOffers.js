@@ -1,7 +1,7 @@
 const appliedOffers = [
   {
     id: 1,
-    hasAnswer: true,
+    hasAnswer: false,
     contactDetails: {
       contactName: "Marie Condiart",
       company: "Microsoft",
@@ -13,10 +13,10 @@ const appliedOffers = [
 
   {
     id: 3,
-    hasAnswer: true,
+    hasAnswer: false,
     contactDetails: {
       contactName: "Norbert Malin",
-      company: "withings",
+      company: "Withings",
       applicationDate: "23/02/2022",
       mail: "norbert.malin@withings.com",
       phone: "01893668",

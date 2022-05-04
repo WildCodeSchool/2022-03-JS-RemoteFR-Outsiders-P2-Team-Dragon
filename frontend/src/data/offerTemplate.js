@@ -37,7 +37,19 @@ const offerTemplate = [
   },
   {
     id: 4,
-    title: " Full-Stack 4",
+    title: "Data Analyst 4",
+    contract: "CDD",
+    workingHours: "24",
+    Company: "Withings",
+    prevExperience: "5ans",
+    Description:
+      "Chez Withings, nous souhaitons redonner aux individus le contrôle de leur santé. Nous avons l’obsession de créer des produits beaux et intuitifs, afin que chacun puisse les utiliser facilement au quotidien; nos balances connectées, montres hybrides, tensiomètres, moniteurs de sommeil et tous les dispositifs de notre gamme sont aujourd’hui utilisés par des millions d’utilisateurs.",
+    isFavorite: false,
+    isPostule: false,
+  },
+  {
+    id: 5,
+    title: " Full-Stack 5",
     contract: "CDI",
     workingHours: "48h",
     Company: "Apple",
@@ -46,17 +58,6 @@ const offerTemplate = [
       "Global P.O.S est un éditeur de plateformes SaaS dédiées aux points de vente. Née en 2004 de l’association de professionnels de l’encaissement, nous sommes aujourd’hui le leader français des solutions software d’encaissement et de gestion des titres prépayés (chèques cadeaux, cartes cadeaux etc.) à destination des grands comptes du Retail comme des plus petites enseignes.",
     isFavorite: false,
     isPostule: false,
-  },
-  {
-    id: 3,
-    title: "Data Analyst",
-    contract: "CDD",
-    workingHours: "24",
-    Company: "Withings",
-    prevExperience: "5ans",
-    Description:
-      "Chez Withings, nous souhaitons redonner aux individus le contrôle de leur santé. Nous avons l’obsession de créer des produits beaux et intuitifs, afin que chacun puisse les utiliser facilement au quotidien; nos balances connectées, montres hybrides, tensiomètres, moniteurs de sommeil et tous les dispositifs de notre gamme sont aujourd’hui utilisés par des millions d’utilisateurs.",
-    isFavorite: false,
   },
 ];
 

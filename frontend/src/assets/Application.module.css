@@ -1,7 +1,7 @@
 .appliedOffer {
   display: flex;
   align-items: center;
-  margin: 0;
+  margin-right: 1rem;
   padding: 0;
 }
 
@@ -29,4 +29,13 @@
 #avecReponse {
   background-color: var(--button-color);
   color: var(--button-color);
+}
+
+.applicationDetails {
+  padding: 1rem;
+}
+
+.contactDetails {
+  font-weight: lighter;
+  font-size: 0.8rem;
 }

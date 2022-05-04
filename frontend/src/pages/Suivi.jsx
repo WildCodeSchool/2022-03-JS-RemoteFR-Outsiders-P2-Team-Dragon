@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+// import Applications from "@components/Applications";
 import offerTemplate from "../data/offerTemplate";
 import BackLogOffer from "../components/BackLogOffer";
-// import Applications from "../components/Applications";
 import "@assets/Common.css";
+import styles from "../assets/Suivi.module.css";
+// import OngletSuiviContext from "../contexts/OngletSuiviContext";
 
 function Suivi() {
   const [isPostuled, setIsPostuled] = useState(false);
@@ -13,10 +15,11 @@ function Suivi() {
     const offerToUpdate = offerTemplate.find((offer) => offer.id === item.id);
     offerToUpdate.isPostule = !offerToUpdate.isPostule;
   };
+
   return (
     <>
       <nav>
-        <ul>
+        <ul className={styles.subNav}>
           <li>
             <Link to="/suivi/backLog">BackLogOffer</Link>
           </li>
@@ -25,6 +28,7 @@ function Suivi() {
           </li>
         </ul>
       </nav>
+
       <BackLogOffer handlePostuled={handlePostuled} />
     </>
   );
