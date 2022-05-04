@@ -1,10 +1,27 @@
 import React, { useState } from "react";
+import axios from "axios";
 import FilterButton from "@components/FilterButton";
 import "@assets/Common.css";
 import "@assets/Search.css";
 
 export default function Search() {
+  const [statejob, setStateJob] = React.useState("Hello");
   const [inputs, setInputs] = useState({});
+  const API = `https://api.emploi-store.fr/partenaire/offresdemploi/v2/offres/search?motsCles=${inputs.job}${statejob}`;
+
+  const config = {
+    headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+  };
+
+  const handleGetJobs = () => {
+    axios
+      .get(API, config)
+      .then((response) => response.data)
+      .then((data) => {
+        console.warn(data);
+        setStateJob(data.statejob);
+      });
+  };
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -13,7 +30,9 @@ export default function Search() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    handleGetJobs();
     console.warn(inputs);
+    console.warn(inputs.job);
   };
   return (
     <div className="searchjob">
