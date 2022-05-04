@@ -1,7 +1,7 @@
 import React from "react";
 import "@assets/BackLogOffer.css";
 
-// When I click on Button, the poste is going to "J'ai postulé"
+// When I click on Button, the offer is going to "J'ai postulé"
 
 export default function JePostuleButton({ handlePostuled, offer }) {
   return (
@@ -11,7 +11,7 @@ export default function JePostuleButton({ handlePostuled, offer }) {
         type="button"
         onClick={() => handlePostuled(offer)}
       >
-        {offer.isPostule ? "J'ai postulé !" : "Je postule"}
+        {offer.isPostule ? "Good job !" : "Je postule"}
       </button>
     </div>
   );
