@@ -7,6 +7,7 @@ import "@assets/Search.css";
 export default function Search() {
   const [statejob, setStateJob] = React.useState("Hello");
   const [inputs, setInputs] = useState({});
+  // ${statejob} a enlever de la URL C'est juste pour faire le commit
   const API = `https://api.emploi-store.fr/partenaire/offresdemploi/v2/offres/search?motsCles=${inputs.job}${statejob}`;
 
   const config = {
