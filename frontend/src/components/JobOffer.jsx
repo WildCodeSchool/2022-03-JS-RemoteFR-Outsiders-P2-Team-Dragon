@@ -20,15 +20,15 @@ function JobOffer({ showFavoriteButton, offer, handleLiked }) {
           ) : null}
         </div>
         <div className={styles.jobSynthesisDiv}>
-          <h1>{offer.title}</h1>
+          <h1>{offer.intitule}</h1>
           <div>
-            {offer.contract}
+            {offer.typeContrat}
             {" | "}
-            {offer.workingHours}
+            {offer.dureeTravailLibelle}
             {" | "}
-            {offer.Company}
+            {offer.entreprise.nom}
             {" | "}
-            {offer.prevExperience}
+            {offer.experienceLibelle}
           </div>
         </div>
         <div className={styles.favoriteDiv}>

@@ -11,10 +11,11 @@ function Accueil() {
     const offerToUpdate = offerTemplate.find((offer) => offer.id === item.id);
     offerToUpdate.isFavorite = !offerToUpdate.isFavorite;
   };
+  const [jobs, setJobs] = useState([]);
   return (
     <div>
-      <Search />
-      {offerTemplate.map((offer) => {
+      <Search setJobs={setJobs} />
+      {jobs.map((offer) => {
         return (
           // Partie Oscar  : ici on envoie les props qui viennent d'App et les transmets vers JobOffer...
           <JobOffer
