@@ -1,0 +1,21 @@
+ul {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: var(--secondary-color);
+}
+li {
+  list-style: none;
+}
+
+.itemsuivi {
+  cursor: pointer;
+  color: white;
+  font-size: 0.9rem;
+}
+
+@media screen and (min-width: 960px) {
+  .itemsuivi {
+    font-size: 1.3rem;
+  }
+}

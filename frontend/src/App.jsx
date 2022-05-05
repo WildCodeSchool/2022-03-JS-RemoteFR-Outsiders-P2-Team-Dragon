@@ -8,8 +8,6 @@ import Suivi from "@pages/Suivi";
 import Bassin from "@pages/Bassin";
 import "./assets/Accueil.module.css";
 import Footer from "@components/Footer";
-import BackLogOffer from "@components/BackLogOffer";
-import Applications from "@components/Applications";
 import { OngletSuiviContextProvider } from "./contexts/OngletSuiviContext";
 import offerTemplate from "./data/offerTemplate";
 
@@ -33,11 +31,13 @@ function App() {
             />
             <Route path="/Bassin" element={<Bassin />} />
             <Route path="/Profil" element={<Profil />} />
-            <Route
-              path="/suivi/backlog"
+            {/* <Route
+              path="/suivi/jevaispostuler"
               element={<BackLogOffer handleLiked={handleLiked} />}
-            />
-            <Route path="/suivi/application" element={<Applications />} />
+            /> */}
+            {/* <Route path="/suivi/jaipostule" element={<Applications />} />
+            <Route path="/suivi/action" element={<Action />} />
+            <Route path="/suivi/feedback" element={<Feedback />} /> */}
           </Routes>
         </div>
         <Footer />
