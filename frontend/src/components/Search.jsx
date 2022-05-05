@@ -6,6 +6,7 @@ import "@assets/Search.css";
 
 export default function Search() {
   const [inputs, setInputs] = useState({});
+  const [jobs, setJobs] = useState([]);
   const API = `https://api.emploi-store.fr/partenaire/offresdemploi/v2/offres/search?motsCles=${inputs.job}`;
 
   const config = {
@@ -17,7 +18,7 @@ export default function Search() {
       .get(API, config)
       .then((response) => response.data)
       .then((data) => {
-        console.warn(data.resultats[0]);
+        setJobs(data.resultats);
       });
   };
   const handleChange = (event) => {
@@ -31,6 +32,11 @@ export default function Search() {
   };
   return (
     <div className="searchjob">
+      <p>
+        {jobs.map((job) => (
+          <div>{job.id}</div>
+        ))}
+      </p>
       <form className="formjob" onSubmit={handleSubmit}>
         <div className="fieldscontainer">
           <input
