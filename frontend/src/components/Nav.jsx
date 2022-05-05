@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
+import SubNavbar from "@components/SubNavbar";
 import logo from "@assets/logo.svg";
 import boussoleToggle from "@assets/boussole.png";
 import "../assets/Nav.css";
@@ -8,9 +9,14 @@ import "../assets/Common.css";
 function Nav() {
   const [toggleMenu, setToggleMenu] = useState(false);
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+  const [toggleMenuSuivi, setToggleMenuSuivi] = useState(false);
 
   const toggleNav = () => {
     setToggleMenu(!toggleMenu);
+  };
+
+  const toggleSuivi = () => {
+    setToggleMenuSuivi(!toggleMenuSuivi);
   };
 
   useEffect(() => {
@@ -42,7 +48,7 @@ function Nav() {
             <Link to="/profil" className="items">
               Profil
             </Link>
-            <Link to="/suivi" className="items">
+            <Link to="/suivi" className="items" onClick={toggleSuivi}>
               Suivi
             </Link>
             <Link to="/bassin" className="items">
@@ -51,6 +57,7 @@ function Nav() {
           </nav>
         )}
       </div>
+      <div>{toggleMenuSuivi ? <SubNavbar /> : null}</div>
     </>
   );
 }
