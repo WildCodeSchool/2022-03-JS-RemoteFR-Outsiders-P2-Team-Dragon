@@ -5,10 +5,8 @@ import "@assets/Common.css";
 import "@assets/Search.css";
 
 export default function Search() {
-  const [statejob, setStateJob] = React.useState("Hello");
   const [inputs, setInputs] = useState({});
-  // ${statejob} a enlever de la URL C'est juste pour faire le commit
-  const API = `https://api.emploi-store.fr/partenaire/offresdemploi/v2/offres/search?motsCles=${inputs.job}${statejob}`;
+  const API = `https://api.emploi-store.fr/partenaire/offresdemploi/v2/offres/search?motsCles=${inputs.job}`;
 
   const config = {
     headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
@@ -17,13 +15,11 @@ export default function Search() {
   const handleGetJobs = () => {
     axios
       .get(API, config)
-      .then((response) => response.data)
+      .then((response) => response.data.resultats)
       .then((data) => {
-        console.warn(data);
-        setStateJob(data.statejob);
+        console.warn(data.resultats[0]);
       });
   };
-
   const handleChange = (event) => {
     const { name, value } = event.target;
     setInputs((values) => ({ ...values, [name]: value }));
@@ -32,8 +28,6 @@ export default function Search() {
   const handleSubmit = (event) => {
     event.preventDefault();
     handleGetJobs();
-    console.warn(inputs);
-    console.warn(inputs.job);
   };
   return (
     <div className="searchjob">
