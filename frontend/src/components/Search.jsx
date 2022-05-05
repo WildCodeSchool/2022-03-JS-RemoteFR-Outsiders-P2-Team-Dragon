@@ -15,7 +15,7 @@ export default function Search() {
   const handleGetJobs = () => {
     axios
       .get(API, config)
-      .then((response) => response.data.resultats)
+      .then((response) => response.data)
       .then((data) => {
         console.warn(data.resultats[0]);
       });
