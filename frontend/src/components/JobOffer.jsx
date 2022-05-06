@@ -12,42 +12,29 @@ function JobOffer({ showFavoriteButton, offer, handleLiked }) {
   };
 
   return (
-    <div>
+    <div className={styles.allInJobOffer}>
       <button
-        className={styles.mainAccueil}
+        className={styles.buttonOffer}
         onClick={handleClick}
         type="button"
       >
         <div className={styles.jobContainer}>
-          <div className={styles.jobSynthesisDiv}>
-            <h1>{offer.title}</h1>
-            <div>
-              {offer.contract}
-              {" | "}
-              {offer.workingHours}
-              {" | "}
-              {offer.Company}
-              {" | "}
-              {offer.prevExperience}
-            </div>
+          <h1>{offer.title}</h1>
+          <div>
+            {offer.contract}
+            {" | "}
+            {offer.workingHours}
+            {" | "}
+            {offer.Company}
+            {" | "}
+            {offer.prevExperience}
           </div>
-          {/* <div className={styles.favoriteDiv}>
-            <button
-              type="button"
-              onClick={handleClick}
-              className={styles.buttonDetail}
-            >
-              ...
-            </button> 
-          </div> */}
         </div>
         {showDetail ? <Details offerTemplate={offer} /> : null}
       </button>
-      <div className={styles.favoriteDiv}>
-        {showFavoriteButton ? (
-          <FavoriteButton offer={offer} handleLiked={handleLiked} />
-        ) : null}
-      </div>
+      {showFavoriteButton ? (
+        <FavoriteButton offer={offer} handleLiked={handleLiked} />
+      ) : null}
     </div>
   );
 }

@@ -1,54 +1,40 @@
-.mainAccueil {
-  background-color: white;
-  border-radius: 10px;
-  margin: 1rem 0rem 1rem 1rem;
+.allInJobOffer{
+  display: flex;
   width: 100%;
+
+}
+.buttonOffer {
+  border-radius: 10px;
+  background-color: white;
+  border: 0;
+  width: 100%;
+  margin: 0.5rem 0 0.5rem 0.5rem;
 }
 .jobContainer {
-  padding: 0;
   display: flex;
+  flex-direction: column;
   text-align: center;
   justify-content: space-around;
+  padding: 1rem;
+}
+.jobContainer h1 {
+  font-size: 1.2em;
 }
 
 .favoriteDiv {
   display: flex;
   align-items: center;
+  justify-content: center;
+  width: 20%;
+  margin: 0rem 0.7rem 0.5rem 0;
 }
-
-.jobSynthesisDiv {
-  margin: 0.5rem;
-  padding: 1rem;
-}
-.jobSynthesisDiv h1 {
-  font-size: 1.2em;
-}
-
 .jobDetail,
-h3,
 p {
   text-align: center;
   background-color: var(--secondary-color);
   color: white;
-}
-
-h3 {
-  padding: 15px;
-  font-size: 20px;
-}
-
-p {
-  padding: 15px;
-  font-size: 1.1rem;
-}
-
-.buttonDetail {
-  border-radius: 50%;
-  background-color: var(--fourth-color);
-  height: 30px;
-  width: 30px;
-  color: var(--fourth-color);
-  border: 0;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 
 /* -------------------------oscar -------------------------*/

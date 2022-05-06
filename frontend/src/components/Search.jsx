@@ -60,10 +60,14 @@ export default function Search() {
           </select>
         </div>
         <div className="filterbutton">
-          <FilterButton onChange={handleChange} label="CDI" />
-          <FilterButton onChange={handleChange} label="CDD" />
-          <FilterButton onChange={handleChange} label="Alternance" />
-          <FilterButton onChange={handleChange} label="Stage" />
+          <div className="filterbutton1">
+            <FilterButton onChange={handleChange} label="CDI" />
+            <FilterButton onChange={handleChange} label="CDD" />
+          </div>
+          <div className="filterbutton2">
+            <FilterButton onChange={handleChange} label="Alternance" />
+            <FilterButton onChange={handleChange} label="Stage" />
+          </div>
         </div>
         <div className="buttonform">
           <input type="submit" value="FIND TECH JOB !" />

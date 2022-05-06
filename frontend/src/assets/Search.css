@@ -50,6 +50,18 @@
   align-items: center;
   flex-wrap: wrap;
 }
+.filterbutton1 {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-bottom: 0.7rem;
+}
+.filterbutton2 {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 0.7rem;
+}
 
 .filterbutton button {
   color: var(--button-color);
@@ -86,9 +98,17 @@
   transition: background-color 0.35s, color 0.35s;
 }
 
-@media screen and (max-width: 430px) {
+
+@media screen and (min-width: 750px) {
   .filterbutton {
-    justify-content: center;
-    gap: 1em;
+    flex-wrap: nowrap;
+  }
+  .filterbutton1 {
+    width: 50%;
+    margin-bottom: 0rem;
+  }
+  .filterbutton2 {
+    width: 50%;
+    margin-top: 0rem;
   }
 }

@@ -18,7 +18,7 @@ export default function JePostuleButton({
         type="button"
         onClick={buttonsBacklogoffer}
       >
-        {offer.isPostule ? "Good job !" : "Je postule"}
+        Je postule
       </button>
     </div>
   );
