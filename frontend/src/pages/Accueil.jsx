@@ -1,14 +1,15 @@
-import React from "react";
-import offerTemplate from "../data/offerTemplate";
+import React, { useState } from "react";
 import Search from "../components/Search";
 import JobOffer from "../components/JobOffer";
 import "../assets/Common.css";
 
 function Accueil({ handleLiked }) {
+  // const [isLiked, setIsLiked] = useState(false);
+  const [jobs, setJobs] = useState([]);
   return (
     <div>
-      <Search />
-      {offerTemplate.map((offer) => {
+      <Search setJobs={setJobs} />
+      {jobs.map((offer) => {
         return (
           // Partie Oscar  : ici on envoie les props qui viennent d'App et les transmets vers JobOffer...
           <JobOffer

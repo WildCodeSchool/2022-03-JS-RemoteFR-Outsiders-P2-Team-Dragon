@@ -1,11 +1,31 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import FilterButton from "@components/FilterButton";
 import "@assets/Common.css";
 import "@assets/Search.css";
 
-export default function Search() {
+export default function Search({ setJobs }) {
   const [inputs, setInputs] = useState({});
+  const [filters, setFilters] = useState([]);
+  const API = `https://api.emploi-store.fr/partenaire/offresdemploi/v2/offres/search?motsCles=${inputs.job}&typeContrat=CDD,CDI`;
 
+  const config = {
+    headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+  };
+
+  useEffect(() => {
+    console.warn(filters);
+  }, [filters]);
+
+  const handleGetJobs = () => {
+    axios
+      .get(API, config)
+      .then((response) => response.data)
+      .then((data) => {
+        console.warn(data.resultats);
+        setJobs(data.resultats);
+      });
+  };
   const handleChange = (event) => {
     const { name, value } = event.target;
     setInputs((values) => ({ ...values, [name]: value }));
@@ -13,10 +33,15 @@ export default function Search() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.warn(inputs);
+    handleGetJobs();
   };
   return (
     <div className="searchjob">
+      {/* <p>
+        {jobs.map((job) => (
+          <div>{job.id}</div>
+        ))}
+      </p> */}
       <form className="formjob" onSubmit={handleSubmit}>
         <div className="fieldscontainer">
           <input
@@ -60,10 +85,10 @@ export default function Search() {
           </select>
         </div>
         <div className="filterbutton">
-          <FilterButton onChange={handleChange} label="CDI" />
-          <FilterButton onChange={handleChange} label="CDD" />
-          <FilterButton onChange={handleChange} label="Alternance" />
-          <FilterButton onChange={handleChange} label="Stage" />
+          <FilterButton setFilters={setFilters} label="CDI" />
+          <FilterButton setFilters={setFilters} label="CDD" />
+          <FilterButton setFilters={setFilters} label="Alternance" />
+          <FilterButton setFilters={setFilters} label="Stage" />
         </div>
         <div className="buttonform">
           <input type="submit" value="FIND TECH JOB !" />

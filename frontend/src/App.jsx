@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Accueil from "@pages/Accueil";
 import Profil from "@pages/Profil";
 import { Routes, Route } from "react-router-dom";
@@ -8,16 +8,26 @@ import Suivi from "@pages/Suivi";
 import Bassin from "@pages/Bassin";
 import "./assets/Accueil.module.css";
 import Footer from "@components/Footer";
+import axios from "axios";
 import { OngletSuiviContextProvider } from "./contexts/OngletSuiviContext";
 import offerTemplate from "./data/offerTemplate";
 
 function App() {
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await axios("http://localhost:5000/api/token");
+      console.warn(result);
+      localStorage.setItem("token", result.data);
+    };
+    fetchData();
+  }, []);
   const [isLiked, setIsLiked] = useState(false);
   const handleLiked = (item) => {
     setIsLiked(!isLiked);
     const offerToUpdate = offerTemplate.find((offer) => offer.id === item.id);
     offerToUpdate.isFavorite = !offerToUpdate.isFavorite;
   };
+
   return (
     <OngletSuiviContextProvider>
       <>

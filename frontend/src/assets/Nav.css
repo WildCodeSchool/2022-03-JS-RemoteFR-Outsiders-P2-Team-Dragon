@@ -64,11 +64,7 @@
   color: white;
 }
 
-
-
-
 @media screen and (min-width: 750px) {
-
   .img-logo {
     width: 6rem;
     height: 6rem;
@@ -96,5 +92,4 @@
   .items {
     font-size: 2rem;
   }
-
 }

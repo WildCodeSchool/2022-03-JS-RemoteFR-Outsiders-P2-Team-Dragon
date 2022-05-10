@@ -12,42 +12,46 @@ function JobOffer({ showFavoriteButton, offer, handleLiked }) {
   };
 
   return (
-    <div>
+    <div className={styles.mainAccueil}>
       <button
-        className={styles.mainAccueil}
-        onClick={handleClick}
+        className={styles.jobContainer}
         type="button"
+        onClick={handleClick}
       >
-        <div className={styles.jobContainer}>
-          <div className={styles.jobSynthesisDiv}>
-            <h1>{offer.title}</h1>
-            <div>
-              {offer.contract}
-              {" | "}
-              {offer.workingHours}
-              {" | "}
-              {offer.Company}
-              {" | "}
-              {offer.prevExperience}
-            </div>
-          </div>
-          {/* <div className={styles.favoriteDiv}>
-            <button
-              type="button"
-              onClick={handleClick}
-              className={styles.buttonDetail}
-            >
-              ...
-            </button> 
-          </div> */}
+        <div className={styles.favoriteDiv}>
+          {showFavoriteButton ? (
+            <FavoriteButton offer={offer} handleLiked={handleLiked} />
+          ) : null}
         </div>
-        {showDetail ? <Details offerTemplate={offer} /> : null}
+        <div className={styles.jobSynthesisDiv}>
+          <h1>{offer.intitule}</h1>
+          <div>
+            {offer.typeContrat}
+            {" | "}
+            {offer.dureeTravailLibelle}
+            {" | "}
+            {offer.entreprise.nom}
+            {" | "}
+            {offer.experienceLibelle}
+          </div>
+
+          {/* <div className={styles.favoriteDiv}>
+              <button
+                type="button"
+                onClick={handleClick}
+                className={styles.buttonDetail}
+              >
+                ...
+              </button> 
+            </div> */}
+        </div>
       </button>
-      <div className={styles.favoriteDiv}>
+      {showDetail ? <Details offerTemplate={offer} /> : null}
+      {/* <div className={styles.favoriteDiv}>
         {showFavoriteButton ? (
           <FavoriteButton offer={offer} handleLiked={handleLiked} />
         ) : null}
-      </div>
+      </div> */}
     </div>
   );
 }
