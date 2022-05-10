@@ -15,16 +15,19 @@ function App() {
   const [jobsApi, setJobsApi] = useState([]);
   const [isLiked, setIsLiked] = useState(false);
   // console.warn(jobsApi);
-
-  const jobs = jobsApi.map((offerApi) => {
-    const offer = { ...offerApi };
-    offer.isFavorite = false;
-    offer.isPostule = false;
-    offer.isRelaunch = false;
-    offer.isCancel = false;
-    offer.inFeedback = false;
-    return offer;
-  });
+  const [jobs, setJobs] = useState([]);
+  useEffect(() => {
+    const newJobs = jobsApi.map((offerApi) => {
+      const offer = { ...offerApi };
+      offer.isFavorite = false;
+      offer.isPostule = false;
+      offer.isRelaunch = false;
+      offer.isCancel = false;
+      offer.inFeedback = false;
+      return offer;
+    });
+    setJobs(newJobs);
+  }, [jobsApi]);
   useEffect(() => {
     const fetchData = async () => {
       const result = await axios("http://localhost:5000/api/token");

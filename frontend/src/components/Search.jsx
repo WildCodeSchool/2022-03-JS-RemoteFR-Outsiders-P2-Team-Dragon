@@ -9,7 +9,7 @@ import "@assets/Search.css";
 export default function Search({ setJobsApi }) {
   const [inputs, setInputs] = useState({});
   const [filters, setFilters] = useState([]);
-  const API = `https://api.emploi-store.fr/partenaire/offresdemploi/v2/offres/search?motsCles=${inputs.job}&typeContrat=${filters}&experienceLibelle=${inputs.experience}&departement=${inputs.lieu}&salaireMin=${inputs.salaire}`;
+  const API = `https://api.emploi-store.fr/partenaire/offresdemploi/v2/offres/search?motsCles=${inputs.job}&typeContrat=${filters}`;
 
   const config = {
     headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
