@@ -6,7 +6,7 @@ import "@assets/Search.css";
 
 // commentaires
 
-export default function Search({ setJobs }) {
+export default function Search({ setJobsApi }) {
   const [inputs, setInputs] = useState({});
   const [filters, setFilters] = useState([]);
   // let API = `https://api.emploi-store.fr/partenaire/offresdemploi/v2/offres/search?motsCles=${inputs.job}&typeContrat=${filters}&experienceLibelle=${inputs.experience}&departement=${inputs.lieu}&salaireMin=${inputs.salaire}`;
@@ -62,7 +62,7 @@ export default function Search({ setJobs }) {
   };
 
   useEffect(() => {
-    console.warn(filters);
+    // console.warn(filters);
   }, [filters]);
 
   useEffect(() => {
@@ -74,8 +74,8 @@ export default function Search({ setJobs }) {
       .get(API, config)
       .then((response) => response.data)
       .then((data) => {
-        console.warn(data.resultats);
-        setJobs(data.resultats);
+        // console.warn(data.resultats);
+        setJobsApi(data.resultats);
       });
   };
   const handleChange = (event) => {

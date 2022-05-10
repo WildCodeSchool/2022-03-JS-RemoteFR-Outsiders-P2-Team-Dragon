@@ -3,11 +3,10 @@ import Search from "../components/Search";
 import JobOffer from "../components/JobOffer";
 import "../assets/Common.css";
 
-function Accueil({ jobs, setJobs, handleLiked }) {
+function Accueil({ jobs, setJobsApi, handleLiked }) {
   return (
     <div>
-      <Search setJobs={setJobs} />
-      {/* {jobs.filter(item => item.intitule.includes("alternance")).map((offer) => { */}
+      <Search setJobsApi={setJobsApi} />
       {jobs.map((offer) => {
         return (
           // Partie Oscar  : ici on envoie les props qui viennent d'App et les transmets vers JobOffer...

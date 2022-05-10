@@ -59,9 +59,11 @@ function Suivi({ handleLiked, jobs }) {
         <BackLogOffer
           handlePostuled={handlePostuled}
           handleLiked={handleLiked}
+          jobs={jobs}
+          onPostule={onPostule}
         />
       ) : null}
-      {onApplications ? <Applications /> : null}
+      {onApplications ? <Applications jobs={jobs} /> : null}
       {onAction ? <ActionOffer /> : null}
       {onFeedback ? <Feedback /> : null}
     </>

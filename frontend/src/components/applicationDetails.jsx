@@ -1,14 +1,14 @@
 import React from "react";
 import styles from "@assets/Application.module.css";
 
-function applicationDetails({ offer }) {
-  const phoneUrl = `tel:${offer.contactDetails.phone}`;
-  const mailUrl = `mailto:${offer.contactDetails.mail}`;
+function applicationDetails() {
+  // const phoneUrl = `tel:`;
+  // const mailUrl = `mailto:`;
 
   return (
     <>
       <div className={styles.applicationDetails}>
-        <div className={styles.displayDetailsApplication}>
+        {/* <div className={styles.displayDetailsApplication}>
           <h5>
             Postulé le :{" "}
             <span className={styles.contactDetails}>
@@ -41,10 +41,9 @@ function applicationDetails({ offer }) {
               {offer.applicationComments}
             </span>
           </h5>
-        </div>
+        </div> */}
         <div>
           <button type="button" className={styles.editButton}>
-            {" "}
             Modifier les informations de candidature
           </button>
         </div>
@@ -59,7 +58,7 @@ function applicationDetails({ offer }) {
                 name="applicationDate"
                 id="applicationDate"
                 width="200px"
-                placeholder={offer.contactDetails.applicationDate}
+                placeholder="Date"
               />
             </label>
 
@@ -69,7 +68,7 @@ function applicationDetails({ offer }) {
                 type="text"
                 name="contactName"
                 id="contactName"
-                placeholder={offer.contactDetails.contactName}
+                placeholder="NOM Prenom"
               />
             </label>
 
@@ -79,28 +78,18 @@ function applicationDetails({ offer }) {
                 type="text"
                 name="company"
                 id="company"
-                placeholder={offer.contactDetails.company}
+                placeholder="Entreprise"
               />
             </label>
 
             <label htmlFor="phone" className={styles.formItem}>
               Téléphone :
-              <input
-                type="text"
-                name="phone"
-                id="phone"
-                placeholder={offer.contactDetails.phone}
-              />
+              <input type="text" name="phone" id="phone" placeholder="phone" />
             </label>
 
             <label htmlFor="mail" className={styles.formItem}>
               Courriel :
-              <input
-                type="text"
-                name="mail"
-                id="mail"
-                placeholder={offer.contactDetails.mail}
-              />
+              <input type="text" name="mail" id="mail" placeholder="mail" />
             </label>
 
             <label htmlFor="applicationComments" className={styles.formItem}>
@@ -109,7 +98,7 @@ function applicationDetails({ offer }) {
                 type="text"
                 name="applicationComments"
                 id="applicationComments"
-                placeholder={offer.applicationComments}
+                placeholder="applicationComments"
                 rows="5"
               />
             </label>

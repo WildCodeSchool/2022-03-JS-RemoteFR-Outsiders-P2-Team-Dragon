@@ -12,16 +12,30 @@ import axios from "axios";
 import { OngletSuiviContextProvider } from "./contexts/OngletSuiviContext";
 
 function App() {
+  const [jobsApi, setJobsApi] = useState([]);
+  const [isLiked, setIsLiked] = useState(false);
+  // console.warn(jobsApi);
   const [jobs, setJobs] = useState([]);
+  useEffect(() => {
+    const newJobs = jobsApi.map((offerApi) => {
+      const offer = { ...offerApi };
+      offer.isFavorite = false;
+      offer.isPostule = false;
+      offer.isRelaunch = false;
+      offer.isCancel = false;
+      offer.inFeedback = false;
+      return offer;
+    });
+    setJobs(newJobs);
+  }, [jobsApi]);
   useEffect(() => {
     const fetchData = async () => {
       const result = await axios("http://localhost:5000/api/token");
-      console.warn(result);
+      // console.warn(result);
       localStorage.setItem("token", result.data);
     };
     fetchData();
   }, []);
-  const [isLiked, setIsLiked] = useState(false);
   const handleLiked = (item) => {
     setIsLiked(!isLiked);
     const offerToUpdate = jobs.find((offer) => offer.id === item.id);
@@ -40,7 +54,7 @@ function App() {
                 <Accueil
                   handleLiked={handleLiked}
                   jobs={jobs}
-                  setJobs={setJobs}
+                  setJobsApi={setJobsApi}
                 />
               }
             />
