@@ -1,0 +1,26 @@
+.containerSubNav {
+  display: flex;
+  background-color: var(--secondary-color);
+  border-radius: 10px;
+  margin-top: 0.1rem;
+  margin-bottom: 0.1rem;
+}
+
+.itemsuivi {
+  cursor: pointer;
+  background-color: var(--secondary-color);
+  font-size: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border: 0;
+  width: 25%;
+  color: white;
+  border-radius: 10px;
+}
+.itemsuivi:hover {
+  background-color: var(--primary-color);
+  color: var(--button-color);
+}
+.itemsuiviOnStart {
+  background-color: var(--primary-color);
+}

@@ -1,22 +1,15 @@
-import React, { useState } from "react";
-import offerTemplate from "../data/offerTemplate";
+import React from "react";
 import Search from "../components/Search";
 import JobOffer from "../components/JobOffer";
 import "../assets/Common.css";
 
-function Accueil() {
-  const [isLiked, setIsLiked] = useState(false);
-  const handleLiked = (item) => {
-    setIsLiked(!isLiked);
-    const offerToUpdate = offerTemplate.find((offer) => offer.id === item.id);
-    offerToUpdate.isFavorite = !offerToUpdate.isFavorite;
-  };
+function Accueil({ jobs, setJobsApi, handleLiked }) {
   return (
     <div>
-      <Search />
-      {offerTemplate.map((offer) => {
+      <Search setJobsApi={setJobsApi} />
+      {jobs.map((offer) => {
         return (
-          // Partie Oscar : ici on envoie les props qui viennent d'App et les transmets vers JobOffer...
+          // Partie Oscar  : ici on envoie les props qui viennent d'App et les transmets vers JobOffer...
           <JobOffer
             key={offer.id}
             handleLiked={handleLiked}

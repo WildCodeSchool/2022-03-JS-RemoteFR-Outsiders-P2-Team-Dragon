@@ -1,11 +1,10 @@
 .div-footer {
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
   background-color: var(--secondary-color);
-
   color: white;
-  font-size: 0.9rem;
+  font-size: 0.7rem;
+  padding: 0.5rem;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
   align-items: self-start;
 }
 

@@ -4,7 +4,7 @@ import styles from "../assets/Accueil.module.css";
 import Details from "./Details";
 import "../assets/Common.css";
 
-// showFavoriteButton=true montre le heart dans offer sinon il ne s'affiche pas
+// showFavoriteButton=true montre le 💖 dans offer sinon il ne s'affiche pas
 function JobOffer({ showFavoriteButton, offer, handleLiked }) {
   const [showDetail, setshowDetail] = useState(false);
   const handleClick = () => {
@@ -12,36 +12,29 @@ function JobOffer({ showFavoriteButton, offer, handleLiked }) {
   };
 
   return (
-    <div className={styles.mainAccueil}>
-      <div className={styles.jobContainer}>
-        <div className={styles.favoriteDiv}>
-          {showFavoriteButton ? (
-            <FavoriteButton offer={offer} handleLiked={handleLiked} />
-          ) : null}
-        </div>
-        <div className={styles.jobSynthesisDiv}>
-          <h1>{offer.title}</h1>
+    <div className={styles.allInJobOffer}>
+      <button
+        className={styles.buttonOffer}
+        onClick={handleClick}
+        type="button"
+      >
+        <div className={styles.jobContainer}>
+          <h1>{offer.intitule}</h1>
           <div>
-            {offer.contract}
+            {offer.typeContrat}
             {" | "}
-            {offer.workingHours}
+            {offer.dureeTravailLibelle}
             {" | "}
-            {offer.Company}
+            {offer.entreprise.nom}
             {" | "}
-            {offer.prevExperience}
+            {offer.experienceLibelle}
           </div>
         </div>
-        <div className={styles.favoriteDiv}>
-          <button
-            type="button"
-            onClick={handleClick}
-            className={styles.buttonDetail}
-          >
-            ...
-          </button>
-        </div>
-      </div>
-      {showDetail ? <Details offerTemplate={offer} /> : null}
+        {showDetail ? <Details offer={offer} /> : null}
+      </button>
+      {showFavoriteButton ? (
+        <FavoriteButton offer={offer} handleLiked={handleLiked} />
+      ) : null}
     </div>
   );
 }

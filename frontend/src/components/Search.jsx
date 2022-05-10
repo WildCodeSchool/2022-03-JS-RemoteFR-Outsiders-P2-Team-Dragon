@@ -1,11 +1,81 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import FilterButton from "@components/FilterButton";
 import "@assets/Common.css";
 import "@assets/Search.css";
 
-export default function Search() {
+export default function Search({ setJobsApi }) {
   const [inputs, setInputs] = useState({});
+  const [filters, setFilters] = useState([]);
+  // let API = `https://api.emploi-store.fr/partenaire/offresdemploi/v2/offres/search?motsCles=${inputs.job}&typeContrat=${filters}&experienceLibelle=${inputs.experience}&departement=${inputs.lieu}&salaireMin=${inputs.salaire}`;
 
+  function getFullAPI(
+    inputJob,
+    contrat,
+    exp,
+    lieu,
+    salaire,
+    teletravail,
+    alternance
+  ) {
+    let API = `https://api.emploi-store.fr/partenaire/offresdemploi/v2/offres/search`;
+    if (inputJob) {
+      API += `?motsCles=${inputJob}`;
+    }
+    if (contrat) {
+      if (contrat === "Alternance") {
+        API += `&typeContrat= CDD`;
+      }
+      API += `&typeContrat=${contrat}`;
+    }
+    if (exp) {
+      API += `&experienceLibelle=${exp}`;
+    }
+    if (lieu) {
+      API += `&departement=${lieu}`;
+    }
+    if (salaire) {
+      API += `&salaireMin=${salaire}`;
+    }
+    if (teletravail) {
+      API += `&tempsPlein=${teletravail}`;
+    }
+    if (alternance) {
+      API += "?motsCles=alternance";
+    }
+    return API;
+  }
+  const API = getFullAPI(
+    inputs.job,
+    filters,
+    inputs.experience,
+    inputs.lieu,
+    inputs.salaire,
+    inputs.remote
+  );
+  console.warn(API);
+
+  const config = {
+    headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+  };
+
+  useEffect(() => {
+    // console.warn(filters);
+  }, [filters]);
+
+  useEffect(() => {
+    console.warn(inputs);
+  }, [inputs]);
+
+  const handleGetJobs = () => {
+    axios
+      .get(API, config)
+      .then((response) => response.data)
+      .then((data) => {
+        // console.warn(data.resultats);
+        setJobsApi(data.resultats);
+      });
+  };
   const handleChange = (event) => {
     const { name, value } = event.target;
     setInputs((values) => ({ ...values, [name]: value }));
@@ -13,10 +83,15 @@ export default function Search() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.warn(inputs);
+    handleGetJobs();
   };
   return (
     <div className="searchjob">
+      {/* <p>
+        {jobs.map((job) => (
+          <div>{job.id}</div>
+        ))}
+      </p> */}
       <form className="formjob" onSubmit={handleSubmit}>
         <div className="fieldscontainer">
           <input
@@ -32,38 +107,43 @@ export default function Search() {
             id="lieu"
             value={inputs.lieu || ""}
             name="lieu"
-            placeholder="Localisation"
+            placeholder="Département"
             onChange={handleChange}
           />
           <select name="salaire" id="salaire" onChange={handleChange}>
-            <option value={inputs.salaire || ""}>Salaire</option>
-            <option> non précisé </option>
-            <option>25k€ - 30k€</option>
-            <option>30k€ - 35k€</option>
-            <option>35k€ - 40k€</option>
-            <option>40k€ - 50k€</option>
+            <option value={inputs.salaire || ""}>Salaire (€)</option>
+            <option>Non précisé</option>
+            <option>25.000</option>
+            <option>30.000</option>
+            <option>40.000</option>
+            <option>50.000</option>
           </select>
           <select id="remote" name="remote" onChange={handleChange}>
             <option value={inputs.remote || ""}>Télétravail</option>
-            <option> non précisé </option>
+            <option>Non précisé</option>
             <option>Complet</option>
-            <option>Régulier (2 à 3j/s)</option>
-            <option>Occasionnel (qq j/m)</option>
+            <option>Régulier</option>
+            <option>Occasionnel</option>
             <option>Non</option>
           </select>
           <select id="experience" name="experience" onChange={handleChange}>
             <option value={inputs.experience || ""}>Experience</option>
-            <option> non précisé </option>
-            <option>0 à 2 ans</option>
-            <option>3 à 5 ans</option>
-            <option>5 à 10 ans</option>
+            <option>Non précisé</option>
+            <option>Débutant accepté</option>
+            <option>Expérience exigée de 1 An(s)</option>
+            <option>Expérience exigée de 2 An(s)</option>
+            <option>Expérience exigée de 5 An(s)</option>
           </select>
         </div>
         <div className="filterbutton">
-          <FilterButton onChange={handleChange} label="CDI" />
-          <FilterButton onChange={handleChange} label="CDD" />
-          <FilterButton onChange={handleChange} label="Alternance" />
-          <FilterButton onChange={handleChange} label="Stage" />
+          <div className="filterbutton1">
+            <FilterButton setFilters={setFilters} label="CDI" />
+            <FilterButton setFilters={setFilters} label="CDD" />
+          </div>
+          <div className="filterbutton2">
+            <FilterButton setFilters={setFilters} label="Alternance" />
+            <FilterButton setFilters={setFilters} label="Stage" />
+          </div>
         </div>
         <div className="buttonform">
           <input type="submit" value="FIND TECH JOB !" />

@@ -1,32 +1,37 @@
-.postulecontainerON {
+.actioncontainer {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  width: 100%;
 }
 
-.jePostuleButtonON {
+.relaunchButtonON,
+.cancelButtonON {
   color: white;
   background-color: var(--button-color);
-  font-size: 0.7rem;
+  font-size: 1.1em;
   font-weight: 700;
-  border-radius: 10px;
-  padding: 0.5rem;
+  border-radius: 0.4em;
+  padding: 0.5em 1.1em;
   border: 1px solid var(--button-color);
   transition: background-color 0.35s, color 0.35s;
   cursor: pointer;
-  margin-left: 0.7rem;
-  margin-right: 0.7rem;
 }
 
-.jePostuleButtonON:hover {
+.relaunchButtonOFF,
+.cancelButtonOFF {
   color: var(--button-color);
   background-color: white;
-  font-size: 0.7rem;
+  font-size: 1.1em;
   font-weight: 700;
-  border-radius: 10px;
-  padding: 0.5rem;
+  border-radius: 0.4em;
+  padding: 0.5em 1.1em;
   border: 1px solid var(--button-color);
   transition: background-color 0.35s, color 0.35s;
   cursor: pointer;
+}
+
+.relaunchbutton,
+.cancelbutton {
+  padding: 1em;
 }
