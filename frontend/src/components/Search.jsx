@@ -87,10 +87,14 @@ export default function Search({ setJobs }) {
           </select>
         </div>
         <div className="filterbutton">
-          <FilterButton setFilters={setFilters} label="CDI" />
-          <FilterButton setFilters={setFilters} label="CDD" />
-          <FilterButton setFilters={setFilters} label="Alternance" />
-          <FilterButton setFilters={setFilters} label="Stage" />
+          <div className="filterbutton1">
+            <FilterButton setFilters={setFilters} label="CDI" />
+            <FilterButton setFilters={setFilters} label="CDD" />
+          </div>
+          <div className="filterbutton2">
+            <FilterButton setFilters={setFilters} label="Alternance" />
+            <FilterButton setFilters={setFilters} label="Stage" />
+          </div>
         </div>
         <div className="buttonform">
           <input type="submit" value="FIND TECH JOB !" />

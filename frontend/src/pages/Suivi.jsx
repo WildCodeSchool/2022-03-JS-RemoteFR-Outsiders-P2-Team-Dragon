@@ -7,10 +7,9 @@ import BackLogOffer from "@components/BackLogOffer";
 import Applications from "@components/Applications";
 import ActionOffer from "@components/ActionOffer";
 import Feedback from "@components/Feedback";
-import offerTemplate from "../data/offerTemplate";
 // import OngletSuiviContext from "../contexts/OngletSuiviContext";
 
-function Suivi({ handleLiked }) {
+function Suivi({ handleLiked, jobs }) {
   const [isPostuled, setIsPostuled] = useState(false);
   const [onPostule, setOnPostule] = useState(true);
   const [onApplications, setOnApplications] = useState(false);
@@ -44,7 +43,7 @@ function Suivi({ handleLiked }) {
 
   const handlePostuled = (item) => {
     setIsPostuled(!isPostuled);
-    const offerToUpdate = offerTemplate.find((offer) => offer.id === item.id);
+    const offerToUpdate = jobs.find((offer) => offer.id === item.id);
     offerToUpdate.isPostule = !offerToUpdate.isPostule;
   };
   return (

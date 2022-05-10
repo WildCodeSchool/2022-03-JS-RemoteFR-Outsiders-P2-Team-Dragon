@@ -1,11 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import Search from "../components/Search";
 import JobOffer from "../components/JobOffer";
 import "../assets/Common.css";
 
-function Accueil({ handleLiked }) {
-  // const [isLiked, setIsLiked] = useState(false);
-  const [jobs, setJobs] = useState([]);
+function Accueil({ jobs, setJobs, handleLiked }) {
   return (
     <div>
       <Search setJobs={setJobs} />
