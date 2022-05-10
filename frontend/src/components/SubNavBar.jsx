@@ -1,42 +1,35 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "@assets/SubNavbar.css";
 
-function SubNavbar({ OnClickOnPostule, OnClickOnApplications }) {
+function SubNavbar({
+  OnClickOnPostule,
+  OnClickOnApplications,
+  OnClickOnAction,
+  OnClickOnFeedback,
+  onPostule,
+}) {
   return (
-    <div>
-      <nav>
-        <ul>
-          <li>
-            <button
-              onClick={OnClickOnPostule}
-              type="button"
-              className="itemsuivi"
-            >
-              Je vais postuler
-            </button>
-          </li>
-          <li>
-            <button
-              onClick={OnClickOnApplications}
-              type="button"
-              className="itemsuivi"
-            >
-              J&apos;ai Postulé
-            </button>
-          </li>
-          <li>
-            <Link to="/suivi/action" className="itemsuivi">
-              Action
-            </Link>
-          </li>
-          <li>
-            <Link to="/suivi/feedback" className="itemsuivi">
-              Feedback
-            </Link>
-          </li>
-        </ul>
-      </nav>
+    <div className="containerSubNav">
+      <button
+        onClick={OnClickOnPostule}
+        type="button"
+        className={onPostule ? "itemsuivi itemsuiviOnStart" : "itemsuivi"}
+      >
+        Je vais postuler
+      </button>
+      <button
+        onClick={OnClickOnApplications}
+        type="button"
+        className="itemsuivi"
+      >
+        J&apos;ai Postulé
+      </button>
+      <button onClick={OnClickOnAction} type="button" className="itemsuivi">
+        Action
+      </button>
+      <button onClick={OnClickOnFeedback} type="button" className="itemsuivi">
+        Feedback
+      </button>
     </div>
   );
 }

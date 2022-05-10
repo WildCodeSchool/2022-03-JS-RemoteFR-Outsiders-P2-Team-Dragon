@@ -1,25 +1,6 @@
-.offercontainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: stretch;
-  width: 100%;
-}
-
 .postulecontainerON {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
-  background-color: rebeccapurple;
-  width: 100%;
-}
-
-.postulecontainerOFF {
-  display: flex;
-  background-color: bisque;
-  flex-direction: row;
-  justify-content: space-evenly;
   align-items: center;
   width: 100%;
 }
@@ -27,27 +8,25 @@
 .jePostuleButtonON {
   color: white;
   background-color: var(--button-color);
-  font-size: 1.1em;
+  font-size: 0.7rem;
   font-weight: 700;
-  border-radius: 0.4em;
-  padding: 0.5em 1.1em;
+  border-radius: 10px;
+  padding: 0.5rem;
   border: 1px solid var(--button-color);
   transition: background-color 0.35s, color 0.35s;
   cursor: pointer;
+  margin-left: 0.7rem;
+  margin-right: 0.7rem;
 }
 
-.jePostuleButtonOFF {
+.jePostuleButtonON:hover {
   color: var(--button-color);
   background-color: white;
-  font-size: 1.1em;
+  font-size: 0.7rem;
   font-weight: 700;
-  border-radius: 0.4em;
-  padding: 0.5em 1.1em;
+  border-radius: 10px;
+  padding: 0.5rem;
   border: 1px solid var(--button-color);
   transition: background-color 0.35s, color 0.35s;
   cursor: pointer;
-}
-
-.postulebutton {
-  padding: 1em;
 }

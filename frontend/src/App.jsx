@@ -37,7 +37,7 @@ function App() {
             <Route path="/" element={<Accueil handleLiked={handleLiked} />} />
             <Route
               path="/Suivi"
-              element={<Suivi handleLiked={handleLiked} />}
+              element={<Suivi handleLiked={handleLiked} isLiked={isLiked} />}
             />
             <Route path="/Bassin" element={<Bassin />} />
             <Route path="/Profil" element={<Profil />} />

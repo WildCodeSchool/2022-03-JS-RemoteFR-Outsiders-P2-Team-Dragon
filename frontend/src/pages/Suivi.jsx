@@ -1,10 +1,11 @@
+/* eslint-disable no-nested-ternary */
 import React, { useState } from "react";
 // import Applications from "@components/Applications";
 import "@assets/Common.css";
 import SubNavbar from "@components/SubNavBar";
 import BackLogOffer from "@components/BackLogOffer";
 import Applications from "@components/Applications";
-import Action from "@components/Action";
+import ActionOffer from "@components/ActionOffer";
 import Feedback from "@components/Feedback";
 import offerTemplate from "../data/offerTemplate";
 // import OngletSuiviContext from "../contexts/OngletSuiviContext";
@@ -28,6 +29,18 @@ function Suivi({ handleLiked }) {
     setOnAction(false);
     setOnFeedback(false);
   };
+  const OnClickOnAction = () => {
+    setOnPostule(false);
+    setOnApplications(false);
+    setOnAction(true);
+    setOnFeedback(false);
+  };
+  const OnClickOnFeedback = () => {
+    setOnPostule(false);
+    setOnApplications(false);
+    setOnAction(false);
+    setOnFeedback(true);
+  };
 
   const handlePostuled = (item) => {
     setIsPostuled(!isPostuled);
@@ -39,6 +52,9 @@ function Suivi({ handleLiked }) {
       <SubNavbar
         OnClickOnPostule={OnClickOnPostule}
         OnClickOnApplications={OnClickOnApplications}
+        OnClickOnAction={OnClickOnAction}
+        OnClickOnFeedback={OnClickOnFeedback}
+        onPostule={onPostule}
       />
       {onPostule ? (
         <BackLogOffer
@@ -46,18 +62,9 @@ function Suivi({ handleLiked }) {
           handleLiked={handleLiked}
         />
       ) : null}
-      {onApplications ? (
-        <Applications
-          handlePostuled={handlePostuled}
-          handleLiked={handleLiked}
-        />
-      ) : null}
-      {onAction ? (
-        <Action handlePostuled={handlePostuled} handleLiked={handleLiked} />
-      ) : null}
-      {onFeedback ? (
-        <Feedback handlePostuled={handlePostuled} handleLiked={handleLiked} />
-      ) : null}
+      {onApplications ? <Applications /> : null}
+      {onAction ? <ActionOffer /> : null}
+      {onFeedback ? <Feedback /> : null}
     </>
   );
 }
