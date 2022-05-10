@@ -4,6 +4,8 @@ import FilterButton from "@components/FilterButton";
 import "@assets/Common.css";
 import "@assets/Search.css";
 
+// commentaires
+
 export default function Search({ setJobs }) {
   const [inputs, setInputs] = useState({});
   const [filters, setFilters] = useState([]);
