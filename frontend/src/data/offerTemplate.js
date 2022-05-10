@@ -25,8 +25,6 @@ const offerTemplate = [
       "Global P.O.S est un éditeur de plateformes SaaS dédiées aux points de vente. Née en 2004 de l’association de professionnels de l’encaissement, nous sommes aujourd’hui le leader français des solutions software d’encaissement et de gestion des titres prépayés (chèques cadeaux, cartes cadeaux etc.) à destination des grands comptes du Retail comme des plus petites enseignes.",
     isFavorite: false,
     isPostule: false,
-    isFavorite: false,
-    isPostule: false,
     isRelaunch: false,
     isCancel: false,
     inFeedback: false,
@@ -40,8 +38,6 @@ const offerTemplate = [
     prevExperience: "+15ans",
     Description:
       "Global P.O.S est un éditeur de plateformes SaaS dédiées aux points de vente. Née en 2004 de l’association de professionnels de l’encaissement, nous sommes aujourd’hui le leader français des solutions software d’encaissement et de gestion des titres prépayés (chèques cadeaux, cartes cadeaux etc.) à destination des grands comptes du Retail comme des plus petites enseignes.",
-    isFavorite: false,
-    isPostule: false,
     isFavorite: false,
     isPostule: false,
     isRelaunch: false,
