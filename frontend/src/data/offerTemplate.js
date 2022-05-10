@@ -12,7 +12,8 @@ const offerTemplate = [
     isPostule: false,
     isRelaunch: false,
     isCancel: false,
-    inFeedback: false,
+    isResponse: false,
+    isNotResponse: false,
   },
   {
     id: 2,

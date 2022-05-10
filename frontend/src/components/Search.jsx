@@ -53,7 +53,7 @@ export default function Search({ setJobsApi }) {
     inputs.salaire,
     inputs.remote
   );
-  console.warn(API);
+  // console.warn(API);
 
   const config = {
     headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
@@ -64,7 +64,7 @@ export default function Search({ setJobsApi }) {
   }, [filters]);
 
   useEffect(() => {
-    console.warn(inputs);
+    // console.warn(inputs);
   }, [inputs]);
 
   const handleGetJobs = () => {
