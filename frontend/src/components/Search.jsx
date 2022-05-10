@@ -4,10 +4,13 @@ import FilterButton from "@components/FilterButton";
 import "@assets/Common.css";
 import "@assets/Search.css";
 
-export default function Search({ setJobs }) {
+export default function Search({ setJobs, setError }) {
   const [inputs, setInputs] = useState({});
   const [filters, setFilters] = useState([]);
-  const API = `https://api.emploi-store.fr/partenaire/offresdemploi/v2/offres/search?motsCles=${inputs.job}&typeContrat=CDD,CDI`;
+
+  const [codeInsee, setCodeInsee] = useState("");
+  const API = `https://api.emploi-store.fr/partenaire/offresdemploi/v2/offres/search?motsCles=${inputs.job}&typeContrat=CDD,CDI&commune=${codeInsee}`;
+  const APILOCATION = `https://geo.api.gouv.fr/communes?nom=${inputs.lieu}`;
 
   const config = {
     headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
@@ -17,6 +20,29 @@ export default function Search({ setJobs }) {
     console.warn(filters);
   }, [filters]);
 
+  const getLocation = () => {
+    axios
+      .get(APILOCATION)
+      .then((response) => response.data)
+      .then((data) => {
+        console.warn(
+          data.find(
+            (item) => item.nom.toLowerCase() === inputs.lieu.toLowerCase()
+          ).code
+        );
+        console.warn(
+          data.find(
+            (item) => item.nom.toLowerCase() === inputs.lieu.toLowerCase()
+          ).nom
+        );
+        setCodeInsee(
+          data.find(
+            (item) => item.nom.toLowerCase() === inputs.lieu.toLowerCase()
+          ).code
+        );
+      });
+  };
+
   const handleGetJobs = () => {
     axios
       .get(API, config)
@@ -24,7 +50,8 @@ export default function Search({ setJobs }) {
       .then((data) => {
         console.warn(data.resultats);
         setJobs(data.resultats);
-      });
+      })
+      .catch(() => setError(true));
   };
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -33,15 +60,11 @@ export default function Search({ setJobs }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    getLocation();
     handleGetJobs();
   };
   return (
     <div className="searchjob">
-      {/* <p>
-        {jobs.map((job) => (
-          <div>{job.id}</div>
-        ))}
-      </p> */}
       <form className="formjob" onSubmit={handleSubmit}>
         <div className="fieldscontainer">
           <input
