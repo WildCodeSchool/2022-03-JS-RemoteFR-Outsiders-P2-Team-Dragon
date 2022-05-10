@@ -1,7 +1,6 @@
-.allInJobOffer{
+.allInJobOffer {
   display: flex;
   width: 100%;
-
 }
 .buttonOffer {
   border-radius: 10px;

@@ -9,7 +9,53 @@ import "@assets/Search.css";
 export default function Search({ setJobs }) {
   const [inputs, setInputs] = useState({});
   const [filters, setFilters] = useState([]);
-  const API = `https://api.emploi-store.fr/partenaire/offresdemploi/v2/offres/search?motsCles=${inputs.job}&typeContrat=${filters}&experienceLibelle=${inputs.experience}&departement=${inputs.lieu}&salaireMin=${inputs.salaire}`;
+  // let API = `https://api.emploi-store.fr/partenaire/offresdemploi/v2/offres/search?motsCles=${inputs.job}&typeContrat=${filters}&experienceLibelle=${inputs.experience}&departement=${inputs.lieu}&salaireMin=${inputs.salaire}`;
+
+  function getFullAPI(
+    inputJob,
+    contrat,
+    exp,
+    lieu,
+    salaire,
+    teletravail,
+    alternance
+  ) {
+    let API = `https://api.emploi-store.fr/partenaire/offresdemploi/v2/offres/search`;
+    if (inputJob) {
+      API += `?motsCles=${inputJob}`;
+    }
+    if (contrat) {
+      if (contrat === "Alternance") {
+        API += `&typeContrat= CDD`;
+      }
+      API += `&typeContrat=${contrat}`;
+    }
+    if (exp) {
+      API += `&experienceLibelle=${exp}`;
+    }
+    if (lieu) {
+      API += `&departement=${lieu}`;
+    }
+    if (salaire) {
+      API += `&salaireMin=${salaire}`;
+    }
+    if (teletravail) {
+      API += `&tempsPlein=${teletravail}`;
+    }
+    if (alternance) {
+      API += "?motsCles=alternance";
+    }
+    return API;
+  }
+  const API = getFullAPI(
+    inputs.job,
+    filters,
+    inputs.experience,
+    inputs.lieu,
+    inputs.salaire,
+    inputs.remote
+  );
+  console.warn(API);
 
   const config = {
     headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
@@ -18,6 +64,10 @@ export default function Search({ setJobs }) {
   useEffect(() => {
     console.warn(filters);
   }, [filters]);
+
+  useEffect(() => {
+    console.warn(inputs);
+  }, [inputs]);
 
   const handleGetJobs = () => {
     axios
