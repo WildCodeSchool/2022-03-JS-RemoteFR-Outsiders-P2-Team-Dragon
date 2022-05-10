@@ -9,6 +9,7 @@ function Accueil({ handleLiked }) {
   return (
     <div>
       <Search setJobs={setJobs} />
+      {/* {jobs.filter(item => item.intitule.includes("alternance")).map((offer) => { */}
       {jobs.map((offer) => {
         return (
           // Partie Oscar  : ici on envoie les props qui viennent d'App et les transmets vers JobOffer...
