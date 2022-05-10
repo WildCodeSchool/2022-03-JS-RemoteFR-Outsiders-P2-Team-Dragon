@@ -9,7 +9,7 @@ import "@assets/Search.css";
 export default function Search({ setJobs }) {
   const [inputs, setInputs] = useState({});
   const [filters, setFilters] = useState([]);
-  const API = `https://api.emploi-store.fr/partenaire/offresdemploi/v2/offres/search?motsCles=${inputs.job}&typeContrat=${inputs.contrat}`;
+  const API = `https://api.emploi-store.fr/partenaire/offresdemploi/v2/offres/search?motsCles=${inputs.job}&typeContrat=${filters}&experienceLibelle=${inputs.experience}&departement=${inputs.lieu}&salaireMin=${inputs.salaire}`;
 
   const config = {
     headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
@@ -59,16 +59,16 @@ export default function Search({ setJobs }) {
             id="lieu"
             value={inputs.lieu || ""}
             name="lieu"
-            placeholder="Localisation"
+            placeholder="Département"
             onChange={handleChange}
           />
           <select name="salaire" id="salaire" onChange={handleChange}>
-            <option value={inputs.salaire || ""}>Salaire</option>
+            <option value={inputs.salaire || ""}>Salaire (€)</option>
             <option>Non précisé</option>
-            <option>25k€ - 30k€</option>
-            <option>30k€ - 35k€</option>
-            <option>35k€ - 40k€</option>
-            <option>40k€ - 50k€</option>
+            <option>25.000</option>
+            <option>30.000</option>
+            <option>40.000</option>
+            <option>50.000</option>
           </select>
           <select id="remote" name="remote" onChange={handleChange}>
             <option value={inputs.remote || ""}>Télétravail</option>
@@ -81,9 +81,10 @@ export default function Search({ setJobs }) {
           <select id="experience" name="experience" onChange={handleChange}>
             <option value={inputs.experience || ""}>Experience</option>
             <option>Non précisé</option>
-            <option>0 à 2 ans</option>
-            <option>3 à 5 ans</option>
-            <option>5 à 10 ans</option>
+            <option>Débutant accepté</option>
+            <option>Expérience exigée de 1 An(s)</option>
+            <option>Expérience exigée de 2 An(s)</option>
+            <option>Expérience exigée de 5 An(s)</option>
           </select>
         </div>
         <div className="filterbutton">
