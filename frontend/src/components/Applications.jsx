@@ -9,34 +9,32 @@ function Applications({ jobs }) {
   // const [hasAnswer, setHasAnswer] = useState(appliedRef);
   return (
     <div>
-      <div>
-        {jobs.map((offer) => {
-          return (
-            <>
-              <div className={styles.appliedOffer}>
-                <JobOffer offer={jobs[offer.id - 1]} key={offer.id - 1} />
-                <div className={styles.answerbuttons}>
-                  <button
-                    type="button"
-                    className={styles.reponseBtn}
-                    id={styles.sansReponse}
-                  >
-                    .
-                  </button>
-                  <button
-                    type="button"
-                    className={styles.reponseBtn}
-                    id={styles.avecReponse}
-                  >
-                    .
-                  </button>
-                </div>
+      {jobs.map((offer) =>
+        offer.isPostule ? (
+          <>
+            <div className={styles.appliedOffer}>
+              <JobOffer offer={offer} key={offer.id} />
+              <div className={styles.answerbuttons}>
+                <button
+                  type="button"
+                  className={styles.reponseBtn}
+                  id={styles.sansReponse}
+                >
+                  .
+                </button>
+                <button
+                  type="button"
+                  className={styles.reponseBtn}
+                  id={styles.avecReponse}
+                >
+                  .
+                </button>
               </div>
-              <ApplicationDetails offer={offer} key={offer.id} />
-            </>
-          );
-        })}
-      </div>
+            </div>
+            <ApplicationDetails />
+          </>
+        ) : null
+      )}
     </div>
   );
 }
