@@ -4,12 +4,13 @@ import FilterButton from "@components/FilterButton";
 import "@assets/Common.css";
 import "@assets/Search.css";
 
+// commentaires
+
 export default function Search({ setJobs, setError }) {
   const [inputs, setInputs] = useState({});
   const [filters, setFilters] = useState([]);
-
   const [codeInsee, setCodeInsee] = useState("");
-  const API = `https://api.emploi-store.fr/partenaire/offresdemploi/v2/offres/search?motsCles=${inputs.job}&typeContrat=CDD,CDI&commune=${codeInsee}`;
+  const API = `https://api.emploi-store.fr/partenaire/offresdemploi/v2/offres/search?motsCles=${inputs.job}&commune=${codeInsee}git`;
   const APILOCATION = `https://geo.api.gouv.fr/communes?nom=${inputs.lieu}`;
 
   const config = {
@@ -80,16 +81,16 @@ export default function Search({ setJobs, setError }) {
             id="lieu"
             value={inputs.lieu || ""}
             name="lieu"
-            placeholder="Localisation"
+            placeholder="Département"
             onChange={handleChange}
           />
           <select name="salaire" id="salaire" onChange={handleChange}>
-            <option value={inputs.salaire || ""}>Salaire</option>
+            <option value={inputs.salaire || ""}>Salaire (€)</option>
             <option>Non précisé</option>
-            <option>25k€ - 30k€</option>
-            <option>30k€ - 35k€</option>
-            <option>35k€ - 40k€</option>
-            <option>40k€ - 50k€</option>
+            <option>25.000</option>
+            <option>30.000</option>
+            <option>40.000</option>
+            <option>50.000</option>
           </select>
           <select id="remote" name="remote" onChange={handleChange}>
             <option value={inputs.remote || ""}>Télétravail</option>
@@ -102,16 +103,21 @@ export default function Search({ setJobs, setError }) {
           <select id="experience" name="experience" onChange={handleChange}>
             <option value={inputs.experience || ""}>Experience</option>
             <option>Non précisé</option>
-            <option>0 à 2 ans</option>
-            <option>3 à 5 ans</option>
-            <option>5 à 10 ans</option>
+            <option>Débutant accepté</option>
+            <option>Expérience exigée de 1 An(s)</option>
+            <option>Expérience exigée de 2 An(s)</option>
+            <option>Expérience exigée de 5 An(s)</option>
           </select>
         </div>
         <div className="filterbutton">
-          <FilterButton setFilters={setFilters} label="CDI" />
-          <FilterButton setFilters={setFilters} label="CDD" />
-          <FilterButton setFilters={setFilters} label="Alternance" />
-          <FilterButton setFilters={setFilters} label="Stage" />
+          <div className="filterbutton1">
+            <FilterButton setFilters={setFilters} label="CDI" />
+            <FilterButton setFilters={setFilters} label="CDD" />
+          </div>
+          <div className="filterbutton2">
+            <FilterButton setFilters={setFilters} label="Alternance" />
+            <FilterButton setFilters={setFilters} label="Stage" />
+          </div>
         </div>
         <div className="buttonform">
           <input type="submit" value="FIND TECH JOB !" />

@@ -10,9 +10,9 @@ import "./assets/Accueil.module.css";
 import Footer from "@components/Footer";
 import axios from "axios";
 import { OngletSuiviContextProvider } from "./contexts/OngletSuiviContext";
-import offerTemplate from "./data/offerTemplate";
 
 function App() {
+  const [jobs, setJobs] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
       const result = await axios("http://localhost:5500/api/token");
@@ -24,7 +24,7 @@ function App() {
   const [isLiked, setIsLiked] = useState(false);
   const handleLiked = (item) => {
     setIsLiked(!isLiked);
-    const offerToUpdate = offerTemplate.find((offer) => offer.id === item.id);
+    const offerToUpdate = jobs.find((offer) => offer.id === item.id);
     offerToUpdate.isFavorite = !offerToUpdate.isFavorite;
   };
 
@@ -34,20 +34,28 @@ function App() {
         <Nav />
         <div className="main">
           <Routes>
-            <Route path="/" element={<Accueil handleLiked={handleLiked} />} />
+            <Route
+              path="/"
+              element={
+                <Accueil
+                  handleLiked={handleLiked}
+                  jobs={jobs}
+                  setJobs={setJobs}
+                />
+              }
+            />
             <Route
               path="/Suivi"
-              element={<Suivi handleLiked={handleLiked} isLiked={isLiked} />}
+              element={
+                <Suivi
+                  handleLiked={handleLiked}
+                  isLiked={isLiked}
+                  jobs={jobs}
+                />
+              }
             />
             <Route path="/Bassin" element={<Bassin />} />
             <Route path="/Profil" element={<Profil />} />
-            {/* <Route
-              path="/suivi/jevaispostuler"
-              element={<BackLogOffer handleLiked={handleLiked} />}
-            /> */}
-            {/* <Route path="/suivi/jaipostule" element={<Applications />} />
-            <Route path="/suivi/action" element={<Action />} />
-            <Route path="/suivi/feedback" element={<Feedback />} /> */}
           </Routes>
         </div>
         <Footer />
