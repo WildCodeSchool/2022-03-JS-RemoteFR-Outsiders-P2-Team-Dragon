@@ -4,7 +4,7 @@ import styles from "../assets/Accueil.module.css";
 import Details from "./Details";
 import "../assets/Common.css";
 
-// showFavoriteButton=true montre le heart dans offer sinon il ne s'affiche pas
+// showFavoriteButton=true montre le 💖 dans offer sinon il ne s'affiche pas
 function JobOffer({ showFavoriteButton, offer, handleLiked }) {
   const [showDetail, setshowDetail] = useState(false);
   const handleClick = () => {
@@ -13,7 +13,11 @@ function JobOffer({ showFavoriteButton, offer, handleLiked }) {
 
   return (
     <div className={styles.mainAccueil}>
-      <div className={styles.jobContainer}>
+      <button
+        className={styles.jobContainer}
+        type="button"
+        onClick={handleClick}
+      >
         <div className={styles.favoriteDiv}>
           {showFavoriteButton ? (
             <FavoriteButton offer={offer} handleLiked={handleLiked} />
@@ -30,18 +34,24 @@ function JobOffer({ showFavoriteButton, offer, handleLiked }) {
             {" | "}
             {offer.experienceLibelle}
           </div>
+
+          {/* <div className={styles.favoriteDiv}>
+              <button
+                type="button"
+                onClick={handleClick}
+                className={styles.buttonDetail}
+              >
+                ...
+              </button> 
+            </div> */}
         </div>
-        <div className={styles.favoriteDiv}>
-          <button
-            type="button"
-            onClick={handleClick}
-            className={styles.buttonDetail}
-          >
-            ...
-          </button>
-        </div>
-      </div>
+      </button>
       {showDetail ? <Details offerTemplate={offer} /> : null}
+      {/* <div className={styles.favoriteDiv}>
+        {showFavoriteButton ? (
+          <FavoriteButton offer={offer} handleLiked={handleLiked} />
+        ) : null}
+      </div> */}
     </div>
   );
 }

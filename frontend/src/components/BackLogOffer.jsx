@@ -5,21 +5,34 @@ import "@assets/BackLogOffer.css";
 import offerTemplate from "../data/offerTemplate";
 import JobOffer from "./JobOffer";
 
-export default function BackLogOffer() {
+export default function BackLogOffer({ handlePostuled, handleLiked }) {
   return (
     <div className="offercontainer">
-      <div className="offerlist">
-        {offerTemplate.map((offer) =>
-          offer.isFavorite ? (
-            <JobOffer showFavoriteButton={false} offer={offer} />
-          ) : (
-            ""
-          )
-        )}
-      </div>
-      <div className="postulebutton">
-        <JePostuleButton />
-      </div>
+      {offerTemplate.map((offer) =>
+        offer.isFavorite ? (
+          <div
+            className={
+              offer.isPostule ? "postulecontainerOFF" : "postulecontainerON"
+            }
+            key={offer.id}
+          >
+            <JobOffer
+              className="coucou"
+              showFavoriteButton={false}
+              offer={offer}
+            />
+            <div className="postulebutton">
+              <JePostuleButton
+                handleLiked={handleLiked}
+                handlePostuled={handlePostuled}
+                offer={offer}
+              />
+            </div>
+          </div>
+        ) : (
+          ""
+        )
+      )}
     </div>
   );
 }

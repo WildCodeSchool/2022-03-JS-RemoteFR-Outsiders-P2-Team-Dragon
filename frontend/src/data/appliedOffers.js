@@ -1,7 +1,9 @@
 const appliedOffers = [
   {
     id: 1,
-    hasAnswer: true,
+    hasAnswer: false,
+    applicationComments:
+      "Entreprise intéressante mais offres limitée en responsabilités",
     contactDetails: {
       contactName: "Marie Condiart",
       company: "Microsoft",
@@ -13,10 +15,11 @@ const appliedOffers = [
 
   {
     id: 3,
-    hasAnswer: true,
+    hasAnswer: false,
+    applicationComments: "Contact bien passé avec le recruteur",
     contactDetails: {
       contactName: "Norbert Malin",
-      company: "withings",
+      company: "Withings",
       applicationDate: "23/02/2022",
       mail: "norbert.malin@withings.com",
       phone: "01893668",

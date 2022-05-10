@@ -24,16 +24,18 @@ function Nav() {
     };
   }, []);
   return (
-    <>
+    <div className="navClass">
       <div className="div-logo">
         <img src={logo} alt="logo" className="img-logo" />
-      </div>
-      <div className="div-nav">
+
+        <h1>FIND TECH JOB</h1>
         <button type="button" onClick={toggleNav} className="btn-toggle">
           {" "}
           <img src={boussoleToggle} alt="boussole" className="img-boussole" />
         </button>
+      </div>
 
+      <div className="div-nav">
         {(toggleMenu || screenWidth > 750) && (
           <nav className="liste-nav">
             <Link to="/" className="items">
@@ -51,7 +53,7 @@ function Nav() {
           </nav>
         )}
       </div>
-    </>
+    </div>
   );
 }
 
