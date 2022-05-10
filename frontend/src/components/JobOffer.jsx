@@ -18,12 +18,7 @@ function JobOffer({ showFavoriteButton, offer, handleLiked }) {
         onClick={handleClick}
         type="button"
       >
-        <div className={styles.favoriteDiv}>
-          {showFavoriteButton ? (
-            <FavoriteButton offer={offer} handleLiked={handleLiked} />
-          ) : null}
-        </div>
-        <div className={styles.jobSynthesisDiv}>
+        <div className={styles.jobContainer}>
           <h1>{offer.intitule}</h1>
           <div>
             {offer.typeContrat}
@@ -35,8 +30,11 @@ function JobOffer({ showFavoriteButton, offer, handleLiked }) {
             {offer.experienceLibelle}
           </div>
         </div>
+        {showDetail ? <Details offer={offer} /> : null}
       </button>
-      {showDetail ? <Details offerTemplate={offer} /> : null}
+      {showFavoriteButton ? (
+        <FavoriteButton offer={offer} handleLiked={handleLiked} />
+      ) : null}
     </div>
   );
 }
