@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "@assets/Bassin.module.css";
 import emplois from "@assets/emploi-crees.png";
 import repartition from "@assets/repartition.png";
@@ -6,6 +6,10 @@ import jobChart from "@assets/jobChart.png";
 import triangleNoir from "@assets/triangleNoir.png";
 
 function Bassin() {
+  const [showTopJobs, setShowTopJobs] = useState(false);
+  const handleClick = () => {
+    setShowTopJobs(!showTopJobs);
+  };
   return (
     <div className={styles.mainBassin}>
       <div>
@@ -27,42 +31,57 @@ function Bassin() {
       </div>
       <div>
         <h2>
-          <img
-            src={triangleNoir}
-            alt="triangle noir"
-            className={styles.discover}
-          />
+          <button
+            type="button"
+            onClick={handleClick}
+            className={styles.triangleButton}
+          >
+            <img
+              src={triangleNoir}
+              alt="triangle noir"
+              className={styles.discover}
+            />
+          </button>
           Découvrez le TOP 15 des métiers les plus demandés en Occitanie
         </h2>
-        <div>
-          <div className={styles.top15Jobs}>
-            <div>
-              <h3>Nouveaux métiers dans le top 15 en 2021</h3>
-              <ul>
-                <li>Data Analyst</li>
-                <li>Designer UX / UI</li>
-                <li>Scrum Master</li>
-                <li>Testeur d application / fonctionnel / QA</li>
-              </ul>
+        {showTopJobs === true ? (
+          <div>
+            <div className={styles.top15Jobs}>
+              <div>
+                <h3>Nouveaux métiers dans le top 15 en 2021</h3>
+                <ul>
+                  <li>Data Analyst</li>
+                  <li>Designer UX / UI</li>
+                  <li>Scrum Master</li>
+                  <li>Testeur d application / fonctionnel / QA</li>
+                </ul>
+              </div>
+              <div>
+                <h3>Métiers qui disparaissent du top15 en 2021:</h3>
+                <ul>
+                  <li>Hotliner / Technicien Help Desk</li>
+                  <li>
+                    Installateur de réseaux de télécoms / Technicien fibre
+                    optique
+                  </li>
+                  <li>Technicien systèmes et réseau</li>
+                  <li>Technicien télécom</li>
+                </ul>
+              </div>
             </div>
-            <div>
-              <h3>Métiers qui disparaissent du top15 en 2021:</h3>
-              <ul>
-                <li>Hotliner / Technicien Help Desk</li>
-                <li>
-                  Installateur de réseaux de télécoms / Technicien fibre optique
-                </li>
-                <li>Technicien systèmes et réseau</li>
-                <li>Technicien télécom</li>
-              </ul>
+            <h3>TOP 15 des métiers les plus demandés en Occitanie</h3>
+            <img
+              src={jobChart}
+              alt="Graphique des métiers les plus recherchés"
+              className={styles.emploiImg}
+            />
+            <div className={styles.minim}>
+              Source: OPIIEC (Observatoire sectoriel Juillet 2021)
             </div>
           </div>
-          <img
-            src={jobChart}
-            alt="Graphique des métiers les plus recherchés"
-            className={styles.emploiImg}
-          />
-        </div>
+        ) : (
+          <div />
+        )}
       </div>
     </div>
   );

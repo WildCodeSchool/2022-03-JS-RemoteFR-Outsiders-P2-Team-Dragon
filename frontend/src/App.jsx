@@ -9,7 +9,6 @@ import Bassin from "@pages/Bassin";
 import "./assets/Accueil.module.css";
 import Footer from "@components/Footer";
 import axios from "axios";
-import { OngletSuiviContextProvider } from "./contexts/OngletSuiviContext";
 
 function App() {
   const [jobsApi, setJobsApi] = useState([]);
@@ -81,43 +80,41 @@ function App() {
   };
 
   return (
-    <OngletSuiviContextProvider>
-      <>
-        <Nav />
-        <div className="main">
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <Accueil
-                  handleLiked={handleLiked}
-                  jobs={jobs}
-                  setJobsApi={setJobsApi}
-                />
-              }
-            />
-            <Route
-              path="/Suivi"
-              element={
-                <Suivi
-                  handleLiked={handleLiked}
-                  jobs={jobs}
-                  handlePostuled={handlePostuled}
-                  handleResponsed={handleResponsed}
-                  handleNotResponsed={handleNotResponsed}
-                  handleRelaunch={handleRelaunch}
-                  handleCancel={handleCancel}
-                  handleDeleted={handleDeleted}
-                />
-              }
-            />
-            <Route path="/Bassin" element={<Bassin />} />
-            <Route path="/Profil" element={<Profil />} />
-          </Routes>
-        </div>
-        <Footer />
-      </>
-    </OngletSuiviContextProvider>
+    <>
+      <Nav />
+      <div className="main">
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Accueil
+                handleLiked={handleLiked}
+                jobs={jobs}
+                setJobsApi={setJobsApi}
+              />
+            }
+          />
+          <Route
+            path="/Suivi"
+            element={
+              <Suivi
+                handleLiked={handleLiked}
+                jobs={jobs}
+                handlePostuled={handlePostuled}
+                handleResponsed={handleResponsed}
+                handleNotResponsed={handleNotResponsed}
+                handleRelaunch={handleRelaunch}
+                handleCancel={handleCancel}
+                handleDeleted={handleDeleted}
+              />
+            }
+          />
+          <Route path="/Bassin" element={<Bassin />} />
+          <Route path="/Profil" element={<Profil />} />
+        </Routes>
+      </div>
+      <Footer />
+    </>
   );
 }
 export default App;

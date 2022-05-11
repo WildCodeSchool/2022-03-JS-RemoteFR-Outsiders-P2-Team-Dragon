@@ -46,3 +46,12 @@ li {
   height: 15px;
   padding-right: 1rem;
 }
+
+.triangleButton {
+  border: 0;
+  background-color: transparent;
+}
+
+.minim {
+  font-size: 0.5rem;
+}
