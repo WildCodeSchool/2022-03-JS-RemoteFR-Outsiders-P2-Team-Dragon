@@ -7,9 +7,13 @@ export default function JePostuleButton({
   // handlePostuled,
   offer,
   handleLiked,
+  handlePostuled,
 }) {
   function buttonsBacklogoffer() {
     handleLiked(offer);
+    handlePostuled(offer);
+    console.warn(offer);
+    window.open(`${offer.origineOffre.urlOrigine}`);
   }
   return (
     <div>

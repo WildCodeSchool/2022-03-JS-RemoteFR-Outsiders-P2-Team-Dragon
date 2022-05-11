@@ -1,47 +1,35 @@
-import React, { useState } from "react";
-import styles from "@assets/Application.module.css";
-import offerTemplate from "../data/offerTemplate";
-import appliedOffers from "../data/appliedOffers";
+import React from "react";
 import JobOffer from "./JobOffer";
 import ApplicationDetails from "./applicationDetails";
+import AplicationButtons from "./ApplicationButtons";
 // import OngletSuiviContext from "../contexts/OngletSuiviContext";
 
-function Applications() {
-  const [appliedRef] = useState(appliedOffers);
-  // const [hasAnswer, setHasAnswer] = useState(appliedRef);
+function Applications({
+  jobs,
+  handleResponsed,
+  handleNotResponsed,
+  handlePostuled,
+}) {
   return (
     <div>
-      <div>
-        {appliedRef.map((offer) => {
-          return (
-            <>
-              <div className={styles.appliedOffer}>
-                <JobOffer
-                  offer={offerTemplate[offer.id - 1]}
-                  key={offer.id - 1}
+      {jobs.map((offer) =>
+        offer.isPostule ? (
+          <div className="suiviContainer" key={offer.id}>
+            <div className="suiviContainer2">
+              <JobOffer offer={offer} />
+              <div className="">
+                <AplicationButtons
+                  offer={offer}
+                  handleResponsed={handleResponsed}
+                  handleNotResponsed={handleNotResponsed}
+                  handlePostuled={handlePostuled}
                 />
-                <div className={styles.answerbuttons}>
-                  <button
-                    type="button"
-                    className={styles.reponseBtn}
-                    id={styles.sansReponse}
-                  >
-                    .
-                  </button>
-                  <button
-                    type="button"
-                    className={styles.reponseBtn}
-                    id={styles.avecReponse}
-                  >
-                    .
-                  </button>
-                </div>
               </div>
-              <ApplicationDetails offer={offer} key={offer.id} />
-            </>
-          );
-        })}
-      </div>
+            </div>
+            <ApplicationDetails commentsInFeedback={false} />
+          </div>
+        ) : null
+      )}
     </div>
   );
 }

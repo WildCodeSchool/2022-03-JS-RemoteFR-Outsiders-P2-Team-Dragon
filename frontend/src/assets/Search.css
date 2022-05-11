@@ -98,7 +98,6 @@
   transition: background-color 0.35s, color 0.35s;
 }
 
-
 @media screen and (min-width: 750px) {
   .filterbutton {
     flex-wrap: nowrap;

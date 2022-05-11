@@ -1,14 +1,13 @@
 import React from "react";
-import styles from "@assets/Application.module.css";
 
-function applicationDetails({ offer }) {
-  const phoneUrl = `tel:${offer.contactDetails.phone}`;
-  const mailUrl = `mailto:${offer.contactDetails.mail}`;
+function applicationDetails({ commentsInFeedback }) {
+  // const phoneUrl = `tel:`;
+  // const mailUrl = `mailto:`;
 
   return (
     <>
-      <div className={styles.applicationDetails}>
-        <div className={styles.displayDetailsApplication}>
+      {/* <div className={styles.applicationDetails}>
+         <div className={styles.displayDetailsApplication}>
           <h5>
             Postulé le :{" "}
             <span className={styles.contactDetails}>
@@ -41,80 +40,52 @@ function applicationDetails({ offer }) {
               {offer.applicationComments}
             </span>
           </h5>
-        </div>
+        </div> 
         <div>
           <button type="button" className={styles.editButton}>
-            {" "}
             Modifier les informations de candidature
           </button>
         </div>
-      </div>
-      <div className={styles.editDetailsDiv}>
-        <h5>
-          <form className={styles.editApplicationForm}>
-            <label htmlFor="applicationDate" className={styles.formItem}>
-              Date de candidature :
-              <input
-                type="text"
-                name="applicationDate"
-                id="applicationDate"
-                width="200px"
-                placeholder={offer.contactDetails.applicationDate}
-              />
-            </label>
+      </div> */}
+      <div className="detailsDiv">
+        <form className="detailsForm">
+          <input
+            type="text"
+            name="applicationDate"
+            id="applicationDate"
+            width="200px"
+            placeholder="Date"
+          />
+          <input
+            type="text"
+            name="contactName"
+            id="contactName"
+            placeholder="NOM Prenom"
+          />
+          <input
+            type="text"
+            name="company"
+            id="company"
+            placeholder="Entreprise"
+          />
+          <input
+            type="text"
+            name="phone"
+            id="phone"
+            placeholder="Nº téléphone"
+          />
+          <input type="text" name="mail" id="mail" placeholder="Mail" />
 
-            <label htmlFor="contactName" className={styles.formItem}>
-              Nom du contact :
-              <input
-                type="text"
-                name="contactName"
-                id="contactName"
-                placeholder={offer.contactDetails.contactName}
-              />
-            </label>
-
-            <label htmlFor="company" className={styles.formItem}>
-              Entreprise :
-              <input
-                type="text"
-                name="company"
-                id="company"
-                placeholder={offer.contactDetails.company}
-              />
-            </label>
-
-            <label htmlFor="phone" className={styles.formItem}>
-              Téléphone :
-              <input
-                type="text"
-                name="phone"
-                id="phone"
-                placeholder={offer.contactDetails.phone}
-              />
-            </label>
-
-            <label htmlFor="mail" className={styles.formItem}>
-              Courriel :
-              <input
-                type="text"
-                name="mail"
-                id="mail"
-                placeholder={offer.contactDetails.mail}
-              />
-            </label>
-
-            <label htmlFor="applicationComments" className={styles.formItem}>
-              Commentaires :
-              <textarea
-                type="text"
-                name="applicationComments"
-                id="applicationComments"
-                placeholder={offer.applicationComments}
-                rows="5"
-              />
-            </label>
-          </form>
-        </h5>
+          {commentsInFeedback ? (
+            <textarea
+              type="text"
+              name="applicationComments"
+              id="applicationComments"
+              placeholder="Mon Feedback"
+              rows="5"
+            />
+          ) : null}
+        </form>
       </div>
     </>
   );

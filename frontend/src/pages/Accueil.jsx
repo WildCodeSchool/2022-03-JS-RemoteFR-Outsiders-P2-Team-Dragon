@@ -6,7 +6,7 @@ import "../assets/Common.css";
 
 function Accueil({ handleLiked }) {
   // const [isLiked, setIsLiked] = useState(false);
-  const [jobs, setJobs] = useState([]);
+  const [jobsApi, setJobsApi] = useState([]);
   const [error, setError] = useState(false);
   const handleReload = () => {
     window.location.reload(false);
@@ -14,7 +14,7 @@ function Accueil({ handleLiked }) {
 
   return (
     <div>
-      <Search setJobs={setJobs} setError={setError} />
+      <Search setJobsApi={setJobsApi} setError={setError} />
       {error === true ? (
         <div className={styles.displayError}>
           <div className={styles.divError}>
@@ -30,7 +30,7 @@ function Accueil({ handleLiked }) {
           </button>
         </div>
       ) : (
-        jobs.map((offer) => {
+        jobsApi.map((offer) => {
           return (
             // Partie Oscar  : ici on envoie les props qui viennent d'App et les transmets vers JobOffer...
             <JobOffer

@@ -4,21 +4,65 @@ import FilterButton from "@components/FilterButton";
 import "@assets/Common.css";
 import "@assets/Search.css";
 
-// commentaires
-
-export default function Search({ setJobs, setError }) {
+export default function Search({ setJobsApi, setError }) {
   const [inputs, setInputs] = useState({});
   const [filters, setFilters] = useState([]);
   const [codeInsee, setCodeInsee] = useState("");
-  const API = `https://api.emploi-store.fr/partenaire/offresdemploi/v2/offres/search?motsCles=${inputs.job}&commune=${codeInsee}git`;
   const APILOCATION = `https://geo.api.gouv.fr/communes?nom=${inputs.lieu}`;
+  // let API = `https://api.emploi-store.fr/partenaire/offresdemploi/v2/offres/search?motsCles=${inputs.job}&typeContrat=${filters}&experienceLibelle=${inputs.experience}&departement=${inputs.lieu}&salaireMin=${inputs.salaire}`;
+
+  function getFullAPI(
+    inputJob,
+    contrat,
+    exp,
+    lieu,
+    salaire,
+    teletravail,
+    alternance
+  ) {
+    let API = `https://api.emploi-store.fr/partenaire/offresdemploi/v2/offres/search`;
+    if (inputJob) {
+      API += `?motsCles=${inputJob}`;
+    }
+    if (contrat) {
+      if (contrat === "Alternance") {
+        API += `&typeContrat= CDD`;
+      }
+      API += `&typeContrat=${contrat}`;
+    }
+    if (exp) {
+      API += `&experienceLibelle=${exp}`;
+    }
+    if (lieu) {
+      API += `&departement=${lieu}`;
+    }
+    if (salaire) {
+      API += `&salaireMin=${salaire}`;
+    }
+    if (teletravail) {
+      API += `&tempsPlein=${teletravail}`;
+    }
+    if (alternance) {
+      API += "?motsCles=alternance";
+    }
+    return API;
+  }
+  const API = getFullAPI(
+    inputs.job,
+    filters,
+    inputs.experience,
+    inputs.lieu,
+    inputs.salaire,
+    inputs.remote
+  );
+  // console.warn(API);
 
   const config = {
     headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
   };
 
   useEffect(() => {
-    console.warn(filters);
+    // console.warn(filters);
   }, [filters]);
 
   const getLocation = () => {
@@ -41,8 +85,13 @@ export default function Search({ setJobs, setError }) {
             (item) => item.nom.toLowerCase() === inputs.lieu.toLowerCase()
           ).code
         );
+        console.warn(codeInsee);
       });
   };
+
+  useEffect(() => {
+    // console.warn(inputs);
+  }, [inputs]);
 
   const handleGetJobs = () => {
     axios
@@ -50,7 +99,7 @@ export default function Search({ setJobs, setError }) {
       .then((response) => response.data)
       .then((data) => {
         console.warn(data.resultats);
-        setJobs(data.resultats);
+        setJobsApi(data.resultats);
       })
       .catch(() => setError(true));
   };

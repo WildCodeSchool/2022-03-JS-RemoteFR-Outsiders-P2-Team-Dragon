@@ -9,8 +9,16 @@ import ActionOffer from "@components/ActionOffer";
 import Feedback from "@components/Feedback";
 // import OngletSuiviContext from "../contexts/OngletSuiviContext";
 
-function Suivi({ handleLiked, jobs }) {
-  const [isPostuled, setIsPostuled] = useState(false);
+function Suivi({
+  handleLiked,
+  jobs,
+  handlePostuled,
+  handleResponsed,
+  handleNotResponsed,
+  handleCancel,
+  handleRelaunch,
+  handleDeleted,
+}) {
   const [onPostule, setOnPostule] = useState(true);
   const [onApplications, setOnApplications] = useState(false);
   const [onAction, setOnAction] = useState(false);
@@ -41,11 +49,6 @@ function Suivi({ handleLiked, jobs }) {
     setOnFeedback(true);
   };
 
-  const handlePostuled = (item) => {
-    setIsPostuled(!isPostuled);
-    const offerToUpdate = jobs.find((offer) => offer.id === item.id);
-    offerToUpdate.isPostule = !offerToUpdate.isPostule;
-  };
   return (
     <>
       <SubNavbar
@@ -59,11 +62,29 @@ function Suivi({ handleLiked, jobs }) {
         <BackLogOffer
           handlePostuled={handlePostuled}
           handleLiked={handleLiked}
+          jobs={jobs}
         />
       ) : null}
-      {onApplications ? <Applications /> : null}
-      {onAction ? <ActionOffer /> : null}
-      {onFeedback ? <Feedback /> : null}
+      {onApplications ? (
+        <Applications
+          jobs={jobs}
+          handleResponsed={handleResponsed}
+          handlePostuled={handlePostuled}
+          handleNotResponsed={handleNotResponsed}
+          handleRelaunch={handleRelaunch}
+        />
+      ) : null}
+      {onAction ? (
+        <ActionOffer
+          jobs={jobs}
+          handleCancel={handleCancel}
+          handleRelaunch={handleRelaunch}
+          handleNotResponsed={handleNotResponsed}
+        />
+      ) : null}
+      {onFeedback ? (
+        <Feedback jobs={jobs} handleDeleted={handleDeleted} />
+      ) : null}
     </>
   );
 }

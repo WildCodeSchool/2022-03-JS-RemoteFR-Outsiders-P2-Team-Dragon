@@ -1,30 +1,33 @@
 import React from "react";
-import RelaunchButton from "./RelaunchButton";
-import CancelButton from "./CancelButton";
-import "@assets/Common.css";
-import "@assets/Actionbutton.css";
-import offerTemplate from "../data/offerTemplate";
+import ActionButtons from "./ActionButtons";
 import JobOffer from "./JobOffer";
+import ApplicationDetails from "./applicationDetails";
 
-export default function ActionOffer({ handleRelaunch, handleCancel }) {
+export default function ActionOffer({
+  jobs,
+  handleRelaunch,
+  handleCancel,
+  handleNotResponsed,
+}) {
   return (
-    <div className="offercontainer">
-      {offerTemplate.map((offer) =>
-        offer.isFavorite ? (
-          <div className="postulecontainer" key={offer.id}>
-            <JobOffer showFavoriteButton={false} offer={offer} />
-            <div className="actioncontainer">
-              <div className="relaunchbutton">
-                <RelaunchButton handleRelaunch={handleRelaunch} offer={offer} />
-              </div>
-              <div className="cancelbutton">
-                <CancelButton handleCancel={handleCancel} offer={offer} />
+    <div>
+      {jobs.map((offer) =>
+        offer.isNotResponse ? (
+          <div className="suiviContainer" key={offer.id}>
+            <div className="suiviContainer2">
+              <JobOffer offer={offer} />
+              <div className="buttonsSuivi">
+                <ActionButtons
+                  offer={offer}
+                  handleCancel={handleCancel}
+                  handleRelaunch={handleRelaunch}
+                  handleNotResponsed={handleNotResponsed}
+                />
               </div>
             </div>
+            <ApplicationDetails commentsInFeedback={false} />
           </div>
-        ) : (
-          ""
-        )
+        ) : null
       )}
     </div>
   );

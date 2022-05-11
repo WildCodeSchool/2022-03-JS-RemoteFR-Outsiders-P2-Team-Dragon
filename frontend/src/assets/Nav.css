@@ -27,8 +27,8 @@
 }
 
 .img-boussole {
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 3rem;
+  height: 3rem;
   cursor: pointer;
 }
 
@@ -39,8 +39,8 @@
 }
 
 .img-boussole:hover {
-  width: 3rem;
-  height: 3rem;
+  width: 3.4rem;
+  height: 3.4rem;
 }
 
 .div-nav {
@@ -64,11 +64,10 @@
   color: white;
 }
 
-.items:hover{
+.items:hover {
   color: var(--button-color);
   transition: color 0.35s, color 0.35s;
 }
-
 
 @media screen and (min-width: 750px) {
   .img-logo {
@@ -99,5 +98,4 @@
   .items {
     font-size: 2rem;
   }
-
 }

@@ -11,7 +11,12 @@ export default function FavoriteButton({ offer, handleLiked }) {
         type="button"
         onClick={() => handleLiked(offer)}
       >
-        {offer.isFavorite ? (
+        {offer.isFavorite ||
+        offer.isPostule ||
+        offer.isNotResponse ||
+        offer.isResponse ||
+        offer.isRelaunch ||
+        offer.isCancel ? (
           <img
             className={styles.favoriteIcon}
             src="..\src\assets\likeON.png"
