@@ -7,26 +7,20 @@ function Profil() {
     <div className="profilcontainer">
       <div className="identity">
         <img src="..\src\assets\moi.jpg" alt="profil" />
-        <h2>Nom :</h2>
-        <p>Boinet</p>
-        <h2>Prénom : </h2>
-        <p>Christophe</p>
+        <div>
+          <h2>Nom :</h2>
+          <p>Boinet</p>
+          <h2>Prénom : </h2>
+          <p>Christophe</p>
+        </div>
       </div>
       <div className="goals">
         <h1>Mes Objectifs professionnels</h1>
         <ul>
-          <li>
-            Job :<p>Développeur FullStack</p>
-          </li>
-          <li>
-            Localisation :<p>Région PACA</p>
-          </li>
-          <li>
-            Salaire :<p>35000€</p>
-          </li>
-          <li>
-            Contrat :<p>CDI</p>
-          </li>
+          <li>Job : Développeur FullStack</li>
+          <li>Localisation : Région PACA</li>
+          <li>Salaire : 35000€</li>
+          <li>Contrat : CDI</li>
         </ul>
       </div>
     </div>
