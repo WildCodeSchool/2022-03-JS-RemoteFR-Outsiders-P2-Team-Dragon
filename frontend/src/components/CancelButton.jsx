@@ -2,8 +2,6 @@ import React from "react";
 import "@assets/Common.css";
 import "@assets/Actionbutton.css";
 
-// When I click on Button, the offer is going to "Feedback"
-
 export default function CancelButton({ handleCancel, offer }) {
   return (
     <div>

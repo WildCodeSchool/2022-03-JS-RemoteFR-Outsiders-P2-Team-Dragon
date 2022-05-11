@@ -13,8 +13,8 @@ import { OngletSuiviContextProvider } from "./contexts/OngletSuiviContext";
 
 function App() {
   const [jobsApi, setJobsApi] = useState([]);
-  // console.warn(jobsApi);
   const [jobs, setJobs] = useState([]);
+  console.warn(jobs[0]);
   useEffect(() => {
     const newJobs = jobsApi.map((offerApi) => {
       const offer = { ...offerApi };
@@ -31,7 +31,6 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       const result = await axios("http://localhost:5000/api/token");
-      // console.warn(result);
       localStorage.setItem("token", result.data);
     };
     fetchData();
@@ -80,24 +79,6 @@ function App() {
     offerToUpdate.isCancel = false;
   };
 
-  useEffect(() => {
-    const as = async () => {
-      console.warn(`isFavorite :${jobs[0].isFavorite}`);
-      console.warn(`isPostule :${jobs[0].isPostule}`);
-      console.warn(`isResponse :${jobs[0].isResponse}`);
-      console.warn(`isNotResponse :${jobs[0].isNotResponse}`);
-      console.warn(`isRelaunch :${jobs[0].isRelaunch}`);
-      console.warn(`isCancel :${jobs[0].isCancel}`);
-    };
-    as();
-  }, [
-    isLiked,
-    isPostuled,
-    isResponsed,
-    isNotResponsed,
-    isRelaunched,
-    isCanceled,
-  ]);
   return (
     <OngletSuiviContextProvider>
       <>

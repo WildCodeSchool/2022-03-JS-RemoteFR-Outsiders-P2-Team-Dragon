@@ -1,6 +1,5 @@
 import React from "react";
 import "@assets/Accueil.module.css";
-// import "@assets/Common.css";
 
 function Details({ offer }) {
   return (

@@ -87,11 +87,6 @@ export default function Search({ setJobsApi }) {
   };
   return (
     <div className="searchjob">
-      {/* <p>
-        {jobs.map((job) => (
-          <div>{job.id}</div>
-        ))}
-      </p> */}
       <form className="formjob" onSubmit={handleSubmit}>
         <div className="fieldscontainer">
           <input

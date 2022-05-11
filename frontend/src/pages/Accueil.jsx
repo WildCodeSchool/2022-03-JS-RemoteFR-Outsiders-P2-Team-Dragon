@@ -9,7 +9,6 @@ function Accueil({ jobs, setJobsApi, handleLiked }) {
       <Search setJobsApi={setJobsApi} />
       {jobs.map((offer) => {
         return (
-          // Partie Oscar  : ici on envoie les props qui viennent d'App et les transmets vers JobOffer...
           <JobOffer
             key={offer.id}
             handleLiked={handleLiked}
