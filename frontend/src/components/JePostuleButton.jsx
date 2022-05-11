@@ -12,6 +12,8 @@ export default function JePostuleButton({
   function buttonsBacklogoffer() {
     handleLiked(offer);
     handlePostuled(offer);
+    console.warn(offer);
+    window.open(`${offer.origineOffre.urlOrigine}`);
   }
   return (
     <div>
