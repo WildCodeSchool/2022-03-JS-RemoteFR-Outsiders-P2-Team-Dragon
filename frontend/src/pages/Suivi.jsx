@@ -1,13 +1,11 @@
 /* eslint-disable no-nested-ternary */
 import React, { useState } from "react";
-// import Applications from "@components/Applications";
 import "@assets/Common.css";
 import SubNavbar from "@components/SubNavBar";
 import BackLogOffer from "@components/BackLogOffer";
 import Applications from "@components/Applications";
 import ActionOffer from "@components/ActionOffer";
 import Feedback from "@components/Feedback";
-// import OngletSuiviContext from "../contexts/OngletSuiviContext";
 
 function Suivi({
   handleLiked,
@@ -50,7 +48,7 @@ function Suivi({
   };
 
   return (
-    <>
+    <div className="divGeneral">
       <SubNavbar
         OnClickOnPostule={OnClickOnPostule}
         OnClickOnApplications={OnClickOnApplications}
@@ -85,7 +83,7 @@ function Suivi({
       {onFeedback ? (
         <Feedback jobs={jobs} handleDeleted={handleDeleted} />
       ) : null}
-    </>
+    </div>
   );
 }
 

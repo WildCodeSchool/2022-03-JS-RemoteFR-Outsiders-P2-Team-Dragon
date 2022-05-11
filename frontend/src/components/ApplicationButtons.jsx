@@ -1,5 +1,4 @@
 import React from "react";
-// When I click on Heart, the poste is going to "Suivi de candidature"
 
 export default function AplicationButtons({
   offer,
@@ -11,7 +10,7 @@ export default function AplicationButtons({
     handlePostuled(offer);
     handleResponsed(offer);
     // eslint-disable-next-line no-alert
-    alert("N'oublies pas écrire un commentaire");
+    alert("N'oublies pas d'écrire un commentaire !");
   }
   function buttonsApplications2() {
     handlePostuled(offer);

@@ -9,12 +9,11 @@ import Bassin from "@pages/Bassin";
 import "./assets/Accueil.module.css";
 import Footer from "@components/Footer";
 import axios from "axios";
-import { OngletSuiviContextProvider } from "./contexts/OngletSuiviContext";
 
 function App() {
   const [jobsApi, setJobsApi] = useState([]);
-  // console.warn(jobsApi);
   const [jobs, setJobs] = useState([]);
+  // console.warn(jobs[0]);
   useEffect(() => {
     const newJobs = jobsApi.map((offerApi) => {
       const offer = { ...offerApi };
@@ -80,62 +79,42 @@ function App() {
     offerToUpdate.isCancel = false;
   };
 
-  useEffect(() => {
-    const as = async () => {
-      console.warn(`isFavorite :${jobs[0].isFavorite}`);
-      console.warn(`isPostule :${jobs[0].isPostule}`);
-      console.warn(`isResponse :${jobs[0].isResponse}`);
-      console.warn(`isNotResponse :${jobs[0].isNotResponse}`);
-      console.warn(`isRelaunch :${jobs[0].isRelaunch}`);
-      console.warn(`isCancel :${jobs[0].isCancel}`);
-    };
-    as();
-  }, [
-    isLiked,
-    isPostuled,
-    isResponsed,
-    isNotResponsed,
-    isRelaunched,
-    isCanceled,
-  ]);
   return (
-    <OngletSuiviContextProvider>
-      <>
-        <Nav />
-        <div className="main">
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <Accueil
-                  handleLiked={handleLiked}
-                  jobs={jobs}
-                  setJobsApi={setJobsApi}
-                />
-              }
-            />
-            <Route
-              path="/Suivi"
-              element={
-                <Suivi
-                  handleLiked={handleLiked}
-                  jobs={jobs}
-                  handlePostuled={handlePostuled}
-                  handleResponsed={handleResponsed}
-                  handleNotResponsed={handleNotResponsed}
-                  handleRelaunch={handleRelaunch}
-                  handleCancel={handleCancel}
-                  handleDeleted={handleDeleted}
-                />
-              }
-            />
-            <Route path="/Bassin" element={<Bassin />} />
-            <Route path="/Profil" element={<Profil />} />
-          </Routes>
-        </div>
-        <Footer />
-      </>
-    </OngletSuiviContextProvider>
+    <>
+      <Nav />
+      <div className="main">
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Accueil
+                handleLiked={handleLiked}
+                jobs={jobs}
+                setJobsApi={setJobsApi}
+              />
+            }
+          />
+          <Route
+            path="/Suivi"
+            element={
+              <Suivi
+                handleLiked={handleLiked}
+                jobs={jobs}
+                handlePostuled={handlePostuled}
+                handleResponsed={handleResponsed}
+                handleNotResponsed={handleNotResponsed}
+                handleRelaunch={handleRelaunch}
+                handleCancel={handleCancel}
+                handleDeleted={handleDeleted}
+              />
+            }
+          />
+          <Route path="/Bassin" element={<Bassin />} />
+          <Route path="/Profil" element={<Profil />} />
+        </Routes>
+      </div>
+      <Footer />
+    </>
   );
 }
 export default App;

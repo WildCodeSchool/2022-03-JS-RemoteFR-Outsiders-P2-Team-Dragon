@@ -1,0 +1,36 @@
+.profilcontainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.identity {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  padding: 1rem;
+}
+
+.identity img {
+  width: 8rem;
+  margin-right: 5em;
+}
+
+.goals {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 2em;
+}
+
+.goals li {
+  padding: 1em;
+  list-style: none;
+  width: 100%;
+}
