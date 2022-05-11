@@ -29,7 +29,7 @@ function App() {
   }, [jobsApi]);
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios("http://localhost:5500/api/token");
+      const result = await axios("http://localhost:5000/api/token");
       console.warn(result);
       localStorage.setItem("token", result.data);
     };
