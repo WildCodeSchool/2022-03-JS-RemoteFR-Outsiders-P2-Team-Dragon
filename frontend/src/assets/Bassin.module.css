@@ -1,5 +1,7 @@
 .mainBassin {
   padding: 1rem;
+  
+  height: 100vh;
 }
 
 .intro {

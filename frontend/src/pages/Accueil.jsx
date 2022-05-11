@@ -13,7 +13,7 @@ function Accueil({ jobs, setJobsApi, handleLiked }) {
   };
 
   return (
-    <div>
+    <div className="divGeneral">
       <Search setJobsApi={setJobsApi} setError={setError} />
       {error === true ? (
         <div className={styles.displayError}>

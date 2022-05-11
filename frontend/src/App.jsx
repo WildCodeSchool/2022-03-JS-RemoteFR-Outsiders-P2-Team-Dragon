@@ -14,7 +14,7 @@ import { OngletSuiviContextProvider } from "./contexts/OngletSuiviContext";
 function App() {
   const [jobsApi, setJobsApi] = useState([]);
   const [jobs, setJobs] = useState([]);
-  console.warn(jobs[0]);
+  // console.warn(jobs[0]);
   useEffect(() => {
     const newJobs = jobsApi.map((offerApi) => {
       const offer = { ...offerApi };
@@ -30,8 +30,8 @@ function App() {
   }, [jobsApi]);
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios("http://localhost:5500/api/token");
-      console.warn(result);
+      const result = await axios("http://localhost:5000/api/token");
+      // console.warn(result);
       localStorage.setItem("token", result.data);
     };
     fetchData();

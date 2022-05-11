@@ -48,7 +48,7 @@ function Suivi({
   };
 
   return (
-    <>
+    <div className="divGeneral">
       <SubNavbar
         OnClickOnPostule={OnClickOnPostule}
         OnClickOnApplications={OnClickOnApplications}
@@ -83,7 +83,7 @@ function Suivi({
       {onFeedback ? (
         <Feedback jobs={jobs} handleDeleted={handleDeleted} />
       ) : null}
-    </>
+    </div>
   );
 }
 
