@@ -1,0 +1,58 @@
+.mainBassin {
+  padding: 1rem;
+}
+
+.intro {
+  background-color: var(--bloc-background);
+  border-radius: 0px;
+  text-align: left;
+  color: black;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+.emploiImg {
+  height: 300px;
+  padding: 1rem;
+}
+
+.sectionSynthesis {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.top15Jobs {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.top15Jobs div {
+  width: 400px;
+}
+
+ul {
+  padding: 1rem;
+}
+
+li {
+  width: 75%;
+}
+
+.discover {
+  height: 15px;
+  padding-right: 1rem;
+}
+
+.triangleButton {
+  border: 0;
+  background-color: transparent;
+}
+
+.minim {
+  font-size: 0.5rem;
+}

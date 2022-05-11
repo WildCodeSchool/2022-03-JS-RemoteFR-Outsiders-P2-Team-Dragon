@@ -1,0 +1,24 @@
+.div-footer {
+  background-color: var(--secondary-color);
+  color: white;
+  font-size: 0.9rem;
+  padding: 0.5rem;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.div-footer p {
+  padding: 0.4rem;
+  text-align: center;
+}
+
+/***/
+
+@media screen and (min-width: 750px) {
+  .div-footer {
+    background-color: var(--secondary-color);
+    margin: inherit;
+    color: white;
+    font-size: 1.2rem;
+  }
+}

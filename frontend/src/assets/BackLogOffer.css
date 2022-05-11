@@ -1,0 +1,32 @@
+.postulecontainerON {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+}
+
+.jePostuleButtonON {
+  color: white;
+  background-color: var(--button-color);
+  font-size: 0.6rem;
+  font-weight: 700;
+  border-radius: 10px;
+  padding: 0.5rem;
+  border: 1px solid var(--button-color);
+  transition: background-color 0.35s, color 0.35s;
+  cursor: pointer;
+  margin-left: 0.7rem;
+  margin-right: 0.7rem;
+}
+
+.jePostuleButtonON:hover {
+  color: var(--button-color);
+  background-color: white;
+  font-size: 0.8rem;
+  font-weight: 700;
+  border-radius: 10px;
+  padding: 0.5rem;
+  border: 1px solid var(--button-color);
+  transition: background-color 0.35s, color 0.35s;
+  cursor: pointer;
+}
