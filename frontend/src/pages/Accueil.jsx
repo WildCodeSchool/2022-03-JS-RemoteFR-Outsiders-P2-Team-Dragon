@@ -4,9 +4,9 @@ import Search from "../components/Search";
 import JobOffer from "../components/JobOffer";
 import "../assets/Common.css";
 
-function Accueil({ handleLiked }) {
+function Accueil({ jobs, setJobsApi, handleLiked }) {
   // const [isLiked, setIsLiked] = useState(false);
-  const [jobsApi, setJobsApi] = useState([]);
+
   const [error, setError] = useState(false);
   const handleReload = () => {
     window.location.reload(false);
@@ -30,9 +30,8 @@ function Accueil({ handleLiked }) {
           </button>
         </div>
       ) : (
-        jobsApi.map((offer) => {
+        jobs.map((offer) => {
           return (
-            // Partie Oscar  : ici on envoie les props qui viennent d'App et les transmets vers JobOffer...
             <JobOffer
               key={offer.id}
               handleLiked={handleLiked}

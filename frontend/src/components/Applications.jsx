@@ -2,7 +2,6 @@ import React from "react";
 import JobOffer from "./JobOffer";
 import ApplicationDetails from "./applicationDetails";
 import AplicationButtons from "./ApplicationButtons";
-// import OngletSuiviContext from "../contexts/OngletSuiviContext";
 
 function Applications({
   jobs,

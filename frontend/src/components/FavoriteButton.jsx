@@ -1,8 +1,6 @@
 import React from "react";
 import styles from "../assets/Accueil.module.css";
 
-// When I click on Heart, the poste is going to "Suivi de candidature"
-
 export default function FavoriteButton({ offer, handleLiked }) {
   return (
     <div className={styles.favoriteDiv}>

@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 
-// When I click on Heart, the poste is going to "Suivi de candidature"
-
 export default function FeedbackButtons({ offer, handleDeleted }) {
   const [final, setFinal] = useState(false);
   function buttonsAction1() {
