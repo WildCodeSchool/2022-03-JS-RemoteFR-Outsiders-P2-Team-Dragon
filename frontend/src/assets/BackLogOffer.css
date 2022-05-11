@@ -8,7 +8,7 @@
 .jePostuleButtonON {
   color: white;
   background-color: var(--button-color);
-  font-size: 0.7rem;
+  font-size: 0.6rem;
   font-weight: 700;
   border-radius: 10px;
   padding: 0.5rem;
@@ -22,7 +22,7 @@
 .jePostuleButtonON:hover {
   color: var(--button-color);
   background-color: white;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   font-weight: 700;
   border-radius: 10px;
   padding: 0.5rem;

@@ -14,7 +14,7 @@ export default function ActionButtons({
     handleNotResponsed(offer);
     handleCancel(offer);
     // eslint-disable-next-line no-alert
-    alert("N'oublies pas écrire un commentaire");
+    alert("N'oublies pas d'écrire un commentaire !");
   }
   return (
     <div className="buttonsContainerSuivi">
