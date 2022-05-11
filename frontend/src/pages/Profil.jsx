@@ -18,7 +18,7 @@ function Profil() {
         <h1>Mes Objectifs professionnels</h1>
         <ul>
           <li>Job : Développeur FullStack</li>
-          <li>Localisation : Région PACA</li>
+          <li>Localisation : Région Occitanie</li>
           <li>Salaire : 35000€</li>
           <li>Contrat : CDI</li>
         </ul>
