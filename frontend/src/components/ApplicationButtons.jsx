@@ -1,5 +1,4 @@
 import React from "react";
-// When I click on Heart, the poste is going to "Suivi de candidature"
 
 export default function AplicationButtons({
   offer,
