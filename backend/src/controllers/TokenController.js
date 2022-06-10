@@ -7,10 +7,12 @@ class TokenController {
   static getToken = async (req, res) => {
     // fetch est à utiliser via le package node-fetch
     // npm i -S node-fetch
+    console.log(API);
     const response = await fetch(API, {
       method: "post",
     });
     const json = await response.json();
+    console.log(json);
     res.send(json.access_token); // je renvoie mon token à mon client
   };
 

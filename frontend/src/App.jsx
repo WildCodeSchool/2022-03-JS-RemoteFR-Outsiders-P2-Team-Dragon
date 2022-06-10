@@ -11,6 +11,7 @@ import Footer from "@components/Footer";
 import axios from "axios";
 
 function App() {
+  const API = "https://find-tech-jobs-backend.remote-fr-3.wilders.dev";
   const [jobsApi, setJobsApi] = useState([]);
   const [jobs, setJobs] = useState([]);
   // console.warn(jobs[0]);
@@ -29,7 +30,7 @@ function App() {
   }, [jobsApi]);
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios("http://localhost:5000/api/token");
+      const result = await axios(`${API}/api/token`);
       // console.warn(result);
       localStorage.setItem("token", result.data);
     };
