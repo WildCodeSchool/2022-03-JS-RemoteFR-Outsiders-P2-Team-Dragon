@@ -11,7 +11,7 @@ import Footer from "@components/Footer";
 import axios from "axios";
 
 function App() {
-  const API = "https://find-tech-jobs-backend.remote-fr-3.wilders.dev";
+  const API = import.meta.env.VITE_BACKEND_URL;
   const [jobsApi, setJobsApi] = useState([]);
   const [jobs, setJobs] = useState([]);
   // console.warn(jobs[0]);
